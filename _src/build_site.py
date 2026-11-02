@@ -805,7 +805,6 @@ def page_redirect_to(l, to):
 <html lang="{l}"><head><meta charset="utf-8"><script>if(location.protocol==="http:"&&location.hostname==="vanphudalat.com")location.replace("https:"+location.href.slice(5))</script>
 <title>{C[l]["home"]["title"]}</title>
 <link rel="canonical" href="{BASE + to}">
-<meta name="robots" content="noindex">
 <meta http-equiv="refresh" content="0; url={BASE + to}">
 </head><body><a href="{BASE + to}">{C[l]["home"]["title"]}</a></body></html>
 """
