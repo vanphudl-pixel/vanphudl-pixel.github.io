@@ -4,7 +4,7 @@ CLUSTERS = {
     # Group 1 — no cash deposit & quick paperwork
     "procedure": ["lt-nodeposit", "lt-procedure", "lt-documents", "lt-booking", "lt-checklist", "lt-reliable", "lt-first-time", "lt-foreigners"],
     # Group 2 — early opening / cloud hunting / sunrise
-    "early": ["cloudhunt", "caudat", "lt-early", "lt-caudat-early", "langbiang"],
+    "early": ["cloudhunt", "caudat", "lt-early", "lt-caudat-early", "langbiang", "pinkgrass"],
     # Group 3 — electric scooters
     "ev": ["evrules", "lt-ev-foreigners", "lt-ev-experience", "lt-ev-city", "lt-ev-price", "lt-ev-battery", "lt-ev-couples",
            "lt-ev-beginners", "lt-ev-cafes", "lt-ev-night", "lt-ev-rain", "lt-ev-vs-grab", "lt-ev-eco", "lt-ev-parking",

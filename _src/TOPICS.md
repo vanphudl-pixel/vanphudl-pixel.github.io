@@ -111,6 +111,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-02 lt-backpacker — Long-tail: motorbike rental for backpackers / budget travellers (vi "thuê xe máy Đà Lạt cho khách du lịch bụi", en "motorbike rental in Da Lat for backpackers", ru "аренда байка в Далате для бэкпекеров", zh "大叻穷游租摩托车", ko "달랏 배낭여행 오토바이 렌트", id "sewa motor Da Lat untuk backpacker"; share a bike, week 1,050,000 VND, 4:30 opening; links lt-multiday, lt-two, budget; photos white-honda-vision-sidewalk-dalat + evening-pickup-van-phu-1-15-5-thong-thien-hoc; 6 languages)
 - 2026-11-02 lt-ev-faq — EV long-tail: 10 common questions (vi "thuê xe máy điện Đà Lạt" + giải đáp câu hỏi, en "electric scooter rental in Da Lat: 10 common questions", ru "аренда электроскутера в Далате: ответы на частые вопросы", zh "大叻租电动车常见问题", ko "달랏 전기 스쿠터 렌트 자주 묻는 질문", id "sewa motor listrik Da Lat: pertanyaan yang sering diajukan"; question <h2>s → FAQPage; no km figure (links lt-ev-battery); links evrules, lt-ev-beginners, lt-ev-rain, lt-ev-parking; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 6 languages)
 
+- 2026-11-03 pinkgrass — Pink grass (cỏ hồng) season around Da Lat by motorbike (Nov–Dec, directions Lac Duong/Lang Biang, Ta Nung, Tuyen Lam, Trai Mat/Cau Dat; respect private land; en "pink grass season in Da Lat", vi "đồi cỏ hồng Đà Lạt", ru "розовая трава в Далате", zh "大叻粉色草原", ko "달랏 핑크 그라스", id "musim rumput merah muda di Da Lat"; links wildsunflower, cloudhunt, passes, routes; photos group-rental-air-blade-van-phu-morning + van-phu-guest-air-blade-thumbs-up; cluster early; 6 languages)
+- 2026-11-03 lt-booking — Long-tail: how to book a motorbike in Da Lat online (vi "đặt thuê xe máy Đà Lạt online", en "book a motorbike in Da Lat online", ru "забронировать байк в Далате онлайн", zh "大叻摩托车在线预订", ko "달랏 오토바이 렌트 예약", id "booking sewa motor Da Lat online"; what to send, confirmation, changes; links lt-delivery, lt-documents, lt-procedure; photos honda-air-blade-vision-fleet-van-phu + honda-vision-hotel-delivery-dalat; 6 languages)
+- 2026-11-03 lt-ev-lake — EV long-tail: around Xuan Huong Lake and the flower garden by electric scooter (vi "xe máy điện dạo hồ Xuân Hương", en "electric scooter around Xuan Huong Lake", ru "на электроскутере вокруг озера Суан Хыонг", zh "骑电动车游春香湖", ko "전기 스쿠터로 쑤언흐엉 호수", id "keliling Danau Xuan Huong naik motor listrik"; Lam Vien Square, flower garden, parking; no km figure (links lt-ev-battery); links evrules, lt-ev-halfday, lt-ev-parking; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -123,11 +127,21 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN 2 (17/10/2026, English-search priorities): each topic below marked [KW2] lists an exact English target phrase → the en title_tag, H1 and meta must contain it (natural capitalisation); vi and other languages use their natural equivalent. Already covered, do NOT write new articles for: "Dalat motorbike rental price" / "How much does it cost to rent a scooter in Dalat" (existing `price`), "Dalat motorbike rental requirements" (lt-documents), "Best places to visit around Dalat by scooter" (routes page + photospots), "What to know before riding a scooter in Dalat" (riding + lt-first-time). Never write "international driving permit" topics; licence questions are answered only on the licence pillar page (/do-i-need-a-license-to-rent-a-motorbike-in-vietnam/, vi /vi/thue-xe-may-co-can-bang-lai/).
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-booking — How to book a motorbike in Da Lat online (WhatsApp, Zalo, WeChat, Telegram — what to send)
 - [ ] lt-reliable — How to choose a reliable motorbike rental in Da Lat (transparent price, no hidden fees, written rules) — generic advice, no competitor claims
 - [ ] lt-first-time — [KW2] en: "is it easy to ride a scooter in Dalat" — First time riding a scooter in Da Lat: is it hard? (practice, quiet streets, traffic on the right)
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
+
+- [ ] lt-groups — Motorbike rental in Da Lat for groups of friends (4+ bikes: booking several bikes, mixing Vision/Air Blade/electric, riding as a group)
+- [ ] lt-sameday — Same-day / walk-in motorbike rental in Da Lat (no booking ahead: what to expect, when it's busy)
+- [ ] lt-return — Returning your rental bike in Da Lat (by 21:00, extending by message, fuel, comparing with the pick-up video)
+- [ ] lt-breakdown — Flat tyre or breakdown on a rental bike in Da Lat: what to do (stop safely, call/message the shop)
+- [ ] lt-included — What's included in a Da Lat motorbike rental (helmet, phone holder, 1 liter of fuel, test ride, condition video, no cash deposit)
+- [ ] lt-navigation — Finding your way on a rental bike: Google Maps with the phone holder, map pins, offline maps
+- [ ] lt-solo-female — Motorbike rental in Da Lat for solo female travellers (timing, safe parking, staying in touch with the shop)
+- [ ] lt-waterfalls-rent — Renting a motorbike to visit the waterfalls near Da Lat (which bike, loops; link waterfalls + waterfalls map, not duplicate them)
+- [ ] lt-photoshoot — Renting a scooter for a photo shoot or couple photos in Da Lat (which bike, parking at photo spots, early light)
+- [ ] lt-weekend — Motorbike rental in Da Lat for the weekend (busy Saturdays: book ahead; link lt-2days, not duplicate it)
 
 ## Photos — owner's real photos (use them in every new article)
 - Library: `img/<name>.jpg` (EXIF/GPS stripped, ≤1200 px, ~150–240 KB; the build serves WebP copies of ~20–75 KB automatically). Alt texts in all languages: `content/photos.py` ALT[lang][name].
@@ -138,7 +152,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-lake — Around Xuan Huong Lake and the city flower garden by electric scooter (short lakeside loop, stops, parking)
 - [ ] lt-ev-market — Going to Da Lat Market by electric scooter: morning shopping, guarded parking, carrying bags
 - [ ] lt-ev-hills — Riding an electric scooter on Da Lat's hilly streets (climbing, braking downhill, two riders, battery use)
 - [ ] lt-ev-weekend — An electric scooter for a weekend in Da Lat (2 days: battery plan, swap at the shop; link lt-2days not duplicate it)
@@ -150,7 +163,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-cold — Electric scooter in Da Lat's cool weather: what to wear (jacket, gloves, rain gear, cold mornings)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 31/10 pinkgrass — Pink grass (cỏ hồng) season around Da Lat: where to see it by bike
 - [ ] 01/11 november — Da Lat in November: weather, what's in season, what to pack
 - [ ] 03/11 sunrise-sunset — Best sunrise and sunset spots around Da Lat
 - [ ] 04/11 station — Da Lat Railway Station and the train to Trai Mat & Linh Phuoc (Ve Chai) pagoda
