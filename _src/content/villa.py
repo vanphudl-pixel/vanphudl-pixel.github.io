@@ -4,6 +4,9 @@ Owner rules: no prices here, no licence wording; villa booking is by message (Za
 
 LANGS = ["vi", "en", "zh", "ru", "ko", "id"]
 UPDATED = "2026-11-04"
+# TikTok clip links to show one by one (owner adds them). The whole-channel embed was dropped 2026-11-04: TikTok's server
+# answered "overload-protect triggered" inside the frame. Single-video embeds are TikTok's stable embed type.
+VIDEOS = []  # e.g. "https://www.tiktok.com/@bietthudalat/video/7400000000000000000"
 SLUG = {"vi": "vi/villa-da-lat/", "en": "villa-da-lat/", "zh": "zh/villa/", "ru": "ru/villa/", "ko": "ko/villa/", "id": "id/villa/"}
 
 T = {

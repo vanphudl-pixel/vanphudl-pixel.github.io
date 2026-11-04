@@ -1347,6 +1347,16 @@ def page_villa(l):
     else:
         b = f'<a class="btn wa" href="https://wa.me/84944081101?text={quote(t["msg"])}" target="_blank" rel="noopener">{t["btn"]}</a>'
     how = "".join(f"<li>{x}</li>" for x in t["how"])
+    vids = [(u, re.search(r"/video/(\d+)", u).group(1)) for u in VL.VIDEOS if re.search(r"/video/(\d+)", u)]
+    if vids:
+        clips = ('<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;align-items:start">'
+                 + "".join(f'<blockquote class="tiktok-embed" cite="{u}" data-video-id="{i}" style="max-width:605px;min-width:288px;margin:0"><section><a target="_blank" rel="noopener" href="{u}">TikTok @bietthudalat</a></section></blockquote>' for u, i in vids)
+                 + '</div>')
+        tt_js = '<script async src="https://www.tiktok.com/embed.js"></script>'
+    else:
+        clips = (f'<a href="{TIKTOK}" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;text-decoration:none;color:inherit;max-width:520px;margin:0 auto">'
+                 f'<span style="font-size:40px;line-height:1">🎵</span><span><b style="font-size:1.1em">@bietthudalat</b><br>{t["lead"].split(". ")[0].replace("<b>","").replace("</b>","")}.</span></a>')
+        tt_js = ""
     body = f"""
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
 <div class="hero">{crumbs(l, me, [(t["crumb"], None)])}
@@ -1355,17 +1365,13 @@ def page_villa(l):
 <main class="wrap">
  <section class="prose"><h2>{t["h_how"]}</h2><ol>{how}</ol></section>
  <section><h2>{t["h_clips"]}</h2>
-  <div style="max-width:780px;margin:0 auto;min-height:480px">
-   <blockquote class="tiktok-embed" cite="{TIKTOK}" data-unique-id="bietthudalat" data-embed-type="creator" style="max-width:780px;min-width:288px;margin:0 auto">
-    <section><a target="_blank" rel="noopener" href="{TIKTOK}?refer=creator_embed">@bietthudalat</a></section>
-   </blockquote>
-  </div>
+  {clips}
   <p style="text-align:center"><a class="btn alt" href="{TIKTOK}" target="_blank" rel="noopener" style="border:1px solid var(--line)">🎵 {t["fallback"]}</a></p>
  </section>
  <section><div class="box"><h2>{t["h_book"]}</h2><p>{t["book_txt"]}</p>{b}</div></section>
  <section><h2>{AB.T[l]["h_contact"]}</h2>{contacts(l)}</section>
 </main>
-<script async src="https://www.tiktok.com/embed.js"></script>
+{tt_js}
 """
     return head_html + body + foot(l, frm=me)
 for _l in VL.LANGS:
