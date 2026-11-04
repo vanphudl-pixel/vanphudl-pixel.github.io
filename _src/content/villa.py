@@ -97,3 +97,16 @@ T = {
   "link_about": "Pesan vila – tonton video", "foot": "Vila Da Lat",
  },
 }
+
+# All clips of @bietthudalat (owner asked 2026-11-04 "lấy hết dữ liệu trên kênh"): read from the channel page on 2026-11-04,
+# covers saved in /img/tiktok/<id>.webp. Order = channel order (pinned first). Fields: id, v (views as shown), p (pinned), t (title), c (caption).
+import json as _json, pathlib as _pl
+CLIPS = _json.loads((_pl.Path(__file__).resolve().parent.parent / "data" / "tiktok.json").read_text(encoding="utf-8"))
+UI = {
+ "vi": ("Đã ghim", "Xem trên TikTok", "💬 Đặt căn này qua Zalo", "Đóng", "clip"),
+ "en": ("Pinned", "Watch on TikTok", "💬 Book this villa on WhatsApp", "Close", "clips"),
+ "zh": ("置顶", "在TikTok观看", "微信预订: vanphudalat", "关闭", "个视频"),
+ "ru": ("Закреплено", "Смотреть в TikTok", "💬 Забронировать в Telegram", "Закрыть", "видео"),
+ "ko": ("고정됨", "TikTok에서 보기", "💬 WhatsApp으로 이 빌라 예약", "닫기", "개 영상"),
+ "id": ("Disematkan", "Tonton di TikTok", "💬 Pesan vila ini via WhatsApp", "Tutup", "video"),
+}

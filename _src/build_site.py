@@ -1347,16 +1347,40 @@ def page_villa(l):
     else:
         b = f'<a class="btn wa" href="https://wa.me/84944081101?text={quote(t["msg"])}" target="_blank" rel="noopener">{t["btn"]}</a>'
     how = "".join(f"<li>{x}</li>" for x in t["how"])
-    vids = [(u, re.search(r"/video/(\d+)", u).group(1)) for u in VL.VIDEOS if re.search(r"/video/(\d+)", u)]
-    if vids:
-        clips = ('<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;align-items:start">'
-                 + "".join(f'<blockquote class="tiktok-embed" cite="{u}" data-video-id="{i}" style="max-width:605px;min-width:288px;margin:0"><section><a target="_blank" rel="noopener" href="{u}">TikTok @bietthudalat</a></section></blockquote>' for u, i in vids)
-                 + '</div>')
-        tt_js = '<script async src="https://www.tiktok.com/embed.js"></script>'
-    else:
-        clips = (f'<a href="{TIKTOK}" target="_blank" rel="noopener" style="display:flex;gap:14px;align-items:center;padding:18px;border:1px solid var(--line);border-radius:16px;background:#fff;text-decoration:none;color:inherit;max-width:520px;margin:0 auto">'
-                 f'<span style="font-size:40px;line-height:1">🎵</span><span><b style="font-size:1.1em">@bietthudalat</b><br>{t["lead"].split(". ")[0].replace("<b>","").replace("</b>","")}.</span></a>')
-        tt_js = ""
+    import html as _h, json as _j
+    pin, watch, bk, close, unit = VL.UI[l]
+    tiles = "".join(
+        f'<a class="tt" href="https://www.tiktok.com/@bietthudalat/video/{c["id"]}" target="_blank" rel="noopener" data-id="{c["id"]}" data-t="{_h.escape(c["t"])}">'
+        f'<img src="/img/tiktok/{c["id"]}.webp" alt="{_h.escape(c["t"])}" width="360" height="480" loading="{"eager" if n < 6 else "lazy"}" decoding="async">'
+        + (f'<span class="pin">{pin}</span>' if c["p"] else "")
+        + f'<span class="vw">▷ {c["v"]}</span></a>' for n, c in enumerate(VL.CLIPS))
+    if l == "vi": bk_href = ZALO
+    elif l == "ru": bk_href = TG
+    elif l == "zh": bk_href = ""
+    else: bk_href = "https://wa.me/84944081101?text="
+    clips = f"""<style>
+.ttg{{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin:0 -16px}}@media(min-width:760px){{.ttg{{grid-template-columns:repeat(4,1fr);gap:4px;margin:0}}}}
+.tt{{position:relative;display:block;aspect-ratio:3/4;overflow:hidden;background:#ddd}}.tt img{{width:100%;height:100%;object-fit:cover;display:block}}
+.tt .vw{{position:absolute;left:6px;bottom:5px;color:#fff;font-weight:700;font-size:14px;text-shadow:0 1px 3px #000}}
+.tt .pin{{position:absolute;left:6px;top:6px;background:#fe2c55;color:#fff;font-size:12px;font-weight:700;padding:2px 6px;border-radius:4px}}
+#ttm{{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;z-index:999;align-items:center;justify-content:center;padding:12px}}#ttm.on{{display:flex}}
+#ttm .in{{width:100%;max-width:420px;max-height:100%;display:flex;flex-direction:column;gap:8px}}
+#ttm iframe{{width:100%;aspect-ratio:9/16;max-height:72vh;border:0;border-radius:12px;background:#000}}
+#ttm .t{{color:#fff;font-size:14px;margin:0}}#ttm .row{{display:flex;gap:8px;flex-wrap:wrap}}#ttm .row a,#ttm .row button{{flex:1;text-align:center}}
+</style>
+<p style="color:var(--muted,#555)">@bietthudalat · {len(VL.CLIPS)} {unit}</p>
+<div class="ttg">{tiles}</div>
+<div id="ttm" role="dialog" aria-modal="true"><div class="in"><iframe allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="TikTok"></iframe>
+<p class="t"></p><div class="row"><a class="btn {"zalo" if l == "vi" else "tg" if l == "ru" else "wechat" if l == "zh" else "wa"} bk" target="_blank" rel="noopener">{bk}</a><a class="btn alt tk" target="_blank" rel="noopener" style="background:#fff">{watch}</a></div>
+<button class="btn alt x" type="button" style="background:#fff">{close}</button></div></div>"""
+    tt_js = ("<script>(function(){var m=document.getElementById('ttm'),f=m.querySelector('iframe'),bk=m.querySelector('.bk'),tk=m.querySelector('.tk'),tx=m.querySelector('.t'),B=" + _j.dumps(bk_href) + ",L=" + _j.dumps(l) + ",M=" + _j.dumps(t["msg"]) + ";"
+             "function shut(){m.classList.remove('on');f.src='about:blank';}"
+             "document.querySelectorAll('.tt').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var id=a.dataset.id,u=a.href;"
+             "f.src='https://www.tiktok.com/player/v1/'+id+'?autoplay=1&music_info=0&description=0&rel=0';tx.textContent=a.dataset.t;tk.href=u;"
+             "if(L==='zh'){bk.removeAttribute('href');bk.onclick=function(){var w=document.querySelector('.wcbtn');shut();if(w)w.click();};}"
+             "else if(B.indexOf('wa.me')>-1){bk.href=B+encodeURIComponent(M+' '+u);}else{bk.href=B;}"
+             "m.classList.add('on');});});m.querySelector('.x').onclick=shut;m.addEventListener('click',function(e){if(e.target===m)shut();});"
+             "document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});})();</script>")
     body = f"""
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
 <div class="hero">{crumbs(l, me, [(t["crumb"], None)])}
