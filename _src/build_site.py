@@ -51,6 +51,7 @@ from content import pagodamap as PG
 from content import churchmap as CH
 from content import halalid as HI
 from content import about as AB
+from content import villa as VL
 from content import funnelid as FI
 from content import sunflowermap as SF
 from content import cloudmap as CL
@@ -1277,6 +1278,7 @@ def page_xeso():
     return st_head(me, title, desc, lds, "xeso-fleet") + body + foot("vi", frm=me)
 write(XS_PATH, page_xeso())
 
+def villa_path(l): return VL.SLUG[l]
 def page_about(l):
     t, me = AB.T[l], about_path(l)
     pre = "../" * me.count("/")
@@ -1291,7 +1293,7 @@ def page_about(l):
     lb = "".join(f'<a href="{rel(me, about_path(x))}" hreflang="{x}" data-l="{x}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if x == l else ""}>{LABEL[x]}</a>' for x in AB.LANGS)
     tgt = {"home": home_path(l), "routes": routes_path(l)}
     def _sl(n, k):
-        if k == "tiktok": return f'<a href="{TIKTOK}" target="_blank" rel="noopener">{n}</a>'
+        if k == "tiktok": return f'<a href="{rel(me, villa_path(l))}">{n}</a>'
         return f'<a href="{rel(me, tgt[k])}">{n}</a>' if k else n
     svc = "".join(f'<li><b>{_sl(n, k)}</b> – {d}</li>' for n, d, k in t["services"])
     intro = "".join(f"<p>{x}</p>" for x in t["intro"])
@@ -1306,7 +1308,7 @@ def page_about(l):
 <main class="wrap">
  <section class="prose">{intro}
   <h2>{t["h_services"]}</h2><ul>{svc}</ul>
-  <h2>{t["h_tt"]}</h2><p>{t["tt"]}</p><p><a class="btn alt" href="{TIKTOK}" target="_blank" rel="noopener" style="border:1px solid var(--line)">🎵 TikTok @bietthudalat →</a></p>
+  <h2>{t["h_tt"]}</h2><p>{t["tt"]}</p><p><a class="btn alt" href="{rel(me, villa_path(l))}" style="border:1px solid var(--line)">🎵 {VL.T[l]["link_about"]} →</a></p>
   <h2>{t["h_more"]}</h2><p>{t["more"]}</p>
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{C[l]["routes"]["h1"]} →</a> <a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">📍 {PM.T[l]["h1"]} →</a></p>
  </section>
@@ -1318,6 +1320,56 @@ def page_about(l):
     return head_html + body + foot(l, frm=me)
 for _l in AB.LANGS:
     write(about_path(_l), page_about(_l))
+
+# ------------------------------------------------------------------ Villa Đà Lạt page (owner asked 2026-11-04): whole TikTok channel embedded
+CSP_TT = CSP.replace("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
+                     "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tiktok.com https://*.tiktok.com https://*.ttwstatic.com https://*.tiktokcdn.com https://*.tiktokcdn-us.com https://*.byteoversea.com https://*.ibytedtos.com"
+               ).replace("frame-src ", "frame-src https://www.tiktok.com https://*.tiktok.com ")
+def page_villa(l):
+    t, me = VL.T[l], villa_path(l)
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + villa_path(x)}">\n' for x in VL.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + villa_path("en")}">\n'
+    lds = [{"@context": "https://schema.org", "@type": "CollectionPage", "url": BASE + me, "inLanguage": l, "name": t["title"], "description": t["desc"],
+            "about": {"@type": "Service", "name": t["crumb"], "provider": {"@id": BASE + "#business"}, "areaServed": "Da Lat"}, "sameAs": [TIKTOK]},
+           crumbs_ld(l, [(t["crumb"], me)])]
+    head_html = head(l, "home", None, t["title"], t["desc"], lds)
+    head_html = re.sub(r'<link rel="canonical" href="[^"]*">\n(?:<link rel="alternate"[^\n]*\n)*', f'<link rel="canonical" href="{BASE + me}">\n' + alts, head_html, count=1)
+    head_html = head_html.replace(f'<meta property="og:url" content="{BASE + home_path(l)}">', f'<meta property="og:url" content="{BASE + me}">')
+    head_html = head_html.replace('<meta charset="utf-8">', f'<meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="{CSP_TT}">', 1)
+    lb = "".join(f'<a href="{rel(me, villa_path(x))}" hreflang="{x}" data-l="{x}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if x == l else ""}>{LABEL[x]}</a>' for x in VL.LANGS)
+    from urllib.parse import quote
+    if l == "vi":
+        b = f'<a class="btn zalo" href="{ZALO}" target="_blank" rel="noopener">{t["btn"]}</a>'
+    elif l == "ru":
+        b = f'<a class="btn tg" href="{TG}" target="_blank" rel="noopener">{t["btn"]}</a>'
+    elif l == "zh":
+        b = ('<img src="/img/wechat-qr.png" alt="微信二维码 vanphudalat" width="280" height="375" '
+             'style="display:block;max-width:280px;width:100%;height:auto;border-radius:12px;margin:0 0 12px;background:#fff">' + btn("wc", l))
+    else:
+        b = f'<a class="btn wa" href="https://wa.me/84944081101?text={quote(t["msg"])}" target="_blank" rel="noopener">{t["btn"]}</a>'
+    how = "".join(f"<li>{x}</li>" for x in t["how"])
+    body = f"""
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
+<div class="hero">{crumbs(l, me, [(t["crumb"], None)])}
+ <h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p>
+</div></div></header>
+<main class="wrap">
+ <section class="prose"><h2>{t["h_how"]}</h2><ol>{how}</ol></section>
+ <section><h2>{t["h_clips"]}</h2>
+  <div style="max-width:780px;margin:0 auto;min-height:480px">
+   <blockquote class="tiktok-embed" cite="{TIKTOK}" data-unique-id="bietthudalat" data-embed-type="creator" style="max-width:780px;min-width:288px;margin:0 auto">
+    <section><a target="_blank" rel="noopener" href="{TIKTOK}?refer=creator_embed">@bietthudalat</a></section>
+   </blockquote>
+  </div>
+  <p style="text-align:center"><a class="btn alt" href="{TIKTOK}" target="_blank" rel="noopener" style="border:1px solid var(--line)">🎵 {t["fallback"]}</a></p>
+ </section>
+ <section><div class="box"><h2>{t["h_book"]}</h2><p>{t["book_txt"]}</p>{b}</div></section>
+ <section><h2>{AB.T[l]["h_contact"]}</h2>{contacts(l)}</section>
+</main>
+<script async src="https://www.tiktok.com/embed.js"></script>
+"""
+    return head_html + body + foot(l, frm=me)
+for _l in VL.LANGS:
+    write(villa_path(_l), page_villa(_l))
 
 # ------------------------------------------------------------------ Indonesian-only halal restaurant map
 def page_halal():
@@ -1930,6 +1982,9 @@ for _M in (LIC, ARR):
 _ab_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + about_path(x)}"/>\n' for x in AB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + about_path("en")}"/>\n'
 for _l in AB.LANGS:
     urls += f"  <url>\n    <loc>{BASE + about_path(_l)}</loc>\n{_ab_alts}    <lastmod>{AB.UPDATED}</lastmod>\n  </url>\n"
+_vl_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + villa_path(x)}"/>\n' for x in VL.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + villa_path("en")}"/>\n'
+for _l in VL.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + villa_path(_l)}</loc>\n{_vl_alts}    <lastmod>{VL.UPDATED}</lastmod>\n  </url>\n"
 for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide_path(_l, _g) for _l in GD.GUIDES for _g in GD.GUIDES[_l]] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
