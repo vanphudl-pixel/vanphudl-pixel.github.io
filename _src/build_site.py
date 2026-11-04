@@ -1029,7 +1029,52 @@ def add_ld(path, html):
                 {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in qa]})
     return html.replace("</head>", "".join(ldjson(x) for x in add) + "</head>", 1) if add else html
 
+# ---- Site menu (owner asked 2026-11-04): 5 items + "Book" button under the logo; the language bar stays as it is.
+NAV = {  # (rental, electric, where to go, guides, about, book)
+ "vi": ("Thuê xe", "Xe điện", "Đi đâu", "Cẩm nang", "Giới thiệu", "Đặt xe"),
+ "en": ("Rental", "Electric", "Where to go", "Guides", "About", "Book"),
+ "ru": ("Аренда", "Электро", "Куда поехать", "Статьи", "О нас", "Забронировать"),
+ "zh": ("租车", "电动车", "去哪玩", "攻略", "关于我们", "预订"),
+ "ko": ("렌탈", "전기 스쿠터", "어디 갈까", "가이드", "소개", "예약"),
+ "ja": ("レンタル", "電動バイク", "行き先", "ガイド", "", "予約"),
+ "th": ("เช่ารถ", "รถไฟฟ้า", "เที่ยวไหนดี", "คู่มือ", "", "จอง"),
+ "id": ("Sewa", "Listrik", "Mau ke mana", "Panduan", "Tentang", "Pesan"),
+ "ms": ("Sewa", "Elektrik", "Ke mana", "Panduan", "", "Tempah"),
+ "de": ("Mieten", "E-Roller", "Wohin", "Ratgeber", "", "Buchen"),
+ "fr": ("Location", "Électrique", "Où aller", "Guides", "", "Réserver"),
+ "es": ("Alquiler", "Eléctrica", "Adónde ir", "Guías", "", "Reservar"),
+ "he": ("השכרה", "חשמלי", "לאן לנסוע", "מדריכים", "", "להזמין"),
+ "it": ("Noleggio", "Elettrico", "Dove andare", "Guide", "", "Prenota"),
+ "nl": ("Huren", "Elektrisch", "Waarheen", "Gidsen", "", "Boeken"),
+ "km": ("ជួលម៉ូតូ", "ម៉ូតូអគ្គិសនី", "ទៅណា", "មគ្គុទ្ទេសក៍", "", "កក់"),
+ "lo": ("ເຊົ່າລົດ", "ລົດໄຟຟ້າ", "ໄປໃສດີ", "ຄູ່ມື", "", "ຈອງ"),
+ "my": ("ငှားရန်", "လျှပ်စစ်", "ဘယ်သွားမလဲ", "လမ်းညွှန်", "", "ကြိုတင်မှာ"),
+}
+NAV_CSS = ('<style>.mnav{display:flex;gap:6px;overflow-x:auto;padding:0 0 12px;scrollbar-width:none;-webkit-overflow-scrolling:touch}'
+           '.mnav::-webkit-scrollbar{display:none}.mnav a{flex:none;color:#fff;text-decoration:none;font-size:14px;font-weight:600;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.1);white-space:nowrap}'
+           '.mnav a.on{background:#fff;color:var(--brand)}.mnav a.bk{background:var(--accent);color:#1d2a24;margin-inline-start:auto}'
+           '@media(max-width:720px){.mnav{flex-wrap:wrap;overflow:visible}.mnav a{font-size:13px;padding:6px 11px}.mnav a.bk{display:none}}</style>')
+def nav_html(l, path):
+    n = NAV.get(l, NAV["en"])
+    items = [(n[0], home_path(l)), (n[1], ev_path(l)), (n[2], routes_path(l)), (n[3], blog_path(l))]
+    if l in AB.LANGS and n[4]: items.append((n[4], about_path(l)))
+    cur = max((p for _, p in items if path.startswith(p) and (p != home_path(l) or path == p)), key=len, default=None)
+    out = "".join(f'<a href="/{p}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if p == cur else ""}>{x}</a>' for x, p in items)
+    bk = ZALO if l == "vi" else wa_link(l)
+    return f'<nav class="mnav" aria-label="Menu">{out}<a class="bk" href="{bk}" target="_blank" rel="noopener">💬 {n[5]}</a></nav>'
+def add_nav(path, html):
+    i = html.find('<div class="top">')
+    if i < 0 or 'class="mnav"' in html or 'http-equiv="refresh"' in html: return html
+    m = re.search(r'<html lang="([a-z]+)"', html); l = m.group(1) if m and m.group(1) in C else "en"
+    depth, j = 0, i
+    for t_ in re.finditer(r"<div\b|</div>", html[i:]):
+        depth += 1 if t_.group(0) == "<div" else -1
+        if depth == 0: j = i + t_.end(); break
+    html = html[:j] + nav_html(l, path) + html[j:]
+    return html.replace("</head>", NAV_CSS + "</head>", 1)
+
 def write(path, html):
+    html = add_nav(path, html)
     html = add_pwa(add_csp(add_ga(speed(add_ld(path, html)))))
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
