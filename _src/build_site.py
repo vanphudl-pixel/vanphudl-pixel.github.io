@@ -48,6 +48,7 @@ from content import photomap as PM
 from content import pagodamap as PG
 from content import churchmap as CH
 from content import halalid as HI
+from content import about as AB
 from content import funnelid as FI
 from content import sunflowermap as SF
 from content import cloudmap as CL
@@ -554,6 +555,8 @@ def foot(l, root_redirect=False, frm=None):
     kw = ""
     if frm is not None:
         kw = f'<br><a href="{rel(frm, home_path(l))}">{kw_rent(l)}</a> · <a href="{rel(frm, ev_path(l))}">{EV[l]["h1"]}</a> · <a href="{rel(frm, routes_path(l))}">{C[l]["routes"]["h1"]}</a>'
+        if l in AB.LANGS:
+            kw += f' · <a href="{rel(frm, about_path(l))}">{AB.T[l]["foot"]}</a>'
         if l == "vi":
             kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
     pre = id_funnel() if l == "id" else ""
@@ -591,6 +594,26 @@ def business_ld(l, url):
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
                            for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
+
+# --- About / Giới thiệu (owner asked 2026-11-04, vi + en; no prices on these blocks) ---
+def about_path(l): return AB.SLUG[l]
+def about_l(l): return l if l in AB.LANGS else "en"
+PERSON_ID = BASE + "#phu"
+def person_ld():
+    return {"@type": "Person", "@id": PERSON_ID, "name": "Ngô Văn Phú", "alternateName": "Phu", "jobTitle": "Owner",
+            "image": f"{BASE}img/{AB.IMG}.jpg", "url": BASE + about_path("en"), "worksFor": {"@id": BASE + "#business"},
+            "knowsLanguage": ["vi", "en"], "sameAs": [YT, "https://www.facebook.com/vanphudalat"]}
+def _owner_card(l, frm, cls, bold, txt, link):
+    pre = "../" * frm.count("/")
+    return (f'<div class="{cls}" style="display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin:24px 0">'
+            f'<img src="{pre}img/{AB.IMG}.jpg" alt="Ngô Văn Phú – Văn Phú Đà Lạt" width="72" height="72" loading="lazy" style="width:72px;height:72px;border-radius:50%;object-fit:cover;flex:none">'
+            f'<p style="margin:0"><b>{bold}</b> – {txt} <a href="{rel(frm, about_path(l))}">{link} →</a></p></div>')
+def author_box(l, frm):
+    if l not in AB.LANGS: return ""
+    t = AB.T[l]; return _owner_card(l, frm, "author-box", t["author"], t["author_txt"], t["author_link"])
+def meet_owner(l, frm):
+    if l not in AB.LANGS: return ""
+    t = AB.T[l]; return _owner_card(l, frm, "meet-owner", t["meet"], t["meet_txt"], t["meet_link"])
 
 def posts(l, frm, keys):
     a = C[l]["articles"]
@@ -661,6 +684,7 @@ def page_home(l):
  <section class="prose"><h2>{h["h_why"]}</h2>{why}
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{h["routes_btn"]}</a></p></section>
  <section><h2>{h["h_photos"]}</h2><div class="gallery">{gallery}</div></section>
+ {meet_owner(l, me)}
  {rev_section(l)}
  {pm_section(l, me)}
  <section class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px"><p>{FE.T[l]["desc"]}</p><p><a class="btn" href="{rel(me, map_path(FE, l))}">🌸 {FE.T[l]["h1"]} →</a></p></section>
@@ -772,7 +796,7 @@ def page_article(l, k):
     html = re.sub(r"\{PHOTO:([a-z0-9-]+)\}", lambda m: f'<p><img src="{pre}img/{m.group(1)}.jpg" alt="{_esc(PHOTO_ALT.get(l, {}).get(m.group(1)) or PHOTO_ALT["en"][m.group(1)])}" loading="lazy" style="{_ph_style(m.group(1))}"></p>', html)
     art = {"@context": "https://schema.org", "@type": "Article", "headline": h1, "description": desc, "inLanguage": l,
            "mainEntityOfPage": BASE + me, "image": [f"{BASE}img/{x}.jpg" for x in dict.fromkeys([img] + _phs)], "datePublished": adate(k), "dateModified": mdate(l, k),
-           "author": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"},
+           "author": person_ld(),
            "publisher": {"@type": "Organization", "name": "Van Phu Dalat Motorbike Rental"}}
     _sib = [x for x in arts(l)[::-1] if x != k and k in CL_GROUP and CL_GROUP.get(x) == CL_GROUP[k]]
     others = (_sib + [x for x in arts(l)[::-1] if x != k and x not in _sib])[:3]
@@ -789,7 +813,7 @@ def page_article(l, k):
  <img class="heroimg" src="{pre}img/{img}.jpg" alt="{h1}" width="1200" height="675">
 </div></div></header>
 <main class="wrap">
- <section class="prose">{vbox(l, VIDEO_ART[k], h1) if k in VIDEO_ART else ""}{html}{lic_link(l, me) if k in LIC_FROM else ""}{arr_link(l, me) if k in ARR.FROM else ""}</section>
+ <section class="prose">{vbox(l, VIDEO_ART[k], h1) if k in VIDEO_ART else ""}{html}{lic_link(l, me) if k in LIC_FROM else ""}{arr_link(l, me) if k in ARR.FROM else ""}{author_box(l, me)}</section>
  {faq_html}
  <section>{contact_box(l)}{cta_box(l, me)}</section>
  <section><h2>{u["read_also"]}</h2>{posts(l, me, others)}</section>
@@ -1190,6 +1214,44 @@ def page_xeso():
     lds = [business_ld("vi", BASE + me), crumbs_ld("vi", [("Thuê xe số Đà Lạt", me)]), faq_ld]
     return st_head(me, title, desc, lds, "xeso-fleet") + body + foot("vi", frm=me)
 write(XS_PATH, page_xeso())
+
+def page_about(l):
+    t, me = AB.T[l], about_path(l)
+    pre = "../" * me.count("/")
+    u = C[l]["ui"]
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + about_path(x)}">\n' for x in AB.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + about_path("en")}">\n'
+    pl = dict(person_ld()); pl["description"] = t["desc"]
+    lds = [{"@context": "https://schema.org", "@type": "AboutPage", "url": BASE + me, "inLanguage": l, "name": t["title"], "mainEntity": pl},
+           crumbs_ld(l, [(t["crumb"], me)])]
+    head_html = head(l, "home", None, t["title"], t["desc"], lds, AB.IMG)
+    head_html = re.sub(r'<link rel="canonical" href="[^"]*">\n(?:<link rel="alternate"[^\n]*\n)*', f'<link rel="canonical" href="{BASE + me}">\n' + alts, head_html, count=1)
+    head_html = head_html.replace(f'<meta property="og:url" content="{BASE + home_path(l)}">', f'<meta property="og:url" content="{BASE + me}">')
+    lb = "".join(f'<a href="{rel(me, about_path(x))}" hreflang="{x}" data-l="{x}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if x == l else ""}>{LABEL[x]}</a>' for x in AB.LANGS)
+    tgt = {"home": home_path(l), "routes": routes_path(l)}
+    svc = "".join(f'<li><b>{f"<a href={chr(34)}{rel(me, tgt[k])}{chr(34)}>{n}</a>" if k else n}</b> – {d}</li>' for n, d, k in t["services"])
+    intro = "".join(f"<p>{x}</p>" for x in t["intro"])
+    body = f"""
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
+<div class="hero">{crumbs(l, me, [(t["crumb"], None)])}
+ <div style="display:flex;gap:20px;align-items:center;flex-wrap:wrap">
+  <img src="{pre}img/{AB.IMG}.jpg" alt="{t["alt"]}" width="160" height="160" style="width:160px;height:160px;border-radius:50%;object-fit:cover">
+  <div><h1>{t["h1"]}</h1><p class="lead">{t["sub"]}</p></div>
+ </div>
+</div></div></header>
+<main class="wrap">
+ <section class="prose">{intro}
+  <h2>{t["h_services"]}</h2><ul>{svc}</ul>
+  <h2>{t["h_more"]}</h2><p>{t["more"]}</p>
+  <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{C[l]["routes"]["h1"]} →</a> <a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">📍 {PM.T[l]["h1"]} →</a></p>
+ </section>
+ <section><h2>{t["h_contact"]}</h2>{contacts(l)}</section>
+ {rev_section(l)}
+ <section>{contact_box(l)}</section>
+</main>
+"""
+    return head_html + body + foot(l, frm=me)
+for _l in AB.LANGS:
+    write(about_path(_l), page_about(_l))
 
 # ------------------------------------------------------------------ Indonesian-only halal restaurant map
 def page_halal():
@@ -1799,6 +1861,9 @@ for _M in (LIC, ARR):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pil_path(_M, x)}"/>\n' for x in _pl) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + pil_path(_M, "en")}"/>\n'
     for l in _pl:
         urls += f"  <url>\n    <loc>{BASE + pil_path(_M, l)}</loc>\n{_alts}    <lastmod>{_M.UPDATED}</lastmod>\n  </url>\n"
+_ab_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + about_path(x)}"/>\n' for x in AB.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + about_path("en")}"/>\n'
+for _l in AB.LANGS:
+    urls += f"  <url>\n    <loc>{BASE + about_path(_l)}</loc>\n{_ab_alts}    <lastmod>{AB.UPDATED}</lastmod>\n  </url>\n"
 for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide_path(_l, _g) for _l in GD.GUIDES for _g in GD.GUIDES[_l]] + [st_path(_s) for _s in ST.S]:
     urls += f"  <url>\n    <loc>{BASE + _me}</loc>\n    <lastmod>{ST.UPDATED}</lastmod>\n  </url>\n"
 # Missing pages (GitHub Pages serves /404.html for any unknown URL): send the visitor to the home page instead of a blank error.
