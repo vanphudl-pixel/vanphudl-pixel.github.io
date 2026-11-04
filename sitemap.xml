@@ -11889,6 +11889,10 @@
     <loc>https://vanphudalat.com/vi/gioi-thieu/</loc>
     <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/gioi-thieu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://vanphudalat.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vanphudalat.com/ru/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vanphudalat.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://vanphudalat.com/id/tentang-kami/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/about/"/>
     <lastmod>2026-11-04</lastmod>
   </url>
@@ -11896,6 +11900,54 @@
     <loc>https://vanphudalat.com/about/</loc>
     <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/gioi-thieu/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://vanphudalat.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vanphudalat.com/ru/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vanphudalat.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://vanphudalat.com/id/tentang-kami/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/about/"/>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://vanphudalat.com/zh/about/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/gioi-thieu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://vanphudalat.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vanphudalat.com/ru/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vanphudalat.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://vanphudalat.com/id/tentang-kami/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/about/"/>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://vanphudalat.com/ru/o-nas/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/gioi-thieu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://vanphudalat.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vanphudalat.com/ru/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vanphudalat.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://vanphudalat.com/id/tentang-kami/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/about/"/>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://vanphudalat.com/ko/about/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/gioi-thieu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://vanphudalat.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vanphudalat.com/ru/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vanphudalat.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://vanphudalat.com/id/tentang-kami/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/about/"/>
+    <lastmod>2026-11-04</lastmod>
+  </url>
+  <url>
+    <loc>https://vanphudalat.com/id/tentang-kami/</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://vanphudalat.com/vi/gioi-thieu/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vanphudalat.com/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://vanphudalat.com/zh/about/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://vanphudalat.com/ru/o-nas/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://vanphudalat.com/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://vanphudalat.com/id/tentang-kami/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://vanphudalat.com/about/"/>
     <lastmod>2026-11-04</lastmod>
   </url>
