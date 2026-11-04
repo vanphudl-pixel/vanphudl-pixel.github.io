@@ -1,5 +1,5 @@
 // Văn Phú Đà Lạt – offline support. Bump VERSION when the site changes in a way guests must see right away.
-const VERSION = "vp-v1";
+const VERSION = "vp-v2";
 const CORE = ["/", "/dalat-motorbike-rental/", "/vi/thue-xe-may-da-lat/", "/id/sewa-motor-dalat/", "/id/restoran-halal-dalat/", "/manifest.json", "/icons/icon-192.png"];
 
 self.addEventListener("install", (e) => {
@@ -17,6 +17,8 @@ self.addEventListener("fetch", (e) => {
   if (url.origin !== self.location.origin) return;
   // Large PDFs are never cached by the browser store; fetch them as usual.
   if (url.pathname.startsWith("/files/")) return;
+  // TikTok covers (276 images on the villa page): leave to the normal browser cache, never the offline store.
+  if (url.pathname.startsWith("/img/tiktok/")) return;
 
   if (req.mode === "navigate") {
     // Pages: network first, so guests see fresh prices; fall back to the saved copy when offline.

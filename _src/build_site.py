@@ -1351,7 +1351,7 @@ def page_villa(l):
     pin, watch, bk, close, unit = VL.UI[l]
     tiles = "".join(
         f'<a class="tt" href="https://www.tiktok.com/@bietthudalat/video/{c["id"]}" target="_blank" rel="noopener" data-id="{c["id"]}" data-t="{_h.escape(c["t"])}">'
-        f'<img src="/img/tiktok/{c["id"]}.webp" alt="{_h.escape(c["t"])}" width="360" height="480" loading="{"eager" if n < 6 else "lazy"}" decoding="async">'
+        f'<img src="/img/tiktok/{c["id"]}.webp?v=2" alt="{_h.escape(c["t"])}" width="360" height="480" loading="{"eager" if n < 6 else "lazy"}" decoding="async">'
         + (f'<span class="pin">{pin}</span>' if c["p"] else "")
         + f'<span class="vw">▷ {c["v"]}</span></a>' for n, c in enumerate(VL.CLIPS))
     if l == "vi": bk_href = ZALO
