@@ -22,6 +22,8 @@ TG = "https://t.me/vanphudalat"
 YT = "https://www.youtube.com/@DalatMotorbikeRentalVanPhu"
 TG_CHANNEL = "https://t.me/dalat_life_vietnam"
 ZALO = "https://zalo.me/0944081101"
+TIKTOK = "https://www.tiktok.com/@bietthudalat"  # owner's TikTok channel about Da Lat villas (owner asked 2026-11-04 to show it on the site)
+TT_LBL = {"vi": "villa Đà Lạt", "en": "Da Lat villas", "ru": "виллы в Далате", "zh": "大叻别墅", "ko": "달랏 빌라", "id": "vila di Da Lat"}
 WA2 = "https://wa.me/84834622149"
 TRIPADVISOR = "https://www.tripadvisor.com/Attraction_Review-g293922-d17622334-Reviews-Van_Phu_Dalat_Motorbike_Rental-Da_Lat_Lam_Dong_Province.html"
 YANDEX_ORG = "https://yandex.com/maps/org/van_phu/50542551609/"
@@ -496,6 +498,7 @@ def contacts(l):
     rows += [("🗨️", '<b>WeChat:</b> vanphudalat'),
              ("👍", '<b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a>'),
              ("▶️", f'<b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a>'),
+             ("🎵", f'<b>TikTok:</b> <a href="{TIKTOK}" target="_blank" rel="noopener">@bietthudalat</a> ({TT_LBL.get(l, TT_LBL["en"])})'),
              ("🦉", f'<b>Tripadvisor:</b> <a href="{TRIPADVISOR}" target="_blank" rel="noopener">Van Phu Dalat Motorbike Rental</a>'),
              ("🧭", f'<b>{ya_name(l)}:</b> <a href="{ya_org(l)}" target="_blank" rel="noopener">Van Phu</a>'),
              ("📍", f'<b>{h["addr_label"]}</b> {h["address"]}')]
@@ -591,7 +594,7 @@ def business_ld(l, url):
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
             "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000. Vị trí thực tế: 1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
-            "sameAs": ["https://www.facebook.com/vanphudalat", YT, "https://www.tiktok.com/@bietthudalat", TG, ZALO, TRIPADVISOR, YANDEX_ORG],
+            "sameAs": ["https://www.facebook.com/vanphudalat", YT, TIKTOK, TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
                            for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
 
@@ -602,7 +605,7 @@ PERSON_ID = BASE + "#phu"
 def person_ld():
     return {"@type": "Person", "@id": PERSON_ID, "name": "Ngô Văn Phú", "alternateName": "Phu", "jobTitle": "Owner",
             "image": f"{BASE}img/{AB.IMG}.jpg", "url": BASE + about_path("en"), "worksFor": {"@id": BASE + "#business"},
-            "knowsLanguage": ["vi", "en"], "sameAs": [YT, "https://www.facebook.com/vanphudalat"]}
+            "knowsLanguage": ["vi", "en"], "sameAs": [YT, TIKTOK, "https://www.facebook.com/vanphudalat"]}
 def _owner_card(l, frm, cls, bold, txt, link):
     pre = "../" * frm.count("/")
     return (f'<div class="{cls}" style="display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin:24px 0">'
@@ -1228,7 +1231,10 @@ def page_about(l):
     head_html = head_html.replace(f'<meta property="og:url" content="{BASE + home_path(l)}">', f'<meta property="og:url" content="{BASE + me}">')
     lb = "".join(f'<a href="{rel(me, about_path(x))}" hreflang="{x}" data-l="{x}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if x == l else ""}>{LABEL[x]}</a>' for x in AB.LANGS)
     tgt = {"home": home_path(l), "routes": routes_path(l)}
-    svc = "".join(f'<li><b>{f"<a href={chr(34)}{rel(me, tgt[k])}{chr(34)}>{n}</a>" if k else n}</b> – {d}</li>' for n, d, k in t["services"])
+    def _sl(n, k):
+        if k == "tiktok": return f'<a href="{TIKTOK}" target="_blank" rel="noopener">{n}</a>'
+        return f'<a href="{rel(me, tgt[k])}">{n}</a>' if k else n
+    svc = "".join(f'<li><b>{_sl(n, k)}</b> – {d}</li>' for n, d, k in t["services"])
     intro = "".join(f"<p>{x}</p>" for x in t["intro"])
     body = f"""
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
@@ -1241,6 +1247,7 @@ def page_about(l):
 <main class="wrap">
  <section class="prose">{intro}
   <h2>{t["h_services"]}</h2><ul>{svc}</ul>
+  <h2>{t["h_tt"]}</h2><p>{t["tt"]}</p><p><a class="btn alt" href="{TIKTOK}" target="_blank" rel="noopener" style="border:1px solid var(--line)">🎵 TikTok @bietthudalat →</a></p>
   <h2>{t["h_more"]}</h2><p>{t["more"]}</p>
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{C[l]["routes"]["h1"]} →</a> <a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">📍 {PM.T[l]["h1"]} →</a></p>
  </section>

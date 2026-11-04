@@ -12,6 +12,7 @@ SLUG = {"vi": "vi/gioi-thieu/", "en": "about/"}
 
 T = {
  "vi": {
+  "h_tt": "Villa Đà Lạt trên TikTok", "tt": "Trên kênh TikTok @bietthudalat, tôi quay thực tế các căn villa, homestay Đà Lạt mà Văn Phú giới thiệu cho khách: phòng ốc, sân vườn, view và đường đi. Bạn xem trước để chọn chỗ ở phù hợp rồi nhắn tôi để đặt.",
   "title": "Giới thiệu Văn Phú Đà Lạt – Ngô Văn Phú, dịch vụ du lịch Đà Lạt",
   "desc": "Văn Phú Đà Lạt do Ngô Văn Phú làm chủ, phục vụ khách từ năm 2018: dịch vụ du lịch Đà Lạt gồm thuê xe máy, đặt homestay, villa và tư vấn lịch trình.",
   "crumb": "Giới thiệu",
@@ -25,7 +26,7 @@ T = {
   "h_services": "Dịch vụ của Văn Phú",
   "services": [
     ("Thuê xe máy Đà Lạt", "xe tay ga, xe điện và xe số để tự do khám phá thành phố.", "home"),
-    ("Đặt homestay, villa", "chỗ ở phù hợp cho cặp đôi, gia đình và nhóm bạn.", None),
+    ("Đặt homestay, villa", "chỗ ở phù hợp cho cặp đôi, gia đình và nhóm bạn.", "tiktok"),
     ("Tư vấn lịch trình", "gợi ý cung đường, điểm chụp ảnh, quán ăn và thời điểm đẹp nhất để đi.", "routes"),
   ],
   "h_more": "Không chỉ là dịch vụ",
@@ -42,6 +43,7 @@ T = {
   "foot": "Giới thiệu",
  },
  "en": {
+  "h_tt": "Da Lat villas on TikTok", "tt": "On my TikTok channel @bietthudalat I film real walk-throughs of the Da Lat villas and homestays that Van Phu books for guests: rooms, gardens, views and how to get there. Have a look first, then message me to book.",
   "title": "About Van Phu Dalat – Meet Phu, Local Travel Services in Da Lat",
   "desc": "Van Phu Dalat is run by Ngo Van Phu, serving guests since 2018: local travel services in Da Lat – motorbike rental, homestay and villa booking.",
   "crumb": "About",
@@ -55,7 +57,7 @@ T = {
   "h_services": "What we offer",
   "services": [
     ("Motorbike rental in Da Lat", "scooters, electric scooters and manual bikes to explore the city at your own pace.", "home"),
-    ("Homestay &amp; villa booking", "places to stay for couples, families and groups of friends.", None),
+    ("Homestay &amp; villa booking", "places to stay for couples, families and groups of friends.", "tiktok"),
     ("Local travel advice", "routes, photo spots, food and the best time to visit each place.", "routes"),
   ],
   "h_more": "More than a service",
@@ -78,6 +80,7 @@ LANGS = ["vi", "en", "zh", "ru", "ko", "id"]
 SLUG.update({"zh": "zh/about/", "ru": "ru/o-nas/", "ko": "ko/about/", "id": "id/tentang-kami/"})
 
 T["zh"] = {
+  "h_tt": "TikTok 上的大叻别墅", "tt": "在我的 TikTok 频道 @bietthudalat，我实地拍摄 Van Phu 为客人推荐的大叻别墅和民宿：房间、花园、景观和交通。先看看视频，再联系我预订。",
   "title": "关于 Van Phu 大叻 – 店主 Phu，大叻本地旅游服务",
   "desc": "Van Phu 大叻由店主 Ngô Văn Phú 经营，自2018年起服务客人：大叻本地旅游服务，包括摩托车租赁、民宿和别墅预订。",
   "crumb": "关于我们",
@@ -91,7 +94,7 @@ T["zh"] = {
   "h_services": "我们的服务",
   "services": [
     ("大叻摩托车租赁", "踏板车、电动车和手动挡摩托车，按自己的节奏探索大叻。", "home"),
-    ("民宿、别墅预订", "适合情侣、家庭和朋友结伴入住。", None),
+    ("民宿、别墅预订", "适合情侣、家庭和朋友结伴入住。", "tiktok"),
     ("行程建议", "推荐路线、拍照点、美食，以及每个地方的最佳游览时间。", "routes"),
   ],
   "h_more": "不只是服务",
@@ -107,6 +110,7 @@ T["zh"] = {
 }
 
 T["ru"] = {
+  "h_tt": "Виллы Далата в TikTok", "tt": "В моём TikTok @bietthudalat я снимаю реальные обзоры вилл и хоумстеев Далата, которые Van Phu бронирует для гостей: комнаты, сад, вид и дорога. Посмотрите заранее, а потом напишите мне, чтобы забронировать.",
   "title": "О Van Phu Dalat – владелец Фу, туристические услуги в Далате",
   "desc": "Van Phu Dalat – бизнес Нго Ван Фу, принимаем гостей с 2018 года: туристические услуги в Далате – аренда байков, бронирование хоумстеев и вилл.",
   "crumb": "О нас",
@@ -120,7 +124,7 @@ T["ru"] = {
   "h_services": "Что мы предлагаем",
   "services": [
     ("Аренда байков в Далате", "скутеры, электроскутеры и байки с механикой, чтобы исследовать город в своём темпе.", "home"),
-    ("Бронирование хоумстеев и вилл", "жильё для пар, семей и компаний друзей.", None),
+    ("Бронирование хоумстеев и вилл", "жильё для пар, семей и компаний друзей.", "tiktok"),
     ("Советы по маршрутам", "маршруты, места для фото, еда и лучшее время для каждой точки.", "routes"),
   ],
   "h_more": "Больше, чем услуга",
@@ -136,6 +140,7 @@ T["ru"] = {
 }
 
 T["ko"] = {
+  "h_tt": "TikTok에서 보는 달랏 빌라", "tt": "제 TikTok 채널 @bietthudalat에서 Van Phu가 손님께 소개하는 달랏 빌라와 홈스테이를 직접 촬영해 보여드립니다: 객실, 정원, 전망, 찾아가는 길. 미리 보시고 메시지로 예약하세요.",
   "title": "Van Phu 달랏 소개 – 사장 Phu, 달랏 현지 여행 서비스",
   "desc": "Van Phu 달랏은 Ngô Văn Phú가 운영하며 2018년부터 손님을 모시고 있습니다. 달랏 현지 여행 서비스: 오토바이 렌탈, 홈스테이·빌라 예약.",
   "crumb": "소개",
@@ -149,7 +154,7 @@ T["ko"] = {
   "h_services": "서비스 안내",
   "services": [
     ("달랏 오토바이 렌탈", "스쿠터, 전기 스쿠터, 기어 오토바이로 원하는 속도에 맞춰 달랏을 둘러보세요.", "home"),
-    ("홈스테이·빌라 예약", "커플, 가족, 친구 모임에 맞는 숙소.", None),
+    ("홈스테이·빌라 예약", "커플, 가족, 친구 모임에 맞는 숙소.", "tiktok"),
     ("여행 일정 상담", "코스, 사진 명소, 맛집, 장소별 가장 좋은 방문 시간.", "routes"),
   ],
   "h_more": "서비스 그 이상",
@@ -165,6 +170,7 @@ T["ko"] = {
 }
 
 T["id"] = {
+  "h_tt": "Vila Da Lat di TikTok", "tt": "Di kanal TikTok saya @bietthudalat, saya merekam langsung vila dan homestay di Da Lat yang dipesankan Van Phu untuk tamu: kamar, taman, pemandangan dan jalan menuju lokasi. Lihat dulu videonya, lalu kirim pesan untuk memesan.",
   "title": "Tentang Van Phu Dalat – Kenalan dengan Phu, Layanan Wisata Lokal Da Lat",
   "desc": "Van Phu Dalat dijalankan oleh Ngô Văn Phú, melayani tamu sejak 2018: layanan wisata lokal di Da Lat – sewa motor, pemesanan homestay dan vila.",
   "crumb": "Tentang kami",
@@ -178,7 +184,7 @@ T["id"] = {
   "h_services": "Layanan kami",
   "services": [
     ("Sewa motor di Da Lat", "skuter matic, skuter listrik dan motor bebek untuk menjelajah kota dengan santai.", "home"),
-    ("Pemesanan homestay &amp; vila", "tempat menginap untuk pasangan, keluarga dan rombongan teman.", None),
+    ("Pemesanan homestay &amp; vila", "tempat menginap untuk pasangan, keluarga dan rombongan teman.", "tiktok"),
     ("Saran perjalanan lokal", "rute, spot foto, kuliner dan waktu terbaik untuk mengunjungi setiap tempat.", "routes"),
   ],
   "h_more": "Lebih dari sekadar layanan",
