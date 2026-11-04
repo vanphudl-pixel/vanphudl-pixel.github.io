@@ -590,13 +590,13 @@ def business_ld(l, url):
             "amenityFeature": [{"@type": "LocationFeatureSpecification", "name": n, "value": True} for n in
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": BASE + home_path("en"), "image": BASE + "img/electric-row.jpg",
-            "telephone": "+84944081101", "contactPoint": [{"@type": "ContactPoint", "telephone": t, "contactType": "customer service", "areaServed": "VN", "availableLanguage": ["Vietnamese", "English"]} for t in ("+84944081101", "+84834622149")], "priceRange": "150,000 VND",
+            "telephone": "+84944081101", "contactPoint": [{"@type": "ContactPoint", "telephone": t, "contactType": "customer service", "areaServed": "VN", "availableLanguage": ["Vietnamese", "English"]} for t in ("+84944081101", "+84834622149")], "priceRange": "120,000–150,000 VND",
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
             "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000. Vị trí thực tế: 1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, TIKTOK, TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
-                           for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]]}
+                           for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]] + [{"@type": "Offer", "name": "Manual bike (Sirius FI, Wave RSX)", "price": "120000", "priceCurrency": "VND"}]}
 
 # --- About / Giới thiệu (owner asked 2026-11-04, vi + en; no prices on these blocks) ---
 def about_path(l): return AB.SLUG[l]
@@ -624,6 +624,19 @@ def posts(l, frm, keys):
         f'<a class="post" href="{rel(frm, art_path(l, k))}"><b>{a[k][2]}</b><span>{a[k][3]}</span></a>' for k in keys) + "</div>"
 
 # ------------------------------------------------------------------ pages
+# Manual bikes (xe số Sirius FI / Wave RSX): owner asked 2026-11-04 to show 120,000 VND/day in the price table of every rental page.
+XS_NAME = {"vi": "Xe số (Sirius FI, Wave RSX)", "en": "Manual bike (Sirius FI, Wave RSX)", "ru": "Байк с механикой (Sirius FI, Wave RSX)",
+  "zh": "手动挡摩托车（Sirius FI、Wave RSX）", "ko": "기어 오토바이 (Sirius FI, Wave RSX)", "ja": "マニュアルバイク（Sirius FI・Wave RSX）",
+  "th": "รถเกียร์ (Sirius FI, Wave RSX)", "id": "Motor bebek (Sirius FI, Wave RSX)", "ms": "Motosikal kapcai (Sirius FI, Wave RSX)",
+  "de": "Schaltmoped (Sirius FI, Wave RSX)", "fr": "Moto à vitesses (Sirius FI, Wave RSX)", "es": "Moto de marchas (Sirius FI, Wave RSX)",
+  "he": "אופנוע ידני (Sirius FI, Wave RSX)", "it": "Moto con marce (Sirius FI, Wave RSX)", "nl": "Schakelbrommer (Sirius FI, Wave RSX)",
+  "km": "ម៉ូតូលេខ (Sirius FI, Wave RSX)", "lo": "ລົດເກຍ (Sirius FI, Wave RSX)", "my": "ဂီယာဆိုင်ကယ် (Sirius FI, Wave RSX)"}
+def xs_price(l): return C[l]["home"].get("price_cell", "150,000 VND").replace("150", "120")
+def xs_row(l, me):
+    n = XS_NAME.get(l, XS_NAME["en"])
+    if l == "vi": n = f'<a href="{rel(me, home_path("vi") + "thue-xe-so-da-lat/")}">{n}</a>'
+    return f'<tr><td>{n}</td><td><b>{xs_price(l)}</b></td></tr>'
+
 def page_home(l):
     h, u = C[l]["home"], C[l]["ui"]
     me = home_path(l)
@@ -672,7 +685,7 @@ def page_home(l):
   <table class="price"><tr><th>{h["th_bike"]}</th><th>{h["th_price"]}</th></tr>
   <tr><td>Honda Vision 110cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
   <tr><td>Honda Air Blade 125cc</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>
-  <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr></table>
+  <tr><td>{h["electric_name"]}</td><td><b>{h.get("price_cell", "150,000 VND")}</b></td></tr>{xs_row(l, me)}</table>
   <p class="note">{h["price_note"]}</p>{upd}</section>
  <section><h2>{h["h_conditions"]}</h2><ul class="checks">{conds}</ul></section></div>
  {cmp_sec}
@@ -1097,7 +1110,8 @@ def page_street(i, s):
 <table class="price"><tr><th>Xe</th><th>Giá</th></tr>
 <tr><td>Honda Vision 110cc</td><td><b>150.000 VND/ngày</b></td></tr>
 <tr><td>Honda Air Blade 125cc</td><td><b>150.000 VND/ngày</b></td></tr>
-<tr><td><a href="{ev}">Xe máy điện</a></td><td><b>150.000 VND/ngày</b></td></tr></table>
+<tr><td><a href="{ev}">Xe máy điện</a></td><td><b>150.000 VND/ngày</b></td></tr>
+<tr><td><a href="{rel(me, home_path("vi") + "thue-xe-so-da-lat/")}">Xe số (Sirius FI, Wave RSX)</a></td><td><b>120.000 VND/ngày</b></td></tr></table>
 <p>Giá cố định cho mọi xe, không phụ phí. Một ngày thuê tính từ lúc nhận xe đến 21:00 cùng ngày.</p>
 <h2>Giao xe đến đường {name}</h2>
 <p>{deliv}</p>
