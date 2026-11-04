@@ -115,6 +115,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-03 lt-booking — Long-tail: how to book a motorbike in Da Lat online (vi "đặt thuê xe máy Đà Lạt online", en "book a motorbike in Da Lat online", ru "забронировать байк в Далате онлайн", zh "大叻摩托车在线预订", ko "달랏 오토바이 렌트 예약", id "booking sewa motor Da Lat online"; what to send, confirmation, changes; links lt-delivery, lt-documents, lt-procedure; photos honda-air-blade-vision-fleet-van-phu + honda-vision-hotel-delivery-dalat; 6 languages)
 - 2026-11-03 lt-ev-lake — EV long-tail: around Xuan Huong Lake and the flower garden by electric scooter (vi "xe máy điện dạo hồ Xuân Hương", en "electric scooter around Xuan Huong Lake", ru "на электроскутере вокруг озера Суан Хыонг", zh "骑电动车游春香湖", ko "전기 스쿠터로 쑤언흐엉 호수", id "keliling Danau Xuan Huong naik motor listrik"; Lam Vien Square, flower garden, parking; no km figure (links lt-ev-battery); links evrules, lt-ev-halfday, lt-ev-parking; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 6 languages)
 
+- 2026-11-04 november — Da Lat in November: weather, what's in season (dã quỳ, pink grass, misty sunrises, persimmons, Flower Festival planned 2nd half of Dec — check official dates), what to pack, riding tips (en "Da Lat in November", vi "Đà Lạt tháng 11", ru "Далат в ноябре", zh "11月的大叻", ko "11월 달랏 여행", id "Da Lat bulan November"; links weather, wildsunflower, pinkgrass, cloudhunt, strawberries; photos friends-air-blade-van-phu-gate + honda-vision-cafe-garden-dalat; cluster early; 6 languages)
+- 2026-11-04 lt-reliable — Long-tail: how to choose a reliable motorbike rental (vi "thuê xe máy Đà Lạt uy tín", en "reliable motorbike rental in Da Lat", ru "надёжная аренда байка в Далате", zh "大叻租摩托车怎么选靠谱的店", ko "믿을 수 있는 달랏 오토바이 렌트", id "sewa motor Da Lat terpercaya"; 8 signs, no competitor claims; links price, lt-nodeposit, lt-checklist; photos van-phu-shop-busy-morning-vision-air-blade + guest-white-honda-vision-van-phu-shop; 6 languages)
+- 2026-11-04 lt-ev-market — EV long-tail: going to Da Lat Market by electric scooter (vi "xe máy điện đi chợ Đà Lạt", en "Da Lat Market by electric scooter", ru "на электроскутере на рынок Далата", zh "骑电动车去大叻市场", ko "전기 스쿠터로 달랏 시장 가기", id "ke Pasar Da Lat naik motor listrik"; best time, gửi xe parking, carrying bags; no km figure (links lt-ev-battery); links nightmarket, lt-ev-parking, food, evrules; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -127,7 +131,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - OWNER'S KEYWORD PLAN 2 (17/10/2026, English-search priorities): each topic below marked [KW2] lists an exact English target phrase → the en title_tag, H1 and meta must contain it (natural capitalisation); vi and other languages use their natural equivalent. Already covered, do NOT write new articles for: "Dalat motorbike rental price" / "How much does it cost to rent a scooter in Dalat" (existing `price`), "Dalat motorbike rental requirements" (lt-documents), "Best places to visit around Dalat by scooter" (routes page + photospots), "What to know before riding a scooter in Dalat" (riding + lt-first-time). Never write "international driving permit" topics; licence questions are answered only on the licence pillar page (/do-i-need-a-license-to-rent-a-motorbike-in-vietnam/, vi /vi/thue-xe-may-co-can-bang-lai/).
 - Internal links: add every new key to its cluster in `content/cluster.py` ("Read also" then shows cluster siblings first), and link 1–2 sibling articles in the body with <a href="{ART:<key>}">…</a>.
 - "Documents" topics: the ONLY documents are passport (foreigners) or CCCD/ID card (Vietnamese guests). Never mention any other document, licence or permit.
-- [ ] lt-reliable — How to choose a reliable motorbike rental in Da Lat (transparent price, no hidden fees, written rules) — generic advice, no competitor claims
 - [ ] lt-first-time — [KW2] en: "is it easy to ride a scooter in Dalat" — First time riding a scooter in Da Lat: is it hard? (practice, quiet streets, traffic on the right)
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
@@ -152,7 +155,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-market — Going to Da Lat Market by electric scooter: morning shopping, guarded parking, carrying bags
 - [ ] lt-ev-hills — Riding an electric scooter on Da Lat's hilly streets (climbing, braking downhill, two riders, battery use)
 - [ ] lt-ev-weekend — An electric scooter for a weekend in Da Lat (2 days: battery plan, swap at the shop; link lt-2days not duplicate it)
 - [ ] lt-ev-homestay — Electric scooter when your homestay is outside the centre (distance vs battery, when to choose the Air Blade)
@@ -163,7 +165,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-cold — Electric scooter in Da Lat's cool weather: what to wear (jacket, gloves, rain gear, cold mornings)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 01/11 november — Da Lat in November: weather, what's in season, what to pack
 - [ ] 03/11 sunrise-sunset — Best sunrise and sunset spots around Da Lat
 - [ ] 04/11 station — Da Lat Railway Station and the train to Trai Mat & Linh Phuoc (Ve Chai) pagoda
 - [ ] 05/11 phrases — Useful Vietnamese phrases for renting a bike, eating and shopping in Da Lat
