@@ -114,19 +114,19 @@ UI = {
 # Availability check inside the clip pop-up (owner asked 2026-11-04: "hiện trên này kiểm tra, không hiện giá").
 # Clip id -> /avail/<key>.json, written by _src/villa_avail.py from the owner's Google Sheet calendar (status only, no price, no names).
 CAL = {"7333867469490146562": "flute"}  # Dalat Flute House
-CK = {  # title, check-in, check-out, button, checking, ok, booked, ask, bad dates, error, message line
+CK = {  # title, check-in, check-out, button, checking, ok, booked, ask, bad dates, error, message line, free-dates label, month full
  "vi": ("📅 Kiểm tra lịch trống", "Nhận phòng", "Trả phòng", "Kiểm tra", "Đang kiểm tra...", "✅ Còn trống {n} đêm! Bấm nút bên dưới để giữ phòng.",
         "❌ Có ngày đã kín, bạn thử ngày khác nhé.", "Một số ngày chưa mở lịch, nhắn mình để kiểm tra giúp bạn.", "Ngày trả phòng phải sau ngày nhận phòng.",
-        "Chưa tải được lịch, nhắn mình để kiểm tra nhé.", "Ngày: {a} → {b} ({n} đêm)"),
+        "Chưa tải được lịch, nhắn mình để kiểm tra nhé.", "Ngày: {a} → {b} ({n} đêm)", "Ngày còn trống tháng {m}:", "Tháng này đã kín, bạn thử tháng khác nhé."),
  "en": ("📅 Check availability", "Check-in", "Check-out", "Check", "Checking...", "✅ Available for {n} night(s)! Tap the button below to hold it.",
         "❌ Some nights are booked, please try other dates.", "Some dates are not open yet, message us to confirm.", "Check-out must be after check-in.",
-        "Could not load the calendar, please message us.", "Dates: {a} → {b} ({n} nights)"),
+        "Could not load the calendar, please message us.", "Dates: {a} → {b} ({n} nights)", "Free dates in {m}:", "This month is fully booked, please try another month."),
  "zh": ("📅 查询空房", "入住", "退房", "查询", "查询中...", "✅ 可预订 {n} 晚！点击下方按钮预订。", "❌ 部分日期已满，请换其他日期。",
-        "部分日期未开放，请联系我们确认。", "退房日期需晚于入住日期。", "无法加载日历，请联系我们。", "日期：{a} → {b}（{n} 晚）"),
+        "部分日期未开放，请联系我们确认。", "退房日期需晚于入住日期。", "无法加载日历，请联系我们。", "日期：{a} → {b}（{n} 晚）", "{m}月可订日期：", "本月已订满，请试试其他月份。"),
  "ru": ("📅 Проверить даты", "Заезд", "Выезд", "Проверить", "Проверяем...", "✅ Свободно ночей: {n}! Нажмите кнопку ниже.", "❌ Часть дат занята, выберите другие.",
-        "Некоторые даты ещё не открыты, напишите нам.", "Выезд должен быть после заезда.", "Не удалось загрузить календарь, напишите нам.", "Даты: {a} → {b} (ночей: {n})"),
+        "Некоторые даты ещё не открыты, напишите нам.", "Выезд должен быть после заезда.", "Не удалось загрузить календарь, напишите нам.", "Даты: {a} → {b} (ночей: {n})", "Свободные даты ({m}):", "В этом месяце всё занято, попробуйте другой месяц."),
  "ko": ("📅 예약 가능 확인", "체크인", "체크아웃", "확인", "확인 중...", "✅ {n}박 예약 가능! 아래 버튼을 눌러주세요.", "❌ 일부 날짜가 마감되었습니다.",
-        "일부 날짜는 아직 열리지 않았어요. 메시지 주세요.", "체크아웃은 체크인 이후여야 합니다.", "달력을 불러올 수 없어요. 메시지 주세요.", "날짜: {a} → {b} ({n}박)"),
+        "일부 날짜는 아직 열리지 않았어요. 메시지 주세요.", "체크아웃은 체크인 이후여야 합니다.", "달력을 불러올 수 없어요. 메시지 주세요.", "날짜: {a} → {b} ({n}박)", "{m}월 예약 가능한 날짜:", "이번 달은 모두 마감되었습니다. 다른 달을 선택해 주세요."),
  "id": ("📅 Cek ketersediaan", "Check-in", "Check-out", "Cek", "Mengecek...", "✅ Tersedia {n} malam! Tekan tombol di bawah.", "❌ Ada tanggal yang penuh, coba tanggal lain.",
-        "Beberapa tanggal belum dibuka, hubungi kami.", "Check-out harus setelah check-in.", "Kalender gagal dimuat, hubungi kami.", "Tanggal: {a} → {b} ({n} malam)"),
+        "Beberapa tanggal belum dibuka, hubungi kami.", "Check-out harus setelah check-in.", "Kalender gagal dimuat, hubungi kami.", "Tanggal: {a} → {b} ({n} malam)", "Tanggal kosong bulan {m}:", "Bulan ini sudah penuh, coba bulan lain."),
 }
