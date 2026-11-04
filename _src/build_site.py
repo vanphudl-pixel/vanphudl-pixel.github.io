@@ -1349,6 +1349,7 @@ def page_villa(l):
     how = "".join(f"<li>{x}</li>" for x in t["how"])
     import html as _h, json as _j
     pin, watch, bk, close, unit = VL.UI[l]
+    ck = VL.CK[l]
     tiles = "".join(
         f'<a class="tt" href="https://www.tiktok.com/@bietthudalat/video/{c["id"]}" target="_blank" rel="noopener" data-id="{c["id"]}" data-t="{_h.escape(c["t"])}">'
         f'<img src="/img/tiktok/{c["id"]}.webp?v=2" alt="{_h.escape(c["t"])}" width="360" height="480" loading="{"eager" if n < 6 else "lazy"}" decoding="async">'
@@ -1367,11 +1368,16 @@ def page_villa(l):
 #ttm .in{{width:100%;max-width:420px;max-height:100%;display:flex;flex-direction:column;gap:8px}}
 #ttm iframe{{width:100%;aspect-ratio:9/16;max-height:72vh;border:0;border-radius:12px;background:#000}}
 #ttm .t{{color:#fff;font-size:14px;margin:0}}#ttm .row{{display:flex;gap:8px;flex-wrap:wrap}}#ttm .row a,#ttm .row button{{flex:1;text-align:center}}
+#ttm .in{{overflow-y:auto}}#ttm.cal iframe{{max-height:50vh}}
+.ck{{display:none;padding:12px;border-radius:14px;background:#f4f8f5;color:#222}}#ttm.cal .ck{{display:block}}.ck b{{display:block;font-size:15px;margin-bottom:8px}}
+.ck .dr{{display:flex;gap:8px}}.ck label{{flex:1;font-size:12px;color:#555}}.ck input{{width:100%;box-sizing:border-box;margin-top:3px;padding:9px 8px;border:1px solid #ccc;border-radius:10px;font-size:16px;background:#fff;color:#222}}
+.ck button{{width:100%;margin-top:8px;padding:11px;border:0;border-radius:10px;background:#1f6f45;color:#fff;font-size:15px;font-weight:700;cursor:pointer}}
+.ck .r{{display:none;margin-top:8px;padding:9px;border-radius:10px;font-size:14px;text-align:center}}.ck .r.ok,.ck .r.no,.ck .r.wt{{display:block}}.ck .r.ok{{background:#e3f4e8;color:#1f6f45}}.ck .r.no{{background:#fbe9e7;color:#b03a2e}}.ck .r.wt{{background:#eee;color:#666}}
 </style>
 <p style="color:var(--muted,#555)">@bietthudalat · {len(VL.CLIPS)} {unit}</p>
 <div class="ttg">{tiles}</div>
 <div id="ttm" role="dialog" aria-modal="true"><div class="in"><iframe allow="autoplay; fullscreen; encrypted-media" allowfullscreen title="TikTok"></iframe>
-<p class="t"></p><div class="row"><a class="btn {"zalo" if l == "vi" else "tg" if l == "ru" else "wechat" if l == "zh" else "wa"} bk" target="_blank" rel="noopener">{bk}</a><a class="btn alt tk" target="_blank" rel="noopener" style="background:#fff">{watch}</a></div>
+<p class="t"></p><div class="ck"><b>{ck[0]}</b><div class="dr"><label>{ck[1]}<input type="date" class="ca"></label><label>{ck[2]}<input type="date" class="cb"></label></div><button type="button" class="cg">{ck[3]}</button><div class="r" aria-live="polite"></div></div><div class="row"><a class="btn {"zalo" if l == "vi" else "tg" if l == "ru" else "wechat" if l == "zh" else "wa"} bk" target="_blank" rel="noopener">{bk}</a><a class="btn alt tk" target="_blank" rel="noopener" style="background:#fff">{watch}</a></div>
 <button class="btn alt x" type="button" style="background:#fff">{close}</button></div></div>"""
     tt_js = ("<script>(function(){var m=document.getElementById('ttm'),f=m.querySelector('iframe'),bk=m.querySelector('.bk'),tk=m.querySelector('.tk'),tx=m.querySelector('.t'),B=" + _j.dumps(bk_href) + ",L=" + _j.dumps(l) + ",M=" + _j.dumps(t["msg"]) + ";"
              "function shut(){m.classList.remove('on');f.src='about:blank';}"
@@ -1381,6 +1387,20 @@ def page_villa(l):
              "else if(B.indexOf('wa.me')>-1){bk.href=B+encodeURIComponent(M+' '+u);}else{bk.href=B;}"
              "m.classList.add('on');});});m.querySelector('.x').onclick=shut;m.addEventListener('click',function(e){if(e.target===m)shut();});"
              "document.addEventListener('keydown',function(e){if(e.key==='Escape')shut();});})();</script>")
+    # availability check in the pop-up (status only from /avail/<key>.json — no price, no guest names)
+    ck_js = ("<script>(function(){var m=document.getElementById('ttm'),c=m.querySelector('.ck'),A=c.querySelector('.ca'),Z=c.querySelector('.cb'),R=c.querySelector('.r'),bk=m.querySelector('.bk'),"
+             "CAL=" + _j.dumps(VL.CAL) + ",T=" + _j.dumps(ck, ensure_ascii=False) + ",key=null,base='',S={};"
+             "function p(n){return('0'+n).slice(-2);}function iso(d){return d.getFullYear()+'-'+p(d.getMonth()+1)+'-'+p(d.getDate());}"
+             "function dm(s){var x=s.split('-');return x[2]+'/'+x[1];}function f(s,o){return s.replace(/\\{(\\w)\\}/g,function(_,k){return o[k];});}"
+             "function get(k){if(!S[k])S[k]=fetch('/avail/'+k+'.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw 0;return r.json();}).catch(function(e){delete S[k];throw e;});return S[k];}"
+             "function reset(){var t=new Date(),u=new Date();u.setDate(t.getDate()+1);A.min=A.value=iso(t);Z.min=Z.value=iso(u);R.className='r';R.textContent='';}"
+             "A.addEventListener('change',function(){var n=new Date(A.value+'T00:00');n.setDate(n.getDate()+1);Z.min=iso(n);if(Z.value<=A.value)Z.value=iso(n);});"
+             "document.querySelectorAll('.tt').forEach(function(a){a.addEventListener('click',function(){key=CAL[a.dataset.id]||null;m.classList.toggle('cal',!!key);if(key){reset();base=bk.getAttribute('href')||'';get(key).catch(function(){});}});});"
+             "c.querySelector('.cg').addEventListener('click',function(){var a=A.value,b=Z.value;if(!a||!b||b<=a){R.className='r no';R.textContent=T[8];return;}"
+             "R.className='r wt';R.textContent=T[4];if(base)bk.href=base;get(key).then(function(j){var d=new Date(a+'T00:00'),n=0,st='ok';while(iso(d)<b){var v=j.d[iso(d)];if(v==='b')st='no';else if(v!=='f'&&st==='ok')st='ask';n++;d.setDate(d.getDate()+1);}"
+             "R.className='r '+(st==='no'?'no':'ok');R.textContent=st==='ok'?f(T[5],{n:n}):st==='no'?T[6]:T[7];"
+             "if(st!=='no'&&base.indexOf('text=')>-1)bk.href=base+encodeURIComponent('\\n'+f(T[10],{a:dm(a),b:dm(b),n:n}));},function(){R.className='r no';R.textContent=T[9];});});"
+             "})();</script>")
     body = f"""
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
 <div class="hero">{crumbs(l, me, [(t["crumb"], None)])}
@@ -1396,6 +1416,7 @@ def page_villa(l):
  <section><h2>{AB.T[l]["h_contact"]}</h2>{contacts(l)}</section>
 </main>
 {tt_js}
+{ck_js}
 """
     return head_html + body + foot(l, frm=me)
 for _l in VL.LANGS:
