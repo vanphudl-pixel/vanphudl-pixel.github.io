@@ -579,7 +579,7 @@ def business_ld(l, url):
     return {"@context": "https://schema.org", "@type": ["LocalBusiness", "AutoRental"], "@id": BASE + "#business",
             "name": "Van Phu Dalat Motorbike Rental", "alternateName": ["Thuê xe máy Đà Lạt Văn Phú", "Văn Phú Đà Lạt", "Dalat Motorbike Rental"],
             "areaServed": {"@type": "City", "name": "Da Lat", "alternateName": ["Đà Lạt", "Dalat"]},
-            "currenciesAccepted": "VND",
+            "currenciesAccepted": "VND", "foundingDate": AB.SINCE,
             "openingHoursSpecification": [{"@type": "OpeningHoursSpecification",
                 "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                 "opens": "04:30", "closes": "21:00"}],
