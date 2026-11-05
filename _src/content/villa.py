@@ -113,7 +113,8 @@ UI = {
 
 # Availability check inside the clip pop-up (owner asked 2026-11-04: "hiện trên này kiểm tra, không hiện giá").
 # Clip id -> /avail/<key>.json, written by _src/villa_avail.py from the owner's Google Sheet calendar (status only, no price, no names).
-CAL = {"7333867469490146562": "flute"}  # Dalat Flute House
+CAL = {"7333867469490146562": "flute",   # Dalat Flute House
+       "7313868038573509889": "sonata"}  # Sonata Villa Đà Lạt (44 Võ Trường Toản, view hồ Đại học)
 CK = {  # title, check-in, check-out, button, checking, ok, booked, ask, bad dates, error, message line, free-dates label, month full
  "vi": ("📅 Kiểm tra lịch trống", "Nhận phòng", "Trả phòng", "Kiểm tra", "Đang kiểm tra...", "✅ Còn trống {n} đêm! Bấm nút bên dưới để giữ phòng.",
         "❌ Có ngày đã kín, bạn thử ngày khác nhé.", "Một số ngày chưa mở lịch, nhắn mình để kiểm tra giúp bạn.", "Ngày trả phòng phải sau ngày nhận phòng.",
