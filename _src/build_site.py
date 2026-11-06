@@ -940,7 +940,9 @@ def speed(html):
     return _IMG_RE.sub(sub, html)
 
 GA_ID = "G-EY9EPL0MQ0"
-GA = ('<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_ID + '"></script>'
+GTM_ID = "GTM-K3LRCDWF"  # Google tag from Google Ads (owner asked 2026-11-06)
+GA = ('<script async src="https://www.googletagmanager.com/gtm.js?id=' + GTM_ID + '"></script>'
+      '<script async src="https://www.googletagmanager.com/gtag/js?id=' + GA_ID + '"></script>'
       '<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}'
       "gtag('js',new Date());gtag('config','" + GA_ID + "');"
       "document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href]');if(!a)return;"
@@ -959,9 +961,9 @@ def add_ga(html):
 
 # Content-Security-Policy (meta tag: GitHub Pages cannot send HTTP headers). Allows only what the pages use:
 # own files, inline CSS/JS already in the pages, Google Tag Manager, YouTube/Maps embeds, Zalo/WhatsApp/Telegram links (links need no CSP).
-CSP = ("default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; "
+CSP = ("default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://*.googletagmanager.com https://www.googleadservices.com https://googleads.g.doubleclick.net https://www.google.com; "
        "style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; "
-       "frame-src https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com; "
+       "frame-src https://td.doubleclick.net https://www.googletagmanager.com https://www.youtube-nocookie.com https://www.youtube.com https://maps.google.com https://www.google.com; "
        "connect-src 'self' https:; object-src 'none'; base-uri 'self'")
 def add_csp(html):
     tag = f'<meta http-equiv="Content-Security-Policy" content="{CSP}">'
