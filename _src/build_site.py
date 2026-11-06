@@ -2086,8 +2086,8 @@ for _f in OUT.rglob("index.html"):
             _f.write_text(_t, encoding="utf-8")
 # Naver Search Advisor ownership check (owner asked 2026-11-06): meta tag on the homepage only
 NAVER_META = '<meta name="naver-site-verification" content="f373446e54ad121fe48ad95321bac8f701800081" />'
-_home = OUT / "index.html"
-if _home.exists():
+for _home in (OUT / "index.html", OUT / "dalat-motorbike-rental" / "index.html"):
+  if _home.exists():
     _t = _home.read_text(encoding="utf-8")
     if "naver-site-verification" not in _t:
         _home.write_text(_t.replace("<head>", "<head>" + NAVER_META, 1), encoding="utf-8")
