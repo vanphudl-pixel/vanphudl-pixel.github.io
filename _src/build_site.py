@@ -2084,6 +2084,13 @@ for _f in OUT.rglob("index.html"):
         if 'name="robots" content="noindex"' not in _t:
             _t = _t.replace("<head>", '<head><meta name="robots" content="noindex">', 1)
             _f.write_text(_t, encoding="utf-8")
+# Naver Search Advisor ownership check (owner asked 2026-11-06): meta tag on the homepage only
+NAVER_META = '<meta name="naver-site-verification" content="f373446e54ad121fe48ad95321bac8f701800081" />'
+_home = OUT / "index.html"
+if _home.exists():
+    _t = _home.read_text(encoding="utf-8")
+    if "naver-site-verification" not in _t:
+        _home.write_text(_t.replace("<head>", "<head>" + NAVER_META, 1), encoding="utf-8")
 (OUT / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n' + urls + "</urlset>\n", encoding="utf-8")
 LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 
