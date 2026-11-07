@@ -129,6 +129,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-06 lt-groups — Long-tail: motorbike rental for groups of friends (vi "thuê xe máy Đà Lạt theo nhóm", en "motorbike rental in Da Lat for groups", ru "аренда байков в Далате для компании", zh "大叻团体租摩托车", ko "달랏 단체 오토바이 렌트", id "sewa motor Da Lat untuk rombongan"; book ahead, fixed price per bike, mix of bikes, lead/sweep riding; links lt-booking, lt-two, passes; photos group-rental-air-blade-van-phu-morning + friends-air-blade-van-phu-gate; cluster bikes; 6 languages)
 - 2026-11-06 lt-ev-weekend — EV long-tail: electric scooter for a weekend (vi "thuê xe máy điện Đà Lạt cuối tuần", en "electric scooter rental in Da Lat for a weekend", ru "аренда электроскутера в Далате на выходные", zh "大叻周末租电动车", ko "달랏 주말 전기 스쿠터 렌트", id "sewa motor listrik Da Lat akhir pekan"; 2-day plan centre + station/Trai Mat, 300,000 VND, battery swap 20,000 VND, no km figure (links lt-ev-battery); links lt-2days, station, lt-ev-parking, evrules; photos electric-scooters-van-phu-shop + evening-pickup-van-phu-1-15-5-thong-thien-hoc; 6 languages)
 
+- 2026-11-07 phrases — Useful Vietnamese phrases for Da Lat: greetings, renting/parking/fuel, food & coffee, market bargaining, numbers ("k" = nghìn); vi version written for Vietnamese travellers with foreign friends (vi "câu giao tiếp tiếng Việt cho khách nước ngoài ở Đà Lạt", en "useful Vietnamese phrases for Da Lat", ru "полезные вьетнамские фразы для Далата", zh "大叻旅游实用越南语", ko "달랏 여행 베트남어 회화", id "frasa bahasa Vietnam untuk liburan di Da Lat"; links riding, food, nightmarket; photos van-phu-shop-busy-morning-vision-air-blade + honda-vision-cafe-garden-dalat; cluster location; 6 languages)
+- 2026-11-07 lt-sameday — Long-tail: same-day / walk-in motorbike rental (vi "thuê xe máy Đà Lạt lấy ngay", en "same-day motorbike rental in Da Lat", ru "аренда байка в Далате без брони", zh "大叻当天租摩托车", ko "달랏 오토바이 당일 렌트", id "sewa motor Da Lat tanpa booking"; what to bring, pick-up minutes, busy times, rental day until 21:00; links lt-documents, lt-procedure, lt-booking, lt-groups; photos van-phu-shop-early-pickup-air-blade + guest-white-honda-vision-van-phu-shop; cluster procedure; 6 languages)
+- 2026-11-07 lt-ev-homestay — EV long-tail: electric scooter when your homestay is outside the centre (vi "thuê xe máy điện Đà Lạt ở homestay xa trung tâm", en "electric scooter rental in Da Lat when your homestay is outside the centre", ru "электроскутер в Далате, если жильё далеко от центра", zh "大叻民宿离市中心远租电动车", ko "달랏 외곽 숙소 전기 스쿠터 렌트", id "sewa motor listrik Da Lat untuk homestay di luar pusat kota"; when EV works, battery swaps around the daily route, when Air Blade; no km figure (links lt-ev-battery); links where-to-stay, lt-ev-hills, lt-airblade, evrules; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -144,7 +148,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-sameday — Same-day / walk-in motorbike rental in Da Lat (no booking ahead: what to expect, when it's busy)
 - [ ] lt-return — Returning your rental bike in Da Lat (by 21:00, extending by message, fuel, comparing with the pick-up video)
 - [ ] lt-breakdown — Flat tyre or breakdown on a rental bike in Da Lat: what to do (stop safely, call/message the shop)
 - [ ] lt-included — What's included in a Da Lat motorbike rental (helmet, phone holder, 1 liter of fuel, test ride, condition video, no cash deposit)
@@ -163,7 +166,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-homestay — Electric scooter when your homestay is outside the centre (distance vs battery, when to choose the Air Blade)
 - [ ] lt-ev-morning — Early-morning rides by electric scooter (shop opens 4:30; quiet lake, bakeries, markets; not Cau Dat)
 - [ ] lt-ev-safety — Safety tips for riding an electric scooter in Da Lat traffic (quiet motor — pedestrians don't hear you, signalling, right-hand traffic)
 - [ ] lt-ev-flowers — Flower spots near the centre by electric scooter (city flower garden, Van Thanh village; far farms → Air Blade)
@@ -171,7 +173,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-cold — Electric scooter in Da Lat's cool weather: what to wear (jacket, gloves, rain gear, cold mornings)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 05/11 phrases — Useful Vietnamese phrases for renting a bike, eating and shopping in Da Lat
 - [ ] 06/11 parking-fuel — Practical riding in Da Lat: parking, fuel stations, charging, helmets, rain gear
 - [ ] 07/11 pagodas — Temples and pagodas of Da Lat worth a ride
 - [ ] 08/11 danhia — Dankia Lake & Golden Stream (Suoi Vang) by motorbike
