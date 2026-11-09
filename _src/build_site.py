@@ -49,6 +49,7 @@ def _ph_style(name):
 from content import photomap as PM
 from content import pagodamap as PG
 from content import churchmap as CH
+from content import palacemap as PL
 from content import halalid as HI
 from content import about as AB
 from content import villa as VL
@@ -332,6 +333,9 @@ VLBL = {"vi": "Xem video", "en": "Watch the video", "ru": "Смотреть ви
         "it": "Guarda il video", "nl": "Bekijk de video", "km": "មើលវីដេអូ", "lo": "ເບິ່ງວິດີໂອ", "my": "ဗီဒီယိုကြည့်ရန်"}
 def gmap(cid, lat=None, lng=None):
     """Google Maps link: numeric cid, or a place_id (ChIJ…) via the official Maps URL API."""
+    if str(cid).startswith("q:"):
+        from urllib.parse import quote
+        return "https://www.google.com/maps/search/?api=1&query=" + quote(str(cid)[2:])
     if str(cid).startswith("ChIJ"):
         return f"https://www.google.com/maps/search/?api=1&query={lat},{lng}&query_place_id={cid}"
     return f"https://maps.google.com/?cid={cid}"
@@ -1707,7 +1711,7 @@ m.fitBounds(b,{{padding:[20,20]}});}})();
 """ + foot(l, frm=me)
 
 # ------------------------------------------------------------------ places hub (pillar page, vi + en)
-THEMES = [RN, RC, PM, WF, AM, FM, PG, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
+THEMES = [RN, RC, PM, WF, AM, FM, PG, PL, CH, SF, CL, CF, NC, NM, BB, FE, HT, H4, H3, BU, DN, NT]
 _TNAME = {M.__name__.split(".")[-1]: M for M in THEMES}
 def hub_link(l, me, key):
     if key == "routes": return rel(me, routes_path(l))
@@ -2000,7 +2004,7 @@ for l in TM.LANGS:
 (OUT / "files").mkdir(exist_ok=True)
 for l in PM.LANGS:
     write(pm_path(l), page_photomap(l))
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, NC, NT, NM):
+for _M in (FE, PG, PL, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, NC, NT, NM):
     for l in _M.LANGS:
         write(map_path(_M, l), page_photomap(l, _M))
 
@@ -2014,7 +2018,7 @@ for kind, key in groups:
 _pm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pm_path(x)}"/>\n' for x in PM.LANGS)
 for l in PM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + pm_path(l)}</loc>\n{_pm_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
-for _M in (FE, PG, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, NC, NT, NM):
+for _M in (FE, PG, PL, CH, SF, CL, CF, BB, HT, H4, H3, BU, DN, RN, RC, WF, AM, FM, NC, NT, NM):
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + map_path(_M, x)}"/>\n' for x in _M.LANGS)
     for l in _M.LANGS:
         urls += f"  <url>\n    <loc>{BASE + map_path(_M, l)}</loc>\n{_alts}    <lastmod>2026-10-14</lastmod>\n  </url>\n"
@@ -2118,6 +2122,7 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Electric scooter rental (2 batteries per scooter, about 50–60 km in total — 25–30 km each; battery swap 20,000 VND)]({BASE + ev_path("en")})
 - [Da Lat photo spot map (16 places, opening hours, free PDF)]({BASE + pm_path("en")})
 - [Da Lat pagoda map (7 pagodas and Zen monasteries, opening hours, free PDF)]({BASE + map_path(PG, "en")})
+- [Da Lat palaces map (Bao Dai Palaces 1–3, Governor's Palace, Empress Nam Phuong's Palace, Madame de Dalat: what is open, hours, reference tickets)]({BASE + map_path(PL, "en")})
 - [Da Lat church map (6 churches incl. the Rooster Church and Domaine de Marie, opening hours, free PDF)]({BASE + map_path(CH, "en")})
 - [Da Lat wild sunflower (dã quỳ) map — 9 spots, late Oct–Dec, free PDF]({BASE + map_path(SF, "en")})
 - [Da Lat cloud hunting & sunrise map — 8 spots, best hours and months, free PDF]({BASE + map_path(CL, "en")})

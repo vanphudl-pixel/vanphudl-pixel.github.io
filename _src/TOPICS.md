@@ -205,3 +205,5 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - Address (owner, 2026-10-23): new address 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt is primary everywhere; the Google Business Profile still shows the OLD address "Khu Quy Hoạch / L8 Đường Bùi Thị Xuân, Xuân Hương – Đà Lạt, Lâm Đồng 670000" (same shop). Every page shows both (contacts block, schema disambiguatingDescription, llms.txt). Keep both until the owner says the GBP address was changed.
 
 - Phones (owner, 2026-10-23): two numbers on every page (contacts + footer + schema contactPoint) to match Google Maps: 0944 081 101 (main, call buttons) and 0834 622 149.
+
+- Palaces map (palacemap.py, 6 focus langs vi/en/zh/ru/ko/id, owner asked 2026-11-09): Madame de Dalat, Dinh 3, Dinh Tỉnh trưởng, Dinh 2, Cung Nam Phương, Dinh 1. Dinh 1/Dinh 2 marked 'check' (status changes). Dinh 3 uses Wikipedia coords + Google search link (its Google pin is wrong). No PDF yet. Re-check statuses/prices every few months.
