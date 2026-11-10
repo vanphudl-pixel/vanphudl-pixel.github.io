@@ -2,9 +2,9 @@
 (newest first), then the newest other articles. Add every new article key to the right cluster."""
 CLUSTERS = {
     # Group 1 — no cash deposit & quick paperwork
-    "procedure": ["lt-nodeposit", "lt-procedure", "lt-sameday", "lt-documents", "lt-booking", "lt-checklist", "lt-reliable", "lt-first-time", "lt-foreigners", "lt-return", "lt-breakdown"],
+    "procedure": ["lt-nodeposit", "lt-procedure", "lt-sameday", "lt-documents", "lt-booking", "lt-checklist", "lt-reliable", "lt-first-time", "lt-foreigners", "lt-return", "lt-breakdown", "lt-included"],
     # Group 2 — early opening / cloud hunting / sunrise
-    "early": ["cloudhunt", "caudat", "lt-early", "lt-caudat-early", "langbiang", "pinkgrass", "november", "sunrise-sunset"],
+    "early": ["cloudhunt", "caudat", "lt-early", "lt-caudat-early", "langbiang", "pinkgrass", "november", "sunrise-sunset", "danhia"],
     # Group 3 — electric scooters
     "ev": ["evrules", "lt-ev-foreigners", "lt-ev-experience", "lt-ev-city", "lt-ev-price", "lt-ev-battery", "lt-ev-couples",
            "lt-ev-beginners", "lt-ev-cafes", "lt-ev-night", "lt-ev-rain", "lt-ev-vs-grab", "lt-ev-eco", "lt-ev-parking",

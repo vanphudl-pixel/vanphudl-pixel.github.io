@@ -141,6 +141,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-09 lt-breakdown — Long-tail: flat tyre or breakdown on a rental motorbike (stop safely, send pin/photo, message before any repair, start/fuel checks; vi "xe máy thuê bị thủng lốp, chết máy ở Đà Lạt", en "flat tyre or breakdown on a rental motorbike in Da Lat", ru "прокол колеса или поломка арендованного байка в Далате", zh "大叻租摩托车爆胎怎么办", ko "달랏 오토바이 렌트 펑크 고장 대처", id "motor sewaan ban bocor di Da Lat"; links lt-checklist, riding, lt-return; photos van-phu-shop-early-pickup-air-blade + air-blade-handover-dalat-homestay; cluster procedure; 6 languages)
 - 2026-11-09 lt-ev-safety — EV long-tail: electric scooter safety tips in Da Lat traffic (quiet motor, gentle throttle, right-hand traffic, signalling, hills, rain/night, 2 riders <140 kg; no km figure (links lt-ev-battery); vi "kinh nghiệm đi xe máy điện an toàn ở Đà Lạt", en "electric scooter safety tips Da Lat", ru "безопасность на электроскутере в Далате", zh "大叻骑电动车安全须知", ko "달랏 전기 스쿠터 안전 수칙", id "tips aman naik motor listrik di Da Lat"; links lt-ev-beginners, lt-ev-hills, lt-ev-battery, evrules; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 6 languages)
 
+- 2026-11-10 danhia — Dankia Lake & Golden Stream (Suoi Vang) by motorbike (~15–20 km NW, 35–50 min, Air Blade recommended, no EV, fill up in the city, no swimming in reservoirs; en "Dankia Lake and Golden Stream", vi "hồ Đankia – Suối Vàng", ru "озеро Данкиа и Золотой ручей", zh "丹基亚湖 金溪湖", ko "단끼아 호수 쑤오이방", id "Danau Dankia dan Suoi Vang"; links langbiang, lt-airblade, pinkgrass, passes, routes; photos group-rental-air-blade-van-phu-morning + couple-air-blade-dalat-center-street; cluster early; 6 languages)
+- 2026-11-10 lt-included — Long-tail: what's included in a motorbike rental (vi "thuê xe máy Đà Lạt bao gồm những gì", en "what's included in a motorbike rental in Da Lat", ru "что входит в аренду байка в Далате", zh "大叻租摩托车包含什么", ko "달랏 오토바이 렌트 포함 사항", id "sewa motor Da Lat sudah termasuk apa saja"; included vs paid yourself (fuel, swaps, gửi xe, tickets); links price, lt-delivery, lt-documents, lt-checklist; photos honda-air-blade-vision-fleet-van-phu + guest-white-honda-vision-van-phu-shop + honda-vision-hotel-delivery-dalat; cluster procedure; 6 languages)
+- 2026-11-10 lt-ev-flowers — EV long-tail: flower spots near the centre by electric scooter (city flower garden, Van Thanh, Domaine de Marie, Thai Phien; far farms → Air Blade; no km figure (links lt-ev-battery); vi "xe máy điện đi ngắm hoa Đà Lạt", en "flower spots in Da Lat by electric scooter", ru "цветы Далата на электроскутере", zh "骑电动车大叻赏花", ko "전기 스쿠터로 달랏 꽃 명소", id "spot bunga Da Lat naik motor listrik"; links lt-ev-lake, domainedemarie, flowers, lt-ev-battery, evrules; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -156,7 +160,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-included — What's included in a Da Lat motorbike rental (helmet, phone holder, 1 liter of fuel, test ride, condition video, no cash deposit)
 - [ ] lt-navigation — Finding your way on a rental bike: Google Maps with the phone holder, map pins, offline maps
 - [ ] lt-solo-female — Motorbike rental in Da Lat for solo female travellers (timing, safe parking, staying in touch with the shop)
 - [ ] lt-waterfalls-rent — Renting a motorbike to visit the waterfalls near Da Lat (which bike, loops; link waterfalls + waterfalls map, not duplicate them)
@@ -172,7 +175,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-flowers — Flower spots near the centre by electric scooter (city flower garden, Van Thanh village; far farms → Air Blade)
 - [ ] lt-ev-luggage — Carrying bags on an electric scooter in Da Lat (backpacks, shopping, what fits under the seat; no suitcases)
 - [ ] lt-ev-cold — Electric scooter in Da Lat's cool weather: what to wear (jacket, gloves, rain gear, cold mornings)
 - [ ] lt-ev-1day — Renting an electric scooter for one full day: a city day plan with one battery swap at the shop (not halfday/weekend)
@@ -187,11 +189,20 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 08/11 danhia — Dankia Lake & Golden Stream (Suoi Vang) by motorbike
 - [ ] 09/11 solo — Da Lat for solo travellers
 - [ ] 10/11 vegetarian — Vegetarian and vegan food in Da Lat
 - [ ] 11/11 souvenirs — What to buy in Da Lat: local souvenirs and specialties
 - [ ] 12/11 december — Da Lat in December & the Flower Festival (tell readers to check official festival dates; never invent dates)
+- [ ] 13/11 dalatmarket — Da Lat Market (Chợ Đà Lạt) by day: what each floor/area sells, best time, parking (not the night-market article)
+- [ ] 14/11 hikes — Easy walks and hikes around Da Lat (pine forests, Tuyen Lam trails; link langbiang, not duplicate it)
+- [ ] 15/11 breakfast — Local breakfast in Da Lat: bánh mì xíu mại, bánh căn, phở and soy milk — where locals eat (no prices)
+- [ ] 16/11 coffeefarms — Coffee farms around Da Lat (Cau Dat arabica, farm visits; not the café-view article)
+- [ ] 17/11 history — A short history of Da Lat: from French hill station to today, and where to see it (link palace map, station)
+- [ ] 18/11 couples — Da Lat for couples: romantic spots, sunrise rides and quiet cafés
+- [ ] 19/11 villages — K'Ho villages around Lac Duong: visiting respectfully (well-established facts only)
+- [ ] 20/11 evenings — Da Lat after dark beyond the night market: lake walks, live-music cafés, night views
+- [ ] 21/11 packing — What to pack for Da Lat: cool mornings, rain, riding gear
+- [ ] 22/11 slowtravel — Slow Da Lat for older travellers: easy sights, short rides, rest stops
 - [ ] christmas — Da Lat in December: Christmas, cool weather, early cherry blossom (publish ~early Dec)
 - [ ] tet — Tết (Lunar New Year) in Da Lat: tips for travellers (publish ~early Jan)
 
