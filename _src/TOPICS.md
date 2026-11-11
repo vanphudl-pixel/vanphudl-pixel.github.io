@@ -229,3 +229,5 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - Phones (owner, 2026-10-23): two numbers on every page (contacts + footer + schema contactPoint) to match Google Maps: 0944 081 101 (main, call buttons) and 0834 622 149.
 
 - Palaces map (palacemap.py, 6 focus langs vi/en/zh/ru/ko/id, owner asked 2026-11-09): Madame de Dalat, Dinh 3, Dinh Tỉnh trưởng, Dinh 2, Cung Nam Phương, Dinh 1. Dinh 1/Dinh 2 marked 'check' (status changes). Dinh 3 uses Wikipedia coords + Google search link (its Google pin is wrong). No PDF yet. Re-check statuses/prices every few months.
+
+- 3-star hotels map (threestarmap.py) expanded 2026-11-11 to 23 hotels from the owner's list, every entry re-checked on Google Maps (coords/phone/address). Hotel-map extras in page_photomap, used only when the module defines them: PHONE, ADDR (call + directions buttons, address), toshop() (distance to the shop), AREA + areas() (filter chips). PDF hidden (old PDF has 8 hotels) until redrawn.

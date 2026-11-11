@@ -1721,11 +1721,16 @@ def page_photomap(l, M=PM):
         ph = M.img_link(sid)
         own = (OUT / "img" / "spots" / f"{sid}.jpg").exists()
         thumb = f'<img src="{pre}img/spots/{sid}.jpg" alt="{n}" loading="lazy" style="width:96px;height:72px;object-fit:cover;border-radius:8px;flex:none">' if own else ""
-        pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr, "p": ph})
+        _ph, _ad = getattr(M, "PHONE", {}).get(sid), getattr(M, "ADDR", {}).get(sid)
+        _sk = f"≈ {pm_km((LAT, LON), (lat, lng)):.1f} km {M.toshop(l)}" if hasattr(M, "toshop") else ""
+        pts.append({"i": i, "n": n, "lat": lat, "lng": lng, "ev": ev, "g": g, "b": best, "h": hr, "p": ph, "t": _ph or "", "a": _ad or "", "k": _sk, "z": getattr(M, "AREA", {}).get(sid, "")})
+        _extra = ((f'<br>📮 {_ad}' if _ad else "") + (f' · 🛵 {_sk}' if _sk else "")
+                  + (f'<br><a class="btn" href="tel:{_ph.replace(" ", "")}" style="padding:6px 12px;margin:6px 6px 0 0;background:#f2b632;color:#173d2d">📞 {CALL[l][0]} {_ph}</a><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination={lat},{lng}" target="_blank" rel="noopener" style="padding:6px 12px;margin-top:6px;background:#1f6f4a;color:#fff">🧭 {DIR_SHORT.get(l, DIR_SHORT["en"])}</a>' if _ph else ""))
         guide = getattr(M, "GUIDES", {"pink": "domainedemarie"}).get(sid)
         nm = f'<a href="{rel(me, art_path(l, guide))}">{n}</a>' if guide and guide in C[l]["articles"] else n
-        rows += (f'<li id="s{i}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>{(f"+{_legs[i-1]:.1f} km {t['leg']} · ") if _route else f"≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · "}{t["hours"]}: {hr} · {t["best"]}: {best}</small>'
-                 f'<br>{d}{(f"<br>🎟 <b>{t[chr(112)+chr(114)+chr(105)+chr(99)+chr(101)+chr(95)+chr(108)]}:</b> " + M.PRICE[l][sid]) if l in getattr(M, "PRICE", {}) else ""}<br><a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · <a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a>{vlink(l, cid)}</div></li>')
+        rows += (f'<li id="s{i}" data-z="{getattr(M, "AREA", {}).get(sid, "")}"><span class="pmn {"ev" if ev else "gas"}">{i}</span>{thumb}<div><b>{nm}</b><br><small>{(f"+{_legs[i-1]:.1f} km {t['leg']} · ") if _route else f"≈ {pm_km(M.CENTER, (lat, lng)):.1f} km · "}{t["hours"]}: {hr} · {t["best"]}: {best}</small>'
+                 f'<br>{d}{(f"<br>🎟 <b>{t[chr(112)+chr(114)+chr(105)+chr(99)+chr(101)+chr(95)+chr(108)]}:</b> " + M.PRICE[l][sid]) if l in getattr(M, "PRICE", {}) else ""}<br>{"" if _ph else f'<a href="{g}" target="_blank" rel="noopener">📍 {t["dir"]}</a> · '}<a href="{ph}" target="_blank" rel="noopener">📷 {t["photo"]}</a>{vlink(l, cid)}{_extra}</div></li>')
+    _chips = ("<div class=\"pmf\" role=\"group\">" + "".join(f'<button type="button" data-z="{k}"{" class=" + chr(34) + "on" + chr(34) if not k else ""}>{x}</button>' for k, x in M.areas(l)) + "</div>") if hasattr(M, "areas") else ""
     seasons = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in t.get("season", []))
     tips = "".join(f"<li>{x}</li>" for x in t["tips"])
     pdf = f"{pre}files/{getattr(M, 'PDF', 'VanPhu-Dalat-Photo-Map')}-{l.upper()}.pdf"
@@ -1751,6 +1756,8 @@ def page_photomap(l, M=PM):
 .pmn{{flex:none;width:28px;height:28px;border-radius:50%;color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;font-size:13px}} .pmn.ev{{background:#0f7a4f}} .pmn.gas{{background:#c06a00}}
 .pmk{{background:none;border:none}} .pmk span{{display:flex;width:26px;height:26px;border-radius:50%;color:#fff;font:700 12px sans-serif;align-items:center;justify-content:center;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.35)}}
 .pmleg{{display:flex;gap:16px;flex-wrap:wrap;font-size:14px;margin:8px 0}}
+.pmf{{display:flex;gap:6px;overflow-x:auto;padding:4px 0 12px;scrollbar-width:none}} .pmf::-webkit-scrollbar{{display:none}}
+.pmf button{{flex:none;border:1px solid var(--line);background:#fff;border-radius:999px;padding:7px 12px;font:600 14px inherit;cursor:pointer;white-space:nowrap}} .pmf button.on{{background:#1f6f4a;color:#fff;border-color:#1f6f4a}}
 </style></head><body>
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{bar}</div></div>
 <div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}{art_link}</p>
@@ -1759,7 +1766,7 @@ def page_photomap(l, M=PM):
 <section><div id="pmap" role="img" aria-label="{t["h1"]}"></div>
 <div class="pmleg"><span><span class="pmn ev" style="display:inline-flex;width:14px;height:14px"></span> {t["ev"]}</span><span><span class="pmn gas" style="display:inline-flex;width:14px;height:14px"></span> {t["gas"]}</span></div>
 <p class="note">{(t["total"].format(km=round(sum(_legs))) + " · ") if _route else ""}{t["check"]} · ≈ {t["km"]}</p></section>
-<section><ol class="pmlist">{rows}</ol></section>
+<section>{_chips}<ol class="pmlist">{rows}</ol></section>
 <section class="prose">{"" if _route else f'<h2>{t["season_h"]}</h2><ul>{seasons}</ul>'}<h2>{t["tips_h"]}</h2><ul>{tips}</ul></section>
 <section>{arr_link(l, me) if M.__name__.split(".")[-1] in ARR.MAPS_FROM else ""}{cta_box(l, me)}</section>
 </main>
@@ -1767,8 +1774,9 @@ def page_photomap(l, M=PM):
 <script>
 (function(){{if(!window.L)return;var P={js};
 var m=L.map('pmap',{{scrollWheelZoom:false}});L.tileLayer('https://{{s}}.tile.openstreetmap.org/{{z}}/{{x}}/{{y}}.png',{{maxZoom:18,attribution:'&copy; OpenStreetMap'}}).addTo(m);
-var b=[];P.forEach(function(p){{var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]}})}}).addTo(m);
-k.bindPopup('<b>'+p.i+'. '+p.n+'</b><br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b+'<br><a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 {t["dir"]}</a> · <a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 {t["photo"]}</a>');b.push([p.lat,p.lng]);}});
+var b=[],K=[];P.forEach(function(p){{var c=p.ev?'#0f7a4f':'#c06a00';var k=L.marker([p.lat,p.lng],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:'+c+'">'+p.i+'</span>',iconSize:[26,26],iconAnchor:[13,13]}})}}).addTo(m);
+k.bindPopup('<b>'+p.i+'. '+p.n+'</b>'+(p.a?'<br>📮 '+p.a:'')+(p.k?'<br>🛵 '+p.k:'')+(p.t?'':'<br>{t["hours"]}: '+p.h+'<br>{t["best"]}: '+p.b)+'<br>'+(p.t?'<a href="tel:'+p.t.replace(/ /g,'')+'">📞 {CALL[l][0]} '+p.t+'</a><br><a href="https://www.google.com/maps/dir/?api=1&destination='+p.lat+','+p.lng+'" target=_blank rel=noopener>🧭 {DIR_SHORT.get(l, DIR_SHORT["en"])}</a> · ':'<a href='+JSON.stringify(p.g)+' target=_blank rel=noopener>📍 {t["dir"]}</a> · ')+'<a href='+JSON.stringify(p.p)+' target=_blank rel=noopener>📷 {t["photo"]}</a>');k._z=p.z;K.push(k);b.push([p.lat,p.lng]);}});
+document.querySelectorAll('.pmf button').forEach(function(x){{x.addEventListener('click',function(){{var z=x.dataset.z;document.querySelectorAll('.pmf button').forEach(function(y){{y.classList.toggle('on',y===x)}});document.querySelectorAll('.pmlist li').forEach(function(li){{li.style.display=(!z||li.dataset.z===z)?'':'none'}});var bb=[];K.forEach(function(k){{var v=!z||k._z===z;k.setOpacity(v?1:.15);if(v)bb.push(k.getLatLng())}});if(bb.length)m.fitBounds(bb,{{padding:[30,30],maxZoom:17}});}})}});
 L.marker([{LAT},{LON}],{{icon:L.divIcon({{className:'pmk',html:'<span style="background:#1a1a1a;width:auto;padding:0 8px;border-radius:12px">Van Phu</span>',iconSize:[70,26],iconAnchor:[35,13]}})}}).addTo(m).bindPopup('<b>{t["shop"]}</b><br><a href="{GMAPS}" target="_blank" rel="noopener">{t["dir"]} →</a>');
 {'L.polyline([['+str(LAT)+','+str(LON)+']].concat(b).concat([['+str(LAT)+','+str(LON)+']]),{color:\'#0f7a4f\',weight:3,opacity:.55,dashArray:\'6 8\'}).addTo(m);' if _route else ''}
 m.fitBounds(b,{{padding:[20,20]}});}})();
