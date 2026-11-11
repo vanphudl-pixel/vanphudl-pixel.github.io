@@ -23,6 +23,7 @@ YT = "https://www.youtube.com/@DalatMotorbikeRentalVanPhu"
 TG_CHANNEL = "https://t.me/dalat_life_vietnam"
 ZALO = "https://zalo.me/0944081101"
 TIKTOK = "https://www.tiktok.com/@bietthudalat"  # owner's TikTok channel about Da Lat villas (owner asked 2026-11-04 to show it on the site)
+NAVER_BLOG = "https://blog.naver.com/vanphu-dalat"  # owner's Korean Naver blog (owner asked 2026-11-11 to show it on the Korean pages)
 TT_LBL = {"vi": "villa Đà Lạt", "en": "Da Lat villas", "ru": "виллы в Далате", "zh": "大叻别墅", "ko": "달랏 빌라", "id": "vila di Da Lat"}
 WA2 = "https://wa.me/84834622149"
 TRIPADVISOR = "https://www.tripadvisor.com/Attraction_Review-g293922-d17622334-Reviews-Van_Phu_Dalat_Motorbike_Rental-Da_Lat_Lam_Dong_Province.html"
@@ -500,6 +501,8 @@ def contacts(l):
             ("✈️", f'<b>Telegram:</b> <a href="{TG}">@vanphudalat</a>')]
     if l == "ru":
         rows.append(("📢", f'<b>Telegram-канал:</b> <a href="{TG_CHANNEL}">@dalat_life_vietnam</a>'))
+    if l == "ko":
+        rows.append(("📝", f'<b>네이버 블로그:</b> <a href="{NAVER_BLOG}" target="_blank" rel="noopener">blog.naver.com/vanphu-dalat</a> (한국어 달랏 여행기)'))
     rows += [("🗨️", '<b>WeChat:</b> vanphudalat'),
              ("👍", '<b>Facebook:</b> <a href="https://www.facebook.com/vanphudalat">facebook.com/vanphudalat</a>'),
              ("▶️", f'<b>YouTube:</b> <a href="{YT}" target="_blank" rel="noopener">@DalatMotorbikeRentalVanPhu</a>'),
@@ -599,7 +602,7 @@ def business_ld(l, url):
             "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
             "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000. Vị trí thực tế: 1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
-            "sameAs": ["https://www.facebook.com/vanphudalat", YT, TIKTOK, TG, ZALO, TRIPADVISOR, YANDEX_ORG],
+            "sameAs": ["https://www.facebook.com/vanphudalat", YT, TIKTOK, NAVER_BLOG, TG, ZALO, TRIPADVISOR, YANDEX_ORG],
             "makesOffer": [{"@type": "Offer", "name": n, "price": "150000", "priceCurrency": "VND"}
                            for n in ["Honda Vision 110cc", "Honda Air Blade 125cc", h["electric_name"]]] + [{"@type": "Offer", "name": "Manual bike (Sirius FI, Wave RSX)", "price": "120000", "priceCurrency": "VND"}]}
 
@@ -610,7 +613,7 @@ PERSON_ID = BASE + "#phu"
 def person_ld():
     return {"@type": "Person", "@id": PERSON_ID, "name": "Ngô Văn Phú", "alternateName": "Phu", "jobTitle": "Owner",
             "image": f"{BASE}img/{AB.IMG}.jpg", "url": BASE + about_path("en"), "worksFor": {"@id": BASE + "#business"},
-            "knowsLanguage": ["vi", "en"], "sameAs": [YT, TIKTOK, "https://www.facebook.com/vanphudalat"]}
+            "knowsLanguage": ["vi", "en"], "sameAs": [YT, TIKTOK, NAVER_BLOG, "https://www.facebook.com/vanphudalat"]}
 def _owner_card(l, frm, cls, bold, txt, link):
     pre = "../" * frm.count("/")
     return (f'<div class="{cls}" style="display:flex;gap:14px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:14px;margin:24px 0">'
@@ -618,7 +621,10 @@ def _owner_card(l, frm, cls, bold, txt, link):
             f'<p style="margin:0"><b>{bold}</b> – {txt} <a href="{rel(frm, about_path(l))}">{link} →</a></p></div>')
 def author_box(l, frm):
     if l not in AB.LANGS: return ""
-    t = AB.T[l]; return _owner_card(l, frm, "author-box", t["author"], t["author_txt"], t["author_link"])
+    t = AB.T[l]; card = _owner_card(l, frm, "author-box", t["author"], t["author_txt"], t["author_link"])
+    if l == "ko":
+        card = card.replace(" →</a></p></div>", f' →</a> · <a href="{NAVER_BLOG}" target="_blank" rel="noopener">네이버 블로그 →</a></p></div>')
+    return card
 def meet_owner(l, frm):
     if l not in AB.LANGS: return ""
     t = AB.T[l]; return _owner_card(l, frm, "meet-owner", t["meet"], t["meet_txt"], t["meet_link"])
@@ -1285,6 +1291,10 @@ def page_xeso():
 write(XS_PATH, page_xeso())
 
 def villa_path(l): return VL.SLUG[l]
+NAVER_ABOUT = ('<h2>네이버 블로그</h2><p>네이버 블로그 <b>vanphu-dalat</b>에서도 한국어로 달랏 여행 이야기를 올리고 있습니다: '
+               '오토바이로 다니기 좋은 코스, 사진 명소, 카페와 맛집, 빌라·홈스테이 소개. 블로그에서 궁금한 점을 댓글로 남기셔도 직접 답변드립니다.</p>'
+               f'<p><a class="btn alt" href="{NAVER_BLOG}" target="_blank" rel="noopener" style="border:1px solid var(--line)">📝 네이버 블로그 보기 →</a></p>')
+
 def page_about(l):
     t, me = AB.T[l], about_path(l)
     pre = "../" * me.count("/")
@@ -1315,7 +1325,7 @@ def page_about(l):
  <section class="prose">{intro}
   <h2>{t["h_services"]}</h2><ul>{svc}</ul>
   <h2>{t["h_tt"]}</h2><p>{t["tt"]}</p><p><a class="btn alt" href="{rel(me, villa_path(l))}" style="border:1px solid var(--line)">🎵 {VL.T[l]["link_about"]} →</a></p>
-  <h2>{t["h_more"]}</h2><p>{t["more"]}</p>
+  <h2>{t["h_more"]}</h2><p>{t["more"]}</p>{NAVER_ABOUT if l == "ko" else ""}
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{C[l]["routes"]["h1"]} →</a> <a class="btn alt" href="{rel(me, pm_path(l))}" style="border:1px solid var(--line)">📍 {PM.T[l]["h1"]} →</a></p>
  </section>
  <section><h2>{t["h_contact"]}</h2>{contacts(l)}</section>
