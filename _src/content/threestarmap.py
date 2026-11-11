@@ -461,6 +461,11 @@ for _l in LANGS:
     t["center"] = t["center"].replace("1–8", f"1–{N}")
     t["season"] = [(a.replace("1–6", f"1–{NC}"), b) for a, b in t["season"]]
     assert f"1–{N}" in t["center"] and any(f"1–{NC}" in a for a, _ in t["season"]), _l
+for _l in LANGS:  # no PDF while it is hidden; reuse the new lead as description where no description was written
+    if _l in _LEAD and _l not in _DESC:
+        T[_l]["desc"] = _LEAD[_l]
+    T[_l]["desc"] = T[_l]["desc"].replace(" និង PDF ឥតគិតថ្លៃ", "").replace(" ແລະ PDF ຟຣີ", "").replace("၊ အကွာအဝေးနှင့် PDF အခမဲ့", "နှင့် အကွာအဝေး")
+    assert "PDF" not in T[_l]["desc"] + T[_l]["title"] + T[_l]["lead"], _l
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]
