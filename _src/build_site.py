@@ -599,7 +599,7 @@ def business_ld(l, url):
                                ["Free helmet", "Phone holder", "1 liter of fuel (gas scooters)", "Free hotel delivery in central Da Lat (2+ days)", "No cash deposit (passport or ID held)"]],
             "description": h["desc"], "url": BASE + home_path("en"), "image": BASE + "img/electric-row.jpg",
             "telephone": "+84944081101", "contactPoint": [{"@type": "ContactPoint", "telephone": t, "contactType": "customer service", "areaServed": "VN", "availableLanguage": ["Vietnamese", "English"]} for t in ("+84944081101", "+84834622149")], "priceRange": "120,000–150,000 VND",
-            "address": {"@type": "PostalAddress", "streetAddress": "1/15/5 Thông Thiên Học", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
+            "address": {"@type": "PostalAddress", "streetAddress": "Khu Quy Hoạch/L8 Đường Bùi Thị Xuân", "addressLocality": "Xuân Hương – Đà Lạt", "addressRegion": "Lâm Đồng", "postalCode": "670000", "addressCountry": "VN"},
             "disambiguatingDescription": "Địa chỉ mới: 1/15/5 Thông Thiên Học, Xuân Hương – Đà Lạt, Lâm Đồng. Địa chỉ trên Google Maps (cùng một cửa hàng): Khu Quy Hoạch/L8 Đường Bùi Thị Xuân, Xuân Hương - Đà Lạt, Lâm Đồng 670000. Vị trí thực tế: 1/15/5 Thông Thiên Học, Xuân Hương - Đà Lạt, Lâm Đồng 670000.",
             "geo": {"@type": "GeoCoordinates", "latitude": LAT, "longitude": LON}, "hasMap": GMAPS,
             "sameAs": ["https://www.facebook.com/vanphudalat", YT, TIKTOK, NAVER_BLOG, TG, ZALO, TRIPADVISOR, YANDEX_ORG],
@@ -667,9 +667,11 @@ def page_home(l):
         mp = f'<iframe class="map" src="{YA_WIDGET}" loading="lazy" title="Яндекс Карты" allowfullscreen></iframe><p class="note"><a href="{YANDEX_ORG_RU}" target="_blank" rel="noopener">Яндекс Карты</a> · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></p>'
     else:
         mp = f'<iframe class="map" src="https://maps.google.com/maps?q={LAT},{LON}&hl={l}&z=17&output=embed" loading="lazy" title="Google Maps"></iframe><p class="note"><a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a>' + (f' · <a href="{AMAP}" target="_blank" rel="noopener">高德地图</a>' if l == "zh" else "") + '</p>'
+    mp += (f'<p><a class="btn" href="{DIR_URL}" target="_blank" rel="noopener">🧭 {DIR_LBL.get(l, DIR_LBL["en"])}</a></p>'
+           + (f'<p class="note">{ENTRY_NOTE[l]}</p>' if l in ENTRY_NOTE else ""))
     imgs = [("electric-row", 1), ("airblade", 2), ("electric-helmets", 3), ("fleet-gas", 4), ("vision-white", 5), ("guest-1", 6), ("guest-2", 7)]
     galts = h.get("gallery_alts")
-    gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{galts[i-1] if galts else f"{alt} {i}"}" loading="lazy">' for n, i in imgs)
+    gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{galts[i-1] if galts else f"{alt} {i}"}" loading="lazy" {img_wh(n)}>' for n, i in imgs)
     cmp_sec = ""
     if h.get("compare"):
         hd = "".join(f"<th>{c}</th>" for c in h["compare_head"])
@@ -1086,8 +1088,61 @@ def add_nav(path, html):
     html = html[:j] + nav_html(l, path) + html[j:]
     return html.replace("</head>", NAV_CSS + "</head>", 1)
 
+# ---- Local SEO additions (owner asked 2026-11-11, from a Gemini checklist) ----
+DIR_URL = f"https://www.google.com/maps/dir/?api=1&destination={LAT},{LON}"
+DIR_LBL = {"vi": "Chỉ đường trên Google Maps", "en": "Directions on Google Maps", "ru": "Маршрут в Google Maps", "zh": "谷歌地图导航",
+  "ko": "구글 지도 길찾기", "ja": "Googleマップで経路", "th": "นำทางด้วย Google Maps", "id": "Petunjuk arah di Google Maps",
+  "ms": "Arah di Google Maps", "de": "Route in Google Maps", "fr": "Itinéraire sur Google Maps", "es": "Cómo llegar en Google Maps",
+  "he": "ניווט ב-Google Maps", "it": "Indicazioni su Google Maps", "nl": "Route in Google Maps", "km": "ផ្លូវទៅលើ Google Maps",
+  "lo": "ເສັ້ນທາງໃນ Google Maps", "my": "Google Maps လမ်းညွှန်"}
+DIR_SHORT = {"vi": "Chỉ đường", "en": "Directions", "ru": "Маршрут", "zh": "导航", "ko": "길찾기", "ja": "経路", "th": "นำทาง", "id": "Arah",
+  "ms": "Arah", "de": "Route", "fr": "Itinéraire", "es": "Cómo llegar", "he": "ניווט", "it": "Indicazioni", "nl": "Route", "km": "ផ្លូវ",
+  "lo": "ເສັ້ນທາງ", "my": "လမ်းညွှန်"}
+ENTRY_NOTE = {
+ "vi": "Lối vào cửa hàng ở hẻm 1/15/5 Thông Thiên Học (thông ra Khu Quy Hoạch Bùi Thị Xuân). Đặt Grab đến hẻm 1/15/5 Thông Thiên Học hoặc đi theo định vị Google Maps đều đến đúng cửa hàng.",
+ "en": "The shop entrance is in the alley at 1/15/5 Thông Thiên Học (it connects to the Bùi Thị Xuân residential area). Book a Grab to 1/15/5 Thông Thiên Học or follow the Google Maps pin — both bring you to the right door.",
+ "ru": "Вход в мастерскую — в переулке 1/15/5 Thông Thiên Học (он выходит к жилому кварталу Bùi Thị Xuân). Закажите Grab до 1/15/5 Thông Thiên Học или едьте по метке Google Maps — оба варианта приведут к нам.",
+ "zh": "店铺入口在 Thông Thiên Học 路 1/15/5 号小巷（与 Bùi Thị Xuân 住宅区相通）。叫 Grab 到 1/15/5 Thông Thiên Học，或按谷歌地图定位走，都能到店。",
+ "ko": "가게 입구는 Thông Thiên Học 1/15/5 골목에 있습니다(Bùi Thị Xuân 주택가와 이어짐). Grab 목적지를 1/15/5 Thông Thiên Học으로 하거나 구글 지도 위치를 따라오시면 됩니다.",
+ "id": "Pintu masuk toko ada di gang 1/15/5 Thông Thiên Học (tembus ke kompleks perumahan Bùi Thị Xuân). Pesan Grab ke 1/15/5 Thông Thiên Học atau ikuti titik Google Maps — keduanya sampai ke toko.",
+}
+_WH = {}
+def img_wh(name):
+    if name not in _WH:
+        try:
+            from PIL import Image
+            with Image.open(OUT / "img" / f"{name}.jpg") as im: _WH[name] = f'width="{im.width}" height="{im.height}"'
+        except Exception:
+            _WH[name] = ""
+    return _WH[name]
+GEO_META = (f'<meta name="geo.region" content="VN-35">\n<meta name="geo.placename" content="Da Lat">\n'
+            f'<meta name="geo.position" content="{LAT};{LON}">\n<meta name="ICBM" content="{LAT}, {LON}">\n')
+MBAR_CSS = ('<style>.mbar{display:none}@media(max-width:720px){.float{display:none!important}'
+            '.mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:50;background:#fff;border-top:1px solid #dfe7e2;box-shadow:0 -4px 14px rgba(0,0,0,.08);padding:6px 6px calc(6px + env(safe-area-inset-bottom))}'
+            '.mbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:#173d2d;font-size:12px;font-weight:700;padding:6px 2px;border-radius:10px}'
+            '.mbar a i{font-style:normal;font-size:20px;line-height:1}.mbar a.p{background:#e9f3ee}}</style>')
+def mbar_html(l):
+    items = [(TEL, "📞", CALL[l][0], "")]
+    if l == "vi": items.append((ZALO, "💬", "Zalo", " p"))
+    elif l == "ru": items.append((TG, "✈️", "Telegram", " p"))
+    items.append((wa_link(l), "🟢", "WhatsApp", "" if l in ("vi", "ru") else " p"))
+    items.append((DIR_URL, "🧭", DIR_SHORT.get(l, DIR_SHORT["en"]), ""))
+    out = "".join(f'<a class="{c.strip()}" href="{h}"{"" if h == TEL else " target=" + chr(34) + "_blank" + chr(34) + " rel=" + chr(34) + "noopener" + chr(34)}><i>{ic}</i>{x}</a>' for h, ic, x, c in items)
+    return f'<nav class="mbar" aria-label="Contact">{out}</nav>'
+def add_local(html):
+    if 'http-equiv="refresh"' in html: return html
+    if 'name="geo.position"' not in html:
+        html = html.replace("</head>", GEO_META + "</head>", 1)
+    if 'class="float' in html and 'class="mbar"' not in html:
+        m = re.search(r'<html lang="([a-z]+)"', html); l = m.group(1) if m and m.group(1) in C else "en"
+        html = html.replace("</head>", MBAR_CSS + "</head>", 1)
+        i = html.rfind("</body>")
+        if i > 0: html = html[:i] + mbar_html(l) + "\n" + html[i:]
+    return html
+
 def write(path, html):
     html = add_nav(path, html)
+    html = add_local(html)
     html = add_pwa(add_csp(add_ga(speed(add_ld(path, html)))))
     p = OUT / path / "index.html"
     p.parent.mkdir(parents=True, exist_ok=True)
