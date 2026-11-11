@@ -667,7 +667,7 @@ def page_home(l):
         mp = f'<iframe class="map" src="{YA_WIDGET}" loading="lazy" title="Яндекс Карты" allowfullscreen></iframe><p class="note"><a href="{YANDEX_ORG_RU}" target="_blank" rel="noopener">Яндекс Карты</a> · <a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a></p>'
     else:
         mp = f'<iframe class="map" src="https://maps.google.com/maps?q={LAT},{LON}&hl={l}&z=17&output=embed" loading="lazy" title="Google Maps"></iframe><p class="note"><a href="{GMAPS}" target="_blank" rel="noopener">Google Maps</a>' + (f' · <a href="{AMAP}" target="_blank" rel="noopener">高德地图</a>' if l == "zh" else "") + '</p>'
-    mp += (f'<p><a class="btn" href="{DIR_URL}" target="_blank" rel="noopener">🧭 {DIR_LBL.get(l, DIR_LBL["en"])}</a></p>'
+    mp += (f'<p><a class="btn" href="{DIR_URL}" target="_blank" rel="noopener" style="background:#1f6f4a;color:#fff">🧭 {DIR_LBL.get(l, DIR_LBL["en"])}</a></p>'
            + (f'<p class="note">{ENTRY_NOTE[l]}</p>' if l in ENTRY_NOTE else ""))
     imgs = [("electric-row", 1), ("airblade", 2), ("electric-helmets", 3), ("fleet-gas", 4), ("vision-white", 5), ("guest-1", 6), ("guest-2", 7)]
     galts = h.get("gallery_alts")
