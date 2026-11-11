@@ -145,6 +145,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-10 lt-included — Long-tail: what's included in a motorbike rental (vi "thuê xe máy Đà Lạt bao gồm những gì", en "what's included in a motorbike rental in Da Lat", ru "что входит в аренду байка в Далате", zh "大叻租摩托车包含什么", ko "달랏 오토바이 렌트 포함 사항", id "sewa motor Da Lat sudah termasuk apa saja"; included vs paid yourself (fuel, swaps, gửi xe, tickets); links price, lt-delivery, lt-documents, lt-checklist; photos honda-air-blade-vision-fleet-van-phu + guest-white-honda-vision-van-phu-shop + honda-vision-hotel-delivery-dalat; cluster procedure; 6 languages)
 - 2026-11-10 lt-ev-flowers — EV long-tail: flower spots near the centre by electric scooter (city flower garden, Van Thanh, Domaine de Marie, Thai Phien; far farms → Air Blade; no km figure (links lt-ev-battery); vi "xe máy điện đi ngắm hoa Đà Lạt", en "flower spots in Da Lat by electric scooter", ru "цветы Далата на электроскутере", zh "骑电动车大叻赏花", ko "전기 스쿠터로 달랏 꽃 명소", id "spot bunga Da Lat naik motor listrik"; links lt-ev-lake, domainedemarie, flowers, lt-ev-battery, evrules; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 6 languages)
 
+- 2026-11-11 solo — Da Lat for solo travellers (stay in centre/hostels, getting around, eating alone, meeting people, safety, 2–3 day plan; en "Da Lat for solo travellers", vi "du lịch Đà Lạt một mình", ru "Далат в одиночку", zh "一个人去大叻旅行", ko "달랏 혼자 여행", id "liburan sendirian ke Da Lat"; links where-to-stay, nightmarket, food, riding, oneday, cloudhunt, routes; photos white-honda-vision-sidewalk-dalat + honda-vision-cafe-garden-dalat; cluster location; 6 languages)
+- 2026-11-11 lt-navigation — Long-tail: navigating by motorbike with Google Maps (phone holder, offline map, pins, steep alleys, rain, getting lost; vi "đi xe máy ở Đà Lạt dùng Google Maps", en "navigating Da Lat by motorbike with Google Maps", ru "навигация на байке в Далате", zh "大叻骑摩托车导航", ko "달랏 오토바이 구글맵 길찾기", id "navigasi naik motor di Da Lat pakai Google Maps"; links routes, parking-fuel, phrases, lt-breakdown; photos friends-air-blade-van-phu-gate + honda-vision-bui-thi-xuan-street-dalat; cluster procedure; 6 languages)
+- 2026-11-11 lt-ev-luggage — EV long-tail: carrying bags on an electric scooter (what fits, no suitcases → Grab/hotel delivery 2+ days, <140 kg, market shopping, rain; no km figure (links lt-ev-battery); vi "xe máy điện chở đồ ở Đà Lạt", en "carrying bags on an electric scooter in Da Lat", ru "багаж на электроскутере в Далате", zh "大叻骑电动车带行李", ko "달랏 전기 스쿠터 짐 싣기", id "bawa tas naik motor listrik di Da Lat"; links lt-ev-market, lt-ev-parking, lt-ev-battery, evrules; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -160,11 +164,20 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-navigation — Finding your way on a rental bike: Google Maps with the phone holder, map pins, offline maps
 - [ ] lt-solo-female — Motorbike rental in Da Lat for solo female travellers (timing, safe parking, staying in touch with the shop)
 - [ ] lt-waterfalls-rent — Renting a motorbike to visit the waterfalls near Da Lat (which bike, loops; link waterfalls + waterfalls map, not duplicate them)
 - [ ] lt-photoshoot — Renting a scooter for a photo shoot or couple photos in Da Lat (which bike, parking at photo spots, early light)
 - [ ] lt-weekend — Motorbike rental in Da Lat for the weekend (busy Saturdays: book ahead; link lt-2days, not duplicate it)
+- [ ] lt-nightride — Riding a rental motorbike in Da Lat after dark (lights, mist, cold, return by 21:00; not the EV-night article)
+- [ ] lt-airport — Renting a motorbike after landing at Lien Khuong Airport (how to reach the shop/hotel first; never promise airport delivery)
+- [ ] lt-language — Renting a motorbike in Da Lat without speaking Vietnamese (messaging in English, translation apps; link phrases)
+- [ ] lt-damage — What happens if a rental bike gets scratched or damaged (pick-up video, message first; no invented fees)
+- [ ] lt-weather-check — Checking weather and road conditions before a day ride from Da Lat (rain, fog, closed roads; link weather)
+- [ ] lt-sunset-ride — Renting a scooter for a sunset ride (Tuyen Lam, view cafés; riding back in the dark, return by 21:00)
+- [ ] lt-tuyenlam-rent — Renting a motorbike to visit Tuyen Lam Lake (which bike, parking; link tuyenlam, not duplicate it)
+- [ ] lt-langbiang-rent — Renting a motorbike to reach Lang Biang (Air Blade, no EV, fuel; link langbiang, not duplicate it)
+- [ ] lt-helmet — Helmets with your rental: getting a good fit, chin strap, two helmets for two riders, rain visor
+- [ ] lt-short-ride — Renting a motorbike for just a few hours in Da Lat (honest: fixed 150,000 VND/day, rental day until 21:00)
 
 ## Photos — owner's real photos (use them in every new article)
 - Library: `img/<name>.jpg` (EXIF/GPS stripped, ≤1200 px, ~150–240 KB; the build serves WebP copies of ~20–75 KB automatically). Alt texts in all languages: `content/photos.py` ALT[lang][name].
@@ -175,7 +188,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-luggage — Carrying bags on an electric scooter in Da Lat (backpacks, shopping, what fits under the seat; no suitcases)
 - [ ] lt-ev-cold — Electric scooter in Da Lat's cool weather: what to wear (jacket, gloves, rain gear, cold mornings)
 - [ ] lt-ev-1day — Renting an electric scooter for one full day: a city day plan with one battery swap at the shop (not halfday/weekend)
 - [ ] lt-ev-week — Electric scooter for a week or longer in Da Lat: daily battery-swap routine, extending, when to switch to Air Blade
@@ -189,7 +201,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 09/11 solo — Da Lat for solo travellers
 - [ ] 10/11 vegetarian — Vegetarian and vegan food in Da Lat
 - [ ] 11/11 souvenirs — What to buy in Da Lat: local souvenirs and specialties
 - [ ] 12/11 december — Da Lat in December & the Flower Festival (tell readers to check official festival dates; never invent dates)
