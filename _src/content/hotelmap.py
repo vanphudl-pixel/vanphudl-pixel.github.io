@@ -232,6 +232,140 @@ T["he"] = _mk("מלונות 5 כוכבים בדלאט: מפה של 8 מלונו�
 
 from content._langs import inject as _inject
 _inject(T, __name__)
+
+# ===== 2026-11-12: owner sent a list of 9 five-star hotels/resorts (hotels_5star_dalat.json), checked on Google Maps the same day.
+# Added: Golden Sun, Grand Mercure Dalat (owner confirms 5-star), Binh An Village. Kept Swiss-Belresort and Tea Resort Prenn
+# (already on the page, not in the list). Coordinates, phones and addresses from Google Maps (the list's Binh An point was ~1 km off).
+# The PDF still shows the first 8, so it is hidden until redrawn.
+_OLD = {x[0]: x for x in SPOTS}
+SPOTS = [
+    _OLD["dalatpalace"],
+    ("goldensun",    11.9379193, 108.4465365, "ChIJG9-FB78TcTERTO7DU33kHvE", True, "24h"),
+    _OLD["merperle"],
+    ("grandmercure", 11.9451708, 108.4594399, "ChIJP6Esk3sTcTERx5XZn19lUx0", True, "24h"),
+    _OLD["imperial"], _OLD["anamandara"], _OLD["ladalat"],
+    _OLD["swissbel"], _OLD["edensee"],
+    ("binhan",       11.8877595, 108.4176396, "ChIJRZmEBEZrcTERIkUn7yHrWQA", False, "24h"),
+    _OLD["teaprenn"],
+]
+N = len(SPOTS); NT = 7
+PDF = None
+PHONE = {"dalatpalace": "+84 263 3825 444", "goldensun": "+84 263 3939 939", "merperle": "+84 263 3553 789", "grandmercure": "+84 263 3810 826",
+         "imperial": "+84 263 3626 626", "anamandara": "+84 263 3555 888", "ladalat": "+84 965 118 118", "swissbel": "+84 263 3800 800",
+         "edensee": "+84 263 3831 515", "binhan": "+84 263 3800 999", "teaprenn": "+84 944 391 616"}
+ADDR = {"dalatpalace": "2 Trần Phú", "goldensun": "1 Bà Huyện Thanh Quan", "merperle": "1 Hùng Vương", "grandmercure": "03 Nguyễn Du",
+        "imperial": "57–59 Hùng Vương", "anamandara": "2 Lê Lai", "ladalat": "106A Mai Anh Đào", "swissbel": "Số 7 & 8, KDL hồ Tuyền Lâm",
+        "edensee": "Khu VII.2, KDL hồ Tuyền Lâm", "binhan": "KDL hồ Tuyền Lâm", "teaprenn": "Chân đèo Prenn"}
+AREA = {**{k: "center" for k in ("dalatpalace", "goldensun", "merperle", "grandmercure", "imperial")},
+        **{k: "nature" for k in ("anamandara", "ladalat", "swissbel", "edensee", "binhan", "teaprenn")}}
+_AL = {  # all, centre & Hung Vuong, Tuyen Lam Lake & pine hills, "to Van Phu"
+ "vi": ("Tất cả", "Trung tâm & Hùng Vương", "Hồ Tuyền Lâm & Đồi thông", "đến Văn Phú"),
+ "en": ("All", "Centre & Hung Vuong", "Tuyen Lam Lake & pine hills", "to Van Phu"),
+ "ru": ("Все", "Центр и Хунгвыонг", "Озеро Туйенлам и сосновые холмы", "до Van Phu"),
+ "zh": ("全部", "市中心和雄王路", "宣林湖和松林山丘", "到 Van Phu"),
+ "ko": ("전체", "시내 & 훙브엉", "뚜옌럼 호수 & 소나무 언덕", "Van Phu까지"),
+ "ja": ("すべて", "中心部・フンヴオン通り", "トゥエンラム湖・松林の丘", "Van Phuまで"),
+ "th": ("ทั้งหมด", "ใจกลางเมือง & หุ่งเวือง", "ทะเลสาบเตวียนเลิม & เนินสน", "ถึง Van Phu"),
+ "id": ("Semua", "Pusat kota & Hung Vuong", "Danau Tuyen Lam & bukit pinus", "ke Van Phu"),
+ "ms": ("Semua", "Pusat bandar & Hung Vuong", "Tasik Tuyen Lam & bukit pain", "ke Van Phu"),
+ "de": ("Alle", "Zentrum & Hung Vuong", "Tuyen-Lam-See & Kiefernhügel", "bis Van Phu"),
+ "fr": ("Tous", "Centre & Hung Vuong", "Lac Tuyen Lam & collines de pins", "jusqu'à Van Phu"),
+ "es": ("Todos", "Centro y Hung Vuong", "Lago Tuyen Lam y colinas de pinos", "hasta Van Phu"),
+ "he": ("הכול", "מרכז והונג וואנג", "אגם טויין לאם וגבעות האורנים", "עד Van Phu"),
+ "it": ("Tutti", "Centro e Hung Vuong", "Lago Tuyen Lam e colline di pini", "fino a Van Phu"),
+ "nl": ("Alle", "Centrum & Hung Vuong", "Tuyen Lam-meer & dennenheuvels", "tot Van Phu"),
+ "km": ("ទាំងអស់", "ទីក្រុង & Hùng Vương", "បឹង Tuyền Lâm & ភ្នំស្រល់", "ដល់ Van Phu"),
+ "lo": ("ທັງໝົດ", "ໃຈກາງເມືອງ & Hùng Vương", "ທະເລສາບ Tuyền Lâm & ພູແປກ", "ຫາ Van Phu"),
+ "my": ("အားလုံး", "မြို့လယ် & Hùng Vương", "Tuyền Lâm ကန် & ထင်းရှူးတောင်", "Van Phu သို့"),
+}
+def areas(l):
+    a = _AL.get(l, _AL["en"]); return [("", a[0]), ("center", a[1]), ("nature", a[2])]
+def toshop(l): return _AL.get(l, _AL["en"])[3]
+
+_NEW = ["goldensun", "grandmercure", "binhan"]
+_NAME = {"goldensun": "Golden Sun Hotel – Dalat", "grandmercure": "Grand Mercure Dalat", "binhan": "Binh An Village Dalat Resort"}
+_D = {
+ "en": ["Hotel by Lam Vien Square and Xuan Huong Lake, with a spa, indoor pool and rooftop bar.",
+        "Hotel with French-style buildings and large flower gardens on Nguyen Du Street, near Da Lat Railway Station.",
+        "Small resort of vintage-style houses and gardens above Tuyen Lam Lake, about 9 km from the centre."],
+ "vi": ["Khách sạn cạnh quảng trường Lâm Viên và hồ Xuân Hương, có spa, hồ bơi trong nhà và bar sân thượng.",
+        "Khách sạn phong cách Pháp, vườn hoa rộng trên đường Nguyễn Du, gần ga Đà Lạt.",
+        "Resort nhỏ gồm những ngôi nhà kiểu xưa và vườn hoa trên đồi bên hồ Tuyền Lâm, cách trung tâm khoảng 9 km."],
+ "zh": ["靠近林园广场和春香湖的酒店，有水疗、室内泳池和屋顶酒吧。",
+        "阮攸路上法式建筑、大花园的酒店，靠近大叻火车站。",
+        "宣林湖畔山坡上的小型度假村，复古小屋和花园，距市中心约 9 公里。"],
+ "ru": ["Отель у площади Ламвьен и озера Суанхыонг: спа, крытый бассейн и бар на крыше.",
+        "Отель во французском стиле с большими цветочными садами на улице Нгуен Зу, рядом с вокзалом Далата.",
+        "Небольшой курорт из домиков в старинном стиле с садами над озером Туйенлам, около 9 км от центра."],
+ "ko": ["럼비엔 광장과 쑤언흐엉 호수 옆 호텔, 스파·실내 수영장·루프톱 바가 있음.",
+        "응우옌주 거리의 프랑스풍 건물과 넓은 꽃정원이 있는 호텔, 달랏 기차역 근처.",
+        "뚜옌럼 호수 위 언덕의 옛날풍 집과 정원으로 된 작은 리조트, 시내에서 약 9km."],
+ "id": ["Hotel di dekat Lapangan Lam Vien dan Danau Xuan Huong, dengan spa, kolam renang dalam ruangan dan bar atap.",
+        "Hotel bergaya Prancis dengan taman bunga luas di Jalan Nguyen Du, dekat Stasiun Kereta Da Lat.",
+        "Resor kecil berisi rumah bergaya klasik dan taman di atas Danau Tuyen Lam, sekitar 9 km dari pusat kota."],
+}
+_TPL = {"ja": "{s}のホテル。", "th": "โรงแรมที่ {s}", "ms": "Hotel di {s}.", "de": "Hotel an der {s}.", "fr": "Hôtel {s}.",
+        "es": "Hotel en {s}.", "he": "מלון ב-{s}.", "it": "Hotel in {s}.", "nl": "Hotel aan {s}.", "km": "សណ្ឋាគារនៅ {s}",
+        "lo": "ໂຮງແຮມຢູ່ {s}", "my": "{s} ရှိ ဟိုတယ်"}
+_PLACE = {"goldensun": "Bà Huyện Thanh Quan", "grandmercure": "Nguyễn Du", "binhan": "Tuyền Lâm"}
+_DEL = {"vi": "Khách lưu trú tại các khách sạn 5 sao trung tâm Đà Lạt (Dalat Palace, MerPerle, Golden Sun, Grand Mercure...) được Văn Phú hỗ trợ giao xe máy tận nơi miễn phí khi thuê từ 2 ngày.",
+        "en": "Staying at a 5-star hotel in central Da Lat (Dalat Palace, MerPerle, Golden Sun, Grand Mercure…)? Van Phu delivers your scooter to the hotel for free on rentals of 2 days or more.",
+        "zh": "入住大叻市中心五星级酒店（大叻皇宫、MerPerle、Golden Sun、Grand Mercure 等）的客人，租车 2 天以上，Van Phu 免费送车到酒店。",
+        "ru": "Живёте в 5-звёздочном отеле в центре Далата (Dalat Palace, MerPerle, Golden Sun, Grand Mercure…)? При аренде от 2 дней Van Phu бесплатно доставит байк к отелю.",
+        "ko": "달랏 시내 5성급 호텔(Dalat Palace, MerPerle, Golden Sun, Grand Mercure 등)에 묵으신다면, 2일 이상 렌탈 시 Van Phu가 호텔까지 무료로 오토바이를 배달해 드립니다.",
+        "id": "Menginap di hotel bintang 5 di pusat Da Lat (Dalat Palace, MerPerle, Golden Sun, Grand Mercure…)? Van Phu mengantar motor gratis ke hotel untuk sewa 2 hari atau lebih."}
+_LEAD = {
+ "vi": f"{N} khách sạn và resort 5 sao ở Đà Lạt: {NT} nơi trong thành phố và {N - NT} resort ven hồ Tuyền Lâm, đèo Prenn — có số điện thoại, khoảng cách tới tiệm Văn Phú và nút chỉ đường. " + _DEL["vi"],
+ "en": f"{N} hotels and resorts listed as 5-star in Da Lat: {NT} in town and {N - NT} by Tuyen Lam Lake and Prenn Pass — with phone numbers, distance to our shop and one-tap directions. " + _DEL["en"],
+ "zh": f"大叻 {N} 家五星级酒店和度假村：市区 {NT} 家，宣林湖和普连山口 {N - NT} 家——附电话、到 Van Phu 店的距离和一键导航。" + _DEL["zh"],
+ "ru": f"{N} отелей и курортов 5 звёзд в Далате: {NT} в городе и {N - NT} у озера Туйенлам и перевала Пренн — с телефонами, расстоянием до нашей мастерской и маршрутом в одно касание. " + _DEL["ru"],
+ "ko": f"달랏의 5성급 호텔·리조트 {N}곳: 시내 {NT}곳과 뚜옌럼 호수·쁘렌 고개 {N - NT}곳 — 전화번호, Van Phu 가게까지 거리, 원터치 길찾기 포함. " + _DEL["ko"],
+ "id": f"{N} hotel dan resor bintang 5 di Da Lat: {NT} di kota dan {N - NT} di Danau Tuyen Lam dan Celah Prenn — lengkap dengan nomor telepon, jarak ke toko kami dan petunjuk arah sekali ketuk. " + _DEL["id"],
+ "ja": f"ダラットの5つ星ホテル・リゾート{N}軒：市内{NT}軒とトゥエンラム湖・プレン峠{N - NT}軒。電話番号、Van Phuまでの距離、ワンタップのルート案内付き。",
+ "th": f"โรงแรมและรีสอร์ต 5 ดาว {N} แห่งในดาลัด: ในเมือง {NT} แห่ง และริมทะเลสาบเตวียนเลิมกับช่องเขาเปรน {N - NT} แห่ง พร้อมเบอร์โทร ระยะทางถึงร้าน Van Phu และปุ่มนำทาง",
+ "ms": f"{N} hotel dan resort 5 bintang di Da Lat: {NT} di bandar dan {N - NT} di Tasik Tuyen Lam dan Laluan Prenn — dengan nombor telefon, jarak ke kedai kami dan arah satu ketikan.",
+ "de": f"{N} Hotels und Resorts mit 5 Sternen in Da Lat: {NT} in der Stadt und {N - NT} am Tuyen-Lam-See und am Prenn-Pass — mit Telefonnummer, Entfernung zu unserem Laden und Route per Fingertipp.",
+ "fr": f"{N} hôtels et resorts 5 étoiles à Da Lat : {NT} en ville et {N - NT} au lac Tuyen Lam et au col de Prenn — avec téléphone, distance jusqu'à notre boutique et itinéraire en un clic.",
+ "es": f"{N} hoteles y resorts de 5 estrellas en Da Lat: {NT} en la ciudad y {N - NT} junto al lago Tuyen Lam y el paso de Prenn — con teléfono, distancia a nuestra tienda y ruta en un toque.",
+ "he": f"{N} מלונות ואתרי נופש בדירוג 5 כוכבים בדלאט: {NT} בעיר ו-{N - NT} ליד אגם טויין לאם ומעבר פרן — עם מספרי טלפון, מרחק לחנות שלנו וניווט בלחיצה אחת.",
+ "it": f"{N} hotel e resort 5 stelle a Da Lat: {NT} in città e {N - NT} sul lago Tuyen Lam e al passo di Prenn — con telefono, distanza dal nostro negozio e indicazioni con un tocco.",
+ "nl": f"{N} hotels en resorts met 5 sterren in Da Lat: {NT} in de stad en {N - NT} aan het Tuyen Lam-meer en de Prenn-pas — met telefoonnummer, afstand tot onze winkel en route met één tik.",
+}
+_TITLE = {"en": f"5-Star Hotels in Da Lat: Map of {N} Hotels & Resorts | Van Phu",
+          "vi": f"Khách sạn 5 sao Đà Lạt: bản đồ {N} khách sạn và resort, có số điện thoại | Văn Phú",
+          "zh": f"大叻五星级酒店：{N} 家酒店与度假村地图（附电话） | Van Phu",
+          "ru": f"Отели 5 звёзд в Далате: карта {N} отелей и курортов | Van Phu",
+          "ko": f"달랏 5성급 호텔: 호텔·리조트 {N}곳 지도 | Van Phu",
+          "id": f"Hotel Bintang 5 di Da Lat: Peta {N} Hotel & Resor | Van Phu"}
+_DESC = {"en": f"Map of {N} 5-star hotels and resorts in Da Lat — in town by Xuan Huong Lake and Hung Vuong, and by Tuyen Lam Lake — with phone numbers, distance to Van Phu and directions.",
+         "vi": f"Bản đồ {N} khách sạn và resort 5 sao Đà Lạt — trung tâm hồ Xuân Hương, Hùng Vương và ven hồ Tuyền Lâm — có số điện thoại, khoảng cách tới Văn Phú và chỉ đường.",
+         "zh": f"大叻 {N} 家五星级酒店和度假村地图——春香湖、雄王路一带和宣林湖边——附电话、到 Van Phu 的距离和导航。",
+         "ru": f"Карта {N} отелей и курортов 5 звёзд в Далате — у озера Суанхыонг, на Хунгвыонг и у озера Туйенлам — с телефонами, расстоянием до Van Phu и маршрутом.",
+         "ko": f"달랏 5성급 호텔·리조트 {N}곳 지도 — 쑤언흐엉 호수·훙브엉 거리와 뚜옌럼 호숫가 — 전화번호, Van Phu까지 거리, 길찾기.",
+         "id": f"Peta {N} hotel dan resor bintang 5 di Da Lat — dekat Danau Xuan Huong, Jalan Hung Vuong dan Danau Tuyen Lam — dengan nomor telepon, jarak ke Van Phu dan petunjuk arah."}
+_KLM = {"km": [("5 ក្នុងទីក្រុង", f"{NT} ក្នុងទីក្រុង"), ("3 នៅបឹង", f"{N - NT} នៅបឹង")],
+        "lo": [("5 ແຫ່ງໃນເມືອງ", f"{NT} ແຫ່ງໃນເມືອງ"), ("3 ແຫ່ງຢູ່ທະເລສາບ", f"{N - NT} ແຫ່ງຢູ່ທະເລສາບ")],
+        "my": [("မြို့တွင်း 5 ခု", f"မြို့တွင်း {NT} ခု"), ("Prenn ချိုင့်ဝှမ်းရှိ 3 ခု", f"Prenn ချိုင့်ဝှမ်းရှိ {N - NT} ခု")]}
+import re as _re
+for _l in LANGS:
+    t = T[_l]; anytime = t["s"]["dalatpalace"][1]
+    for i, sid in enumerate(_NEW):
+        t["s"][sid] = (_NAME[sid], anytime, _D[_l][i] if _l in _D else _TPL[_l].format(s=_PLACE[sid]))
+    t["title"] = _TITLE.get(_l) or _re.sub(r"(?<!\d)8(?!\d)", str(N), t["title"])
+    if _l in _LEAD:
+        t["lead"] = _LEAD[_l]
+        t["desc"] = _DESC.get(_l, _LEAD[_l])
+    else:
+        ld = _re.sub(r"(?<!\d)8(?!\d)", str(N), t["lead"])
+        for a, b in _KLM[_l]:
+            assert a in ld, (_l, a); ld = ld.replace(a, b)
+        t["lead"] = ld
+        t["desc"] = (_re.sub(r"(?<!\d)8(?!\d)", str(N), t["desc"]).replace(" និង PDF ឥតគិតថ្លៃ", "").replace(" ແລະ PDF ຟຣີ", "")
+                     .replace("၊ အကွာအဝေးနှင့် PDF အခမဲ့", "နှင့် အကွာအဝေး"))
+    t["center"] = t["center"].replace("1–5", f"1–{NT}")
+    t["season"] = [(a.replace("6–8", f"{NT + 1}–{N}"), b) for a, b in t["season"]]
+    assert f"1–{NT}" in t["center"] and any(f"{NT + 1}–{N}" in a for a, _ in t["season"]), _l
+    assert "PDF" not in t["desc"] + t["title"] + t["lead"], _l
 for _l in LANGS:
     for _k in SHARED:
         T[_l][_k] = _PM.T[_l][_k]
@@ -240,6 +374,7 @@ for _l in LANGS:
 _Q = {"dalatpalace": "Dalat Palace Heritage Hotel", "merperle": "MerPerle Dalat Hotel", "imperial": "Best Western Premier Imperial Dalat",
       "anamandara": "Ana Mandara Villas Dalat", "ladalat": "Ladalat Hotel", "swissbel": "Swiss-Belresort Tuyen Lam",
       "edensee": "Dalat Edensee Lake Resort", "teaprenn": "Tea Resort Prenn"}
+_Q.update(_NAME)
 def img_link(sid):
     """Temporary photo link: Google Images search for the hotel name."""
     from urllib.parse import quote

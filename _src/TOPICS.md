@@ -232,3 +232,4 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 
 - 3-star hotels map (threestarmap.py) expanded 2026-11-11 to 23 hotels from the owner's list, every entry re-checked on Google Maps (coords/phone/address). Hotel-map extras in page_photomap, used only when the module defines them: PHONE, ADDR (call + directions buttons, address), toshop() (distance to the shop), AREA + areas() (filter chips). PDF hidden (old PDF has 8 hotels) until redrawn.
 - 4-star hotels map (fourstarmap.py) expanded 2026-11-11 to 16 (owner list checked on Google Maps; 5-star-map hotels and Grand Mercure left out). Same hotel-map extras as the 3-star map; PDF hidden until redrawn.
+- 5-star hotels map (hotelmap.py) expanded 2026-11-12 to 11 (owner list checked on Google Maps: + Golden Sun, Grand Mercure, Binh An). Filters: centre & Hung Vuong / Tuyen Lam & pine hills. PDF hidden until redrawn.
