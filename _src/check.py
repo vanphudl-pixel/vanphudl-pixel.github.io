@@ -70,9 +70,31 @@ for _PN in ("licence", "arrive", "routeshub"):
       if '"' in t.get("title", "") + t.get("desc", ""):
           problems.append(f"{_PN}/{l}: ASCII quote in title/desc breaks the meta tag")
 
+# core pages (rental home, electric scooter page) in the 6 focus languages: meta description <= 160 characters (audit 2026-11-12)
+_ST = importlib.import_module("content.seo_titles")
+for _blk in ("HOME", "EV"):
+    for _l in ("vi", "en", "ru", "zh", "ko", "id"):
+        if len(getattr(_ST, _blk)[_l][1]) > 160:
+            problems.append(f"seo_titles {_blk}/{_l}: meta description longer than 160 characters")
 # every page: internal links and images must exist
 pages = list(ROOT.rglob("index.html"))
 pages = [p for p in pages if "_src" not in p.parts]
+# Audit 2026-11-12 (owner approved): built-page rules
+_NOIDX = {BASE + str(p.parent.relative_to(ROOT)).replace("\\", "/").strip(".").lstrip("/") + ("/" if str(p.parent.relative_to(ROOT)) != "." else "")
+          for p in pages if 'name="robots" content="noindex"' in p.read_text(encoding="utf-8")}
+_OLD_LOAD = re.compile(r'(?<![\d–-])140\s?(kg|кг|公斤|킬로그램|กก\.|กิโลกรัม|ק"ג|ק״ג|ກິໂລ|ကီလို|គីឡូក្រាម)')
+_OLD_RANGE = re.compile(r"(35\s?[〜～~–-]\s?40|60\s?[〜～~–-]\s?70)\s?km")
+_CTA_FAQ = re.compile(r'"@type": "Question", "name": "(Ready to|Sẵn sàng|이제 빌려|准备好|Готовы|Siap )')
+_CORE = {"dalat-motorbike-rental", "electric-scooter-rental-dalat"}
+for p in pages:
+    _h = p.read_text(encoding="utf-8")
+    _rel = str(p.parent.relative_to(ROOT)).replace("\\", "/")
+    _vis = re.sub(r"<script.*?</script>", "", _h, flags=re.S)
+    if _OLD_LOAD.search(_vis): problems.append(f"{_rel}: old electric-scooter load 140 kg (now 130 kg)")
+    if _OLD_RANGE.search(_vis): problems.append(f"{_rel}: old battery range 35–40 / 60–70 km (now 25–30 / 50–60 km)")
+    if _CTA_FAQ.search(_h): problems.append(f"{_rel}: call-to-action heading inside FAQPage")
+    for _u in re.findall(r'<link rel="alternate" hreflang="[^"]+" href="([^"]+)"', _h):
+        if _u in _NOIDX: problems.append(f"{_rel}: hreflang points to noindex page {_u}"); break
 for p in pages:
     html = p.read_text(encoding="utf-8")
     page_url = BASE + str(p.parent.relative_to(ROOT)).replace("\\", "/").strip(".") + "/"
@@ -93,12 +115,17 @@ try:
     for u in locs:
         if not (ROOT / u.replace(BASE, "") / "index.html").exists():
             problems.append(f"sitemap url has no page: {u}")
+        if u in _NOIDX:
+            problems.append(f"sitemap lists noindex page: {u}")
+    for e in r.iter("{http://www.w3.org/1999/xhtml}link"):
+        if e.get("href") in _NOIDX:
+            problems.append(f"sitemap hreflang points to noindex page: {e.get('href')}"); break
 except Exception as e:
     problems.append(f"sitemap invalid: {e}")
 
 print(f"pages: {len(pages)}, sitemap urls: {len(locs) if 'locs' in dir() else '?'}")
 if problems:
     print("PROBLEMS:")
-    print("\n".join(problems[:50]))
+    print("\n".join(problems[:50])); import collections as _c; print(_c.Counter(re.sub(r"^[^:]*: ", "", x).split(" http")[0].split(" ->")[0][:60] for x in problems).most_common(12))
     sys.exit(1)
 print("ALL CHECKS PASSED")

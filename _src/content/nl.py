@@ -120,7 +120,7 @@ EV_ = dict(
  h_facts='De elektrische scooter in het kort',
  facts=[('Prijs', '150,000 VND per dag, vast'),
  ('Actieradius', 'één accu gaat ongeveer 25–30 km (elke scooter heeft 2 accu’s, samen ongeveer 50–60 km) mee; accuwissel in de winkel 20,000 VND'),
- ('Belasting', 'max. 2 personen, totaalgewicht onder 140 kg'),
+ ('Belasting', 'max. 2 personen, totaalgewicht onder 130 kg'),
  ('Huurdag', 'van het ophalen tot 21:00; de winkel opent om 4:30'),
  ('Borg', 'geen contanten — laat je paspoort of ID-kaart achter'),
  ('Inbegrepen', 'gratis helm en telefoonhouder'),
@@ -133,14 +133,14 @@ EV_ = dict(
  notes=['Elektrische scooters hebben weinig vermogen: ze klimmen langzaam op steile heuvels en passen.',
  'Eén accu gaat ongeveer 25–30 km (elke scooter heeft 2 accu’s, samen ongeveer 50–60 km) mee: plan je dag binnen die afstand en kom terug naar de winkel voor een accuwissel (20,000 VND) voordat hij leeg raakt.',
  'Kies voor lange tochten zoals de theeheuvels van Cau Dat, de Lang Biang of watervaltochten liever de Honda Air Blade 125cc.',
- 'Met z\'n tweeën kan alleen als jullie samen minder dan 140 kg wegen.'],
+ 'Met z\'n tweeën kan alleen als jullie samen minder dan 130 kg wegen.'],
  h_faq='Veelgestelde vragen over de elektrische scooter',
  faq=[('Wat heb ik nodig om een elektrische scooter te huren in Da Lat?',
   'Alleen je paspoort of ID-kaart, die we tijdens de huur bewaren — geen borg in contanten. Je betaalt de huur bij het ophalen.'),
  ('Hoe ver kom ik met één accu?',
   'Eén accu gaat ongeveer 25–30 km (elke scooter heeft 2 accu’s, samen ongeveer 50–60 km) mee. Genoeg voor het centrum en de bezienswaardigheden in de buurt; wil je verder, wissel dan in onze winkel voor een volle accu voor 20,000 VND.'),
  ('Wat kost het?', '150,000 VND per dag — dezelfde vaste prijs als onze benzinescooters, geen verborgen kosten.'),
- ('Kunnen we met z\'n tweeën rijden?', 'Ja, zolang het totaalgewicht van beide rijders onder 140 kg is.')],
+ ('Kunnen we met z\'n tweeën rijden?', 'Ja, zolang het totaalgewicht van beide rijders onder 130 kg is.')],
 )
 
 ART_ = {
@@ -188,7 +188,7 @@ ART_ = {
 <li>Stil, geen versnellingen, geen tankstops.</li>
 <li>Eén accu gaat ongeveer <b>25–30 km</b> (elke scooter heeft 2 accu’s, samen ongeveer 50–60 km) mee (accuwissel in onze winkel: 20,000 VND) — genoeg voor het centrum en de bezienswaardigheden in de buurt.</li>
 <li>Weinig vermogen: langzaam op steile heuvels en passen.</li>
-<li>Met z'n tweeën alleen als jullie samen minder dan 140 kg wegen.</li>
+<li>Met z'n tweeën alleen als jullie samen minder dan 130 kg wegen.</li>
 </ul>
 <p>Meer details: <a href="{EV}">elektrische scooter huren in Da Lat</a>.</p>
 <h2>Benzinescooter: voordelen en grenzen</h2>

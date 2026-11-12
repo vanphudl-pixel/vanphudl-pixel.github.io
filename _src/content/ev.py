@@ -14,7 +14,7 @@ EV["en"] = dict(
  h_facts='Electric scooter at a glance',
  facts=[('Price', '150,000 VND per day, fixed'),
  ('Range', 'one battery lasts about 25–30 km (each bike comes with 2 batteries, about 50–60 km in total); battery swap at the shop 20,000 VND'),
- ('Load', 'max. 2 people, total weight under 140 kg'),
+ ('Load', 'max. 2 people, total weight under 130 kg'),
  ('Rental day', 'from pickup until 9:00 PM; shop opens 4:30 AM'),
  ('Deposit', 'no cash — leave your passport or ID card'),
  ('Included', 'helmet included and phone holder'),
@@ -27,14 +27,14 @@ EV["en"] = dict(
  notes=['Electric scooters have low power: they climb slowly on steep hills and passes.',
  'One battery lasts about 25–30 km (each bike comes with 2 batteries, about 50–60 km in total): plan your day within that distance and come back to the shop for a battery swap (20,000 VND) before it runs low.',
  'For long trips such as the Cau Dat tea hills, Lang Biang or waterfall loops, choose the Honda Air Blade 125cc instead.',
- 'Two riders are fine only if your combined weight is under 140 kg.'],
+ 'Two riders are fine only if your combined weight is under 130 kg.'],
  h_faq='Electric scooter FAQ',
  faq=[('What do I need to rent an electric scooter in Da Lat?',
   'Just your passport or ID card, which we keep during the rental — no cash deposit. You pay the rental at pick-up.'),
  ('How far can I go on one battery?',
   "One battery lasts about 25–30 km (each bike comes with 2 batteries, about 50–60 km in total). That's enough for the center and nearby sights; for more, swap for a full battery at our shop for 20,000 VND."),
  ('How much does it cost?', '150,000 VND per day — the same fixed price as our gas scooters, no hidden fees.'),
- ('Can two people ride?', 'Yes, as long as the total weight of both riders is under 140 kg.')],
+ ('Can two people ride?', 'Yes, as long as the total weight of both riders is under 130 kg.')],
 )
 
 EV["vi"] = dict(
@@ -49,7 +49,7 @@ EV["vi"] = dict(
  h_facts='Thông tin xe máy điện',
  facts=[('Giá thuê', '150.000 VND/ngày, giá cố định'),
  ('Quãng đường', '1 cục pin đi khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km); đổi pin tại cửa hàng 20.000 VND/lần'),
- ('Tải trọng', 'tối đa 2 người, tổng cân nặng dưới 140 kg'),
+ ('Tải trọng', 'tối đa 2 người, tổng cân nặng dưới 130 kg'),
  ('Thời gian thuê', 'từ lúc nhận xe đến 21:00; tiệm mở cửa từ 4:30 sáng'),
  ('Đặt cọc', 'không cọc tiền — gửi hộ chiếu hoặc CCCD'),
  ('Kèm theo', 'mũ bảo hiểm và giá đỡ điện thoại miễn phí'),
@@ -62,12 +62,12 @@ EV["vi"] = dict(
  notes=['Xe máy điện công suất thấp, leo dốc và đèo sẽ chậm.',
  '1 cục pin đi được khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km), nên tính lộ trình trong khoảng đó và về cửa hàng đổi pin (20.000 VND/lần) trước khi hết pin.',
  'Đi xa như đồi chè Cầu Đất, Langbiang hay vòng các thác thì nên thuê Honda Air Blade 125cc.',
- 'Chở 2 người được nếu tổng cân nặng dưới 140 kg.'],
+ 'Chở 2 người được nếu tổng cân nặng dưới 130 kg.'],
  h_faq='Hỏi đáp về xe máy điện',
  faq=[('Thuê xe máy điện ở Đà Lạt cần những gì?', 'Chỉ cần để lại hộ chiếu hoặc CCCD trong thời gian thuê, không cọc tiền. Trả tiền thuê khi nhận xe.'),
  ('1 cục pin đi được bao xa?', 'Khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km), đủ để dạo trung tâm và các điểm gần. Cần đi thêm thì ghé cửa hàng đổi pin đầy, 20.000 VND/lần.'),
  ('Giá thuê bao nhiêu?', '150.000 VND/ngày, bằng giá xe xăng. Giá cố định, không phụ phí.'),
- ('Chở 2 người được không?', 'Được, miễn tổng cân nặng hai người dưới 140 kg.')],
+ ('Chở 2 người được không?', 'Được, miễn tổng cân nặng hai người dưới 130 kg.')],
 )
 
 EV["ru"] = dict(
@@ -82,7 +82,7 @@ EV["ru"] = dict(
  h_facts='Коротко об электроскутере',
  facts=[('Цена', '150 000 VND в день, фиксированная'),
  ('Запас хода', 'одной батареи хватает примерно на 25–30 км (на каждом байке 2 батареи — всего около 50–60 км); замена батареи у нас — 20 000 VND'),
- ('Нагрузка', 'максимум 2 человека, общий вес до 140 кг'),
+ ('Нагрузка', 'максимум 2 человека, общий вес до 130 кг'),
  ('День аренды', 'с момента получения до 21:00; открываемся в 4:30'),
  ('Залог', 'без денег — оставляете паспорт или ID-карту'),
  ('Включено', 'шлем и держатель для телефона бесплатно'),
@@ -95,14 +95,14 @@ EV["ru"] = dict(
  notes=['У электроскутера небольшая мощность: на крутых подъёмах и перевалах он едет медленно.',
  'Одной батареи хватает примерно на 25–30 км (на каждом байке 2 батареи — всего около 50–60 км) — планируйте маршрут в этих пределах и заезжайте к нам заменить батарею (20 000 VND), пока она не села.',
  'Для дальних поездок (чайные холмы Каудат, Лангбианг, водопады) лучше взять Honda Air Blade 125cc.',
- 'Вдвоём можно, если общий вес меньше 140 кг.'],
+ 'Вдвоём можно, если общий вес меньше 130 кг.'],
  h_faq='Вопросы об электроскутере',
  faq=[('Что нужно, чтобы арендовать электроскутер в Далате?',
   'Только паспорт или удостоверение личности — мы храним его на время аренды, денежный залог не нужен. Оплата при получении скутера.'),
  ('Сколько можно проехать на одной батарее?',
   'Примерно 25–30 км (на каждом байке 2 батареи — всего около 50–60 км) — хватит на центр и ближайшие места. Нужно больше — замените батарею на полную у нас за 20 000 VND.'),
  ('Сколько стоит аренда?', '150 000 VND в день — как и бензиновые скутеры. Без скрытых платежей.'),
- ('Можно ли ездить вдвоём?', 'Да, если общий вес двух человек меньше 140 кг.')],
+ ('Можно ли ездить вдвоём?', 'Да, если общий вес двух человек меньше 130 кг.')],
 )
 
 EV["zh"] = dict(
@@ -116,7 +116,7 @@ EV["zh"] = dict(
  h_facts='电动车信息一览',
  facts=[('价格', '每天 150,000 VND，固定价格'),
  ('续航', '一块电池约可行驶 25–30 公里（每辆车配 2 块电池，共约 50–60 公里）；店内换电池每次 20,000 VND'),
- ('载重', '最多 2 人，总体重 140 公斤以下'),
+ ('载重', '最多 2 人，总体重 130 公斤以下'),
  ('租期', '取车后至当晚 21:00；店铺早上 4:30 开门'),
  ('押金', '无现金押金——押护照或身份证'),
  ('赠送', '免费头盔和手机支架'),
@@ -127,12 +127,12 @@ EV["zh"] = dict(
  notes=['电动车功率较小，爬陡坡和山路会比较慢。',
  '一块电池约可行驶 25–30 公里（每辆车配 2 块电池，共约 50–60 公里），请在这个范围内规划路线，电量不足前回店换电池（每次 20,000 VND）。',
  '去求德茶山、浪必安山或瀑布环线等远途，建议租本田 Air Blade 125cc。',
- '两人总体重低于 140 公斤即可双人骑行。'],
+ '两人总体重低于 130 公斤即可双人骑行。'],
  h_faq='电动车常见问题',
  faq=[('在大叻租电动车需要准备什么？', '只需押护照或身份证，租期结束归还，无现金押金。取车时支付租金。'),
  ('一块电池能跑多远？', '约 25–30 公里（每辆车配 2 块电池，共约 50–60 公里），足够市中心和周边景点。想多跑一些，可以回店换一块满电电池，每次 20,000 VND。'),
  ('租金多少？', '每天 150,000 VND，和汽油车同价，无隐藏费用。'),
- ('可以两个人骑吗？', '可以，只要两人总体重低于 140 公斤。')],
+ ('可以两个人骑吗？', '可以，只要两人总体重低于 130 公斤。')],
 )
 
 EV["ko"] = dict(
@@ -146,7 +146,7 @@ EV["ko"] = dict(
  h_facts='전기 스쿠터 한눈에 보기',
  facts=[('가격', '1일 150,000 VND, 고정 가격'),
  ('주행거리', '배터리 1개로 약 25–30km(차량마다 배터리 2개, 총 약 50–60km); 매장에서 배터리 교체 20,000 VND'),
- ('탑승', '최대 2인, 총 체중 140kg 미만'),
+ ('탑승', '최대 2인, 총 체중 130kg 미만'),
  ('대여 시간', '수령 후 당일 21:00까지; 오전 4:30 오픈'),
  ('보증금', '현금 없음 — 여권 또는 신분증 보관'),
  ('포함', '헬멧, 휴대폰 거치대 무료'),
@@ -157,26 +157,26 @@ EV["ko"] = dict(
  notes=['전기 스쿠터는 출력이 낮아 가파른 언덕과 고개에서 느립니다.',
  '배터리 1개로 약 25–30km(차량마다 배터리 2개, 총 약 50–60km)를 갈 수 있으니 그 안에서 일정을 짜고, 배터리가 떨어지기 전에 매장에서 교체하세요(20,000 VND).',
  '꺼우닷 차밭, 랑비앙, 폭포 투어 같은 장거리는 혼다 에어블레이드 125cc를 추천합니다.',
- '두 사람의 총 체중이 140kg 미만이면 2인 탑승 가능합니다.'],
+ '두 사람의 총 체중이 130kg 미만이면 2인 탑승 가능합니다.'],
  h_faq='전기 스쿠터 FAQ',
  faq=[('달랏에서 전기 스쿠터를 빌리려면 무엇이 필요한가요?', '여권이나 신분증만 맡기시면 됩니다. 현금 보증금은 없고, 요금은 차량을 받을 때 결제합니다.'),
  ('배터리 1개로 얼마나 갈 수 있나요?', '약 25–30km(차량마다 배터리 2개, 총 약 50–60km)로 시내와 근교에는 충분합니다. 더 가려면 매장에서 완충 배터리로 교체하세요(20,000 VND).'),
  ('요금은 얼마인가요?', '1일 150,000 VND로 가솔린 스쿠터와 같습니다. 숨은 비용은 없습니다.'),
- ('두 명이 탈 수 있나요?', '네, 두 사람의 총 체중이 140kg 미만이면 가능합니다.')],
+ ('두 명이 탈 수 있나요?', '네, 두 사람의 총 체중이 130kg 미만이면 가능합니다.')],
 )
 
 EV["ja"] = dict(
  slug='electric-scooter-rental-dalat',
  title='ダラット電動スクーターレンタル – 1日150,000 VND | Van Phu',
- desc='ダラットの電動スクーターレンタル：1日150,000 VND、バッテリー1個で約25–30km（1台にバッテリー2個、合計約60〜70km）、バッテリー交換20,000 VND、現金デポジットなし、ヘルメット無料。WhatsAppで予約。',
+ desc='ダラットの電動スクーターレンタル：1日150,000 VND、バッテリー1個で約25–30km（1台にバッテリー2個、合計約50〜60km）、バッテリー交換20,000 VND、現金デポジットなし、ヘルメット無料。WhatsAppで予約。',
  h1='ダラットの電動スクーターレンタル',
  lead='静かで軽く、運転も簡単。電動スクーターはダラット中心部の観光にぴったりです。1日150,000 VND。',
  crumb='電動スクーター',
  more='電動スクーター：航続距離・注意点・FAQ →',
  h_facts='電動スクーターの概要',
  facts=[('料金', '1日150,000 VND（固定）'),
- ('航続距離', 'バッテリー1個で約25–30km（1台にバッテリー2個、合計約60〜70km）、店頭でのバッテリー交換20,000 VND'),
- ('乗車', '最大2人、合計体重140kg未満'),
+ ('航続距離', 'バッテリー1個で約25–30km（1台にバッテリー2個、合計約50〜60km）、店頭でのバッテリー交換20,000 VND'),
+ ('乗車', '最大2人、合計体重130kg未満'),
  ('レンタル時間', '受け取りから当日21:00まで／朝4:30オープン'),
  ('デポジット', '現金なし — パスポートまたはIDカードを預けます'),
  ('付属品', 'ヘルメットとスマホホルダー無料'),
@@ -185,14 +185,14 @@ EV["ja"] = dict(
  good=['中心部の観光：スアンフーン湖、ナイトマーケット、クレイジーハウス、カフェ。', '近場のスポット：ダタンラの滝（約5〜7km）、リンフオック寺（約8km）。', 'ギアも給油もいらない、静かで簡単な運転をしたい方。'],
  h_note='出発前に知っておきたいこと',
  notes=['電動スクーターはパワーが小さく、急な坂や峠ではゆっくりになります。',
- 'バッテリー1個で約25–30km（1台にバッテリー2個、合計約60〜70km）走れます。その範囲でルートを組み、電池が減る前に店でバッテリーを交換してください（20,000 VND）。',
+ 'バッテリー1個で約25–30km（1台にバッテリー2個、合計約50〜60km）走れます。その範囲でルートを組み、電池が減る前に店でバッテリーを交換してください（20,000 VND）。',
  'カウダット茶畑、ランビアン山、滝めぐりなどの遠出にはホンダ エアブレード125ccがおすすめです。',
- '2人の合計体重が140kg未満なら2人乗りできます。'],
+ '2人の合計体重が130kg未満なら2人乗りできます。'],
  h_faq='電動スクーターのよくある質問',
  faq=[('ダラットで電動スクーターを借りるには何が必要ですか？', 'パスポートまたは身分証明書を預けるだけです。現金デポジットは不要で、料金は受け取り時にお支払いください。'),
- ('バッテリー1個でどのくらい走れますか？', '約25–30km（1台にバッテリー2個、合計約60〜70km）です。中心部と近場には十分で、もっと走りたいときは店で満充電のバッテリーに交換できます（20,000 VND）。'),
+ ('バッテリー1個でどのくらい走れますか？', '約25–30km（1台にバッテリー2個、合計約50〜60km）です。中心部と近場には十分で、もっと走りたいときは店で満充電のバッテリーに交換できます（20,000 VND）。'),
  ('料金はいくらですか？', '1日150,000 VNDで、ガソリンスクーターと同じです。追加料金はありません。'),
- ('2人乗りはできますか？', 'はい、2人の合計体重が140kg未満なら可能です。')],
+ ('2人乗りはできますか？', 'はい、2人の合計体重が130kg未満なら可能です。')],
 )
 
 EV["th"] = dict(
@@ -207,7 +207,7 @@ EV["th"] = dict(
  h_facts='ข้อมูลสกู๊ตเตอร์ไฟฟ้า',
  facts=[('ราคา', 'วันละ 150,000 VND ราคาคงที่'),
  ('ระยะทาง', 'แบต 1 ก้อนวิ่งได้ประมาณ 25–30 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 50–60 กม.) เปลี่ยนแบตที่ร้าน 20,000 VND'),
- ('น้ำหนักบรรทุก', 'สูงสุด 2 คน น้ำหนักรวมไม่เกิน 140 กก.'),
+ ('น้ำหนักบรรทุก', 'สูงสุด 2 คน น้ำหนักรวมไม่เกิน 130 กก.'),
  ('เวลาเช่า', 'ตั้งแต่รับรถถึง 21:00 น. ร้านเปิด 4:30 น.'),
  ('มัดจำ', 'ไม่ต้องใช้เงินสด ฝากพาสปอร์ตหรือบัตรประชาชน'),
  ('ฟรี', 'หมวกกันน็อกและที่จับโทรศัพท์'),
@@ -220,12 +220,12 @@ EV["th"] = dict(
  notes=['สกู๊ตเตอร์ไฟฟ้ามีกำลังน้อย ขึ้นเนินชันและทางขึ้นเขาจะช้า',
  'แบต 1 ก้อนวิ่งได้ประมาณ 25–30 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 50–60 กม.) วางแผนเส้นทางให้อยู่ในระยะนี้ และแวะเปลี่ยนแบตที่ร้าน (20,000 VND) ก่อนแบตหมด',
  'ถ้าจะไปไกล เช่น ไร่ชาเกิ่วดั๊ต ภูเขาลางเบียง หรือเที่ยวน้ำตก แนะนำ Honda Air Blade 125cc',
- 'ซ้อน 2 คนได้ถ้าน้ำหนักรวมไม่เกิน 140 กก.'],
+ 'ซ้อน 2 คนได้ถ้าน้ำหนักรวมไม่เกิน 130 กก.'],
  h_faq='คำถามพบบ่อยเกี่ยวกับสกู๊ตเตอร์ไฟฟ้า',
  faq=[('เช่าสกู๊ตเตอร์ไฟฟ้าในดาลัดต้องใช้อะไรบ้าง?', 'แค่ฝากพาสปอร์ตหรือบัตรประชาชนไว้ระหว่างเช่า ไม่ต้องวางมัดจำเงินสด ชำระค่าเช่าตอนรับรถ'),
  ('แบต 1 ก้อนวิ่งได้ไกลแค่ไหน?', 'ประมาณ 25–30 กม. (รถแต่ละคันมีแบต 2 ก้อน รวมประมาณ 50–60 กม.) พอสำหรับในเมืองและที่ใกล้ ๆ ถ้าจะไปต่อ แวะเปลี่ยนแบตเต็มที่ร้านได้ ครั้งละ 20,000 VND'),
  ('ค่าเช่าเท่าไหร่?', 'วันละ 150,000 VND เท่ากับรถน้ำมัน ไม่มีค่าใช้จ่ายแอบแฝง'),
- ('ซ้อนสองคนได้ไหม?', 'ได้ ถ้าน้ำหนักรวมของสองคนไม่เกิน 140 กก.')],
+ ('ซ้อนสองคนได้ไหม?', 'ได้ ถ้าน้ำหนักรวมของสองคนไม่เกิน 130 กก.')],
 )
 
 EV["id"] = dict(
@@ -240,7 +240,7 @@ EV["id"] = dict(
  h_facts='Info singkat motor listrik',
  facts=[('Harga', '150.000 VND per hari, tetap'),
  ('Jarak tempuh', 'satu baterai sekitar 25–30 km (setiap motor dilengkapi 2 baterai, total sekitar 50–60 km); tukar baterai di toko 20.000 VND'),
- ('Muatan', 'maks. 2 orang, total berat di bawah 140 kg'),
+ ('Muatan', 'maks. 2 orang, total berat di bawah 130 kg'),
  ('Waktu sewa', 'dari pengambilan sampai pukul 21.00; toko buka 04.30'),
  ('Jaminan', 'tanpa uang tunai — tinggalkan paspor atau KTP'),
  ('Gratis', 'helm dan dudukan HP'),
@@ -253,14 +253,14 @@ EV["id"] = dict(
  notes=['Motor listrik bertenaga kecil, jadi pelan di tanjakan curam dan jalan pegunungan.',
  'Satu baterai cukup untuk sekitar 25–30 km (setiap motor dilengkapi 2 baterai, total sekitar 50–60 km): rencanakan rute dalam jarak itu dan mampir ke toko untuk tukar baterai (20.000 VND) sebelum habis.',
  'Untuk perjalanan jauh seperti kebun teh Cau Dat, Lang Biang atau tur air terjun, pilih Honda Air Blade 125cc.',
- 'Boleh berboncengan jika total berat berdua di bawah 140 kg.'],
+ 'Boleh berboncengan jika total berat berdua di bawah 130 kg.'],
  h_faq='FAQ motor listrik',
  faq=[('Apa yang dibutuhkan untuk sewa motor listrik di Da Lat?',
   'Cukup titipkan paspor atau KTP selama masa sewa — tanpa deposit uang tunai. Biaya sewa dibayar saat mengambil motor.'),
  ('Satu baterai bisa sejauh apa?',
   'Sekitar 25–30 km (setiap motor dilengkapi 2 baterai, total sekitar 50–60 km), cukup untuk pusat kota dan sekitarnya. Kalau perlu lebih, tukar dengan baterai penuh di toko kami seharga 20.000 VND.'),
  ('Berapa harganya?', '150.000 VND per hari, sama dengan motor bensin. Tanpa biaya tersembunyi.'),
- ('Bisa berboncengan?', 'Bisa, asalkan total berat berdua di bawah 140 kg.')],
+ ('Bisa berboncengan?', 'Bisa, asalkan total berat berdua di bawah 130 kg.')],
 )
 
 EV["ms"] = dict(
@@ -275,7 +275,7 @@ EV["ms"] = dict(
  h_facts='Ringkasan skuter elektrik',
  facts=[('Harga', '150,000 VND sehari, harga tetap'),
  ('Jarak', 'satu bateri kira-kira 25–30 km (setiap skuter ada 2 bateri, jumlah kira-kira 50–60 km); tukar bateri di kedai 20,000 VND'),
- ('Muatan', 'maks. 2 orang, jumlah berat bawah 140 kg'),
+ ('Muatan', 'maks. 2 orang, jumlah berat bawah 130 kg'),
  ('Tempoh sewa', 'dari ambil motor hingga 9:00 malam; kedai buka 4:30 pagi'),
  ('Deposit', 'tiada wang tunai — tinggalkan pasport atau kad pengenalan'),
  ('Percuma', 'topi keledar dan pemegang telefon'),
@@ -288,14 +288,14 @@ EV["ms"] = dict(
  notes=['Skuter elektrik berkuasa rendah, jadi perlahan di bukit curam dan jalan gunung.',
  'Satu bateri boleh pergi kira-kira 25–30 km (setiap skuter ada 2 bateri, jumlah kira-kira 50–60 km): rancang laluan dalam jarak itu dan singgah di kedai untuk tukar bateri (20,000 VND) sebelum habis.',
  'Untuk perjalanan jauh seperti ladang teh Cau Dat, Lang Biang atau lawatan air terjun, pilih Honda Air Blade 125cc.',
- 'Boleh membonceng jika jumlah berat berdua di bawah 140 kg.'],
+ 'Boleh membonceng jika jumlah berat berdua di bawah 130 kg.'],
  h_faq='Soalan lazim skuter elektrik',
  faq=[('Apa yang diperlukan untuk sewa skuter elektrik di Da Lat?',
   'Hanya tinggalkan pasport atau kad pengenalan sepanjang tempoh sewa — tiada deposit tunai. Bayaran sewa dibuat semasa mengambil skuter.'),
  ('Berapa jauh satu bateri?',
   'Kira-kira 25–30 km (setiap skuter ada 2 bateri, jumlah kira-kira 50–60 km), cukup untuk pusat bandar dan kawasan berdekatan. Perlu lebih? Tukar bateri penuh di kedai kami dengan 20,000 VND.'),
  ('Berapa harganya?', '150,000 VND sehari, sama dengan skuter petrol. Tiada caj tersembunyi.'),
- ('Boleh berdua?', 'Boleh, asalkan jumlah berat berdua di bawah 140 kg.')],
+ ('Boleh berdua?', 'Boleh, asalkan jumlah berat berdua di bawah 130 kg.')],
 )
 
 EV["de"] = dict(
@@ -310,7 +310,7 @@ EV["de"] = dict(
  h_facts='E-Roller auf einen Blick',
  facts=[('Preis', '150.000 VND pro Tag, Festpreis'),
  ('Reichweite', 'ein Akku reicht für etwa 25–30 km (jeder Roller hat 2 Akkus, zusammen etwa 50–60 km); Akkutausch im Shop 20.000 VND'),
- ('Zuladung', 'max. 2 Personen, zusammen unter 140 kg'),
+ ('Zuladung', 'max. 2 Personen, zusammen unter 130 kg'),
  ('Miettag', 'ab Abholung bis 21:00 Uhr; geöffnet ab 4:30 Uhr'),
  ('Kaution', 'kein Bargeld – Reisepass oder Ausweis wird hinterlegt'),
  ('Inklusive', 'Helm und Handyhalterung gratis'),
@@ -323,14 +323,14 @@ EV["de"] = dict(
  notes=['E-Roller haben wenig Leistung und fahren an steilen Hügeln und Pässen langsam.',
  'Ein Akku reicht für etwa 25–30 km (jeder Roller hat 2 Akkus, zusammen etwa 50–60 km): Planen Sie Ihre Tour in diesem Rahmen und tauschen Sie den Akku bei uns (20.000 VND), bevor er leer ist.',
  'Für weite Touren wie die Teehügel von Cau Dat, Lang Biang oder Wasserfall-Runden nehmen Sie besser die Honda Air Blade 125cc.',
- 'Zu zweit fahren ist möglich, wenn Sie zusammen unter 140 kg wiegen.'],
+ 'Zu zweit fahren ist möglich, wenn Sie zusammen unter 130 kg wiegen.'],
  h_faq='Häufige Fragen zum E-Roller',
  faq=[('Was brauche ich, um in Da Lat einen E-Roller zu mieten?',
   'Nur Ihren Reisepass oder Ausweis, den wir während der Miete aufbewahren – keine Barkaution. Die Miete zahlen Sie bei der Abholung.'),
  ('Wie weit komme ich mit einem Akku?',
   'Etwa 25–30 km (jeder Roller hat 2 Akkus, zusammen etwa 50–60 km) – genug für das Zentrum und die Umgebung. Für mehr tauschen Sie bei uns gegen einen vollen Akku, 20.000 VND.'),
  ('Was kostet die Miete?', '150.000 VND pro Tag, genauso viel wie ein Benzinroller. Keine versteckten Kosten.'),
- ('Kann man zu zweit fahren?', 'Ja, wenn beide zusammen unter 140 kg wiegen.')],
+ ('Kann man zu zweit fahren?', 'Ja, wenn beide zusammen unter 130 kg wiegen.')],
 )
 
 EV["fr"] = dict(
@@ -345,7 +345,7 @@ EV["fr"] = dict(
  h_facts='Le scooter électrique en bref',
  facts=[('Prix', '150 000 VND par jour, tarif fixe'),
  ('Autonomie', 'une batterie permet environ 25–30 km (chaque scooter a 2 batteries, environ 50–60 km au total) ; échange de batterie à la boutique 20 000 VND'),
- ('Charge', '2 personnes max., poids total inférieur à 140 kg'),
+ ('Charge', '2 personnes max., poids total inférieur à 130 kg'),
  ('Journée de location', "de la prise du scooter jusqu'à 21 h ; ouverture à 4 h 30"),
  ('Caution', "sans espèces : vous laissez votre passeport ou carte d'identité"),
  ('Inclus', 'casque et support de téléphone offerts'),
@@ -359,7 +359,7 @@ EV["fr"] = dict(
  "Une batterie permet environ 25–30 km (chaque scooter a 2 batteries, environ 50–60 km au total) : prévoyez votre itinéraire dans ce rayon et passez échanger la batterie chez nous (20 000 VND) avant qu'elle "
  'soit vide.',
  'Pour les longues sorties (collines de thé de Cau Dat, Lang Biang, circuit des cascades), choisissez plutôt la Honda Air Blade 125cc.',
- 'On peut rouler à deux si le poids total est inférieur à 140 kg.'],
+ 'On peut rouler à deux si le poids total est inférieur à 130 kg.'],
  h_faq='Questions fréquentes sur le scooter électrique',
  faq=[('Que faut-il pour louer un scooter électrique à Da Lat ?',
   "Seulement votre passeport ou votre carte d'identité, que nous gardons pendant la location — sans caution en espèces. La location se paie à la "
@@ -367,7 +367,7 @@ EV["fr"] = dict(
  ('Quelle distance avec une batterie ?',
   'Environ 25–30 km (chaque scooter a 2 batteries, environ 50–60 km au total), assez pour le centre et les environs. Pour aller plus loin, échangez-la contre une batterie pleine chez nous pour 20 000 VND.'),
  ('Combien coûte la location ?', '150 000 VND par jour, le même prix que les scooters à essence. Sans frais cachés.'),
- ('Peut-on rouler à deux ?', 'Oui, si le poids total des deux personnes est inférieur à 140 kg.')],
+ ('Peut-on rouler à deux ?', 'Oui, si le poids total des deux personnes est inférieur à 130 kg.')],
 )
 
 EV["es"] = dict(
@@ -382,7 +382,7 @@ EV["es"] = dict(
  h_facts='El scooter eléctrico en resumen',
  facts=[('Precio', '150.000 VND al día, precio fijo'),
  ('Autonomía', 'una batería da para unos 25–30 km (cada moto lleva 2 baterías, unos 50–60 km en total); cambio de batería en la tienda 20.000 VND'),
- ('Carga', 'máx. 2 personas, peso total inferior a 140 kg'),
+ ('Carga', 'máx. 2 personas, peso total inferior a 130 kg'),
  ('Día de alquiler', 'desde la recogida hasta las 21:00; abrimos a las 4:30'),
  ('Depósito', 'sin efectivo: deja tu pasaporte o documento de identidad'),
  ('Incluido', 'casco y soporte para el móvil gratis'),
@@ -396,7 +396,7 @@ EV["es"] = dict(
  'Una batería da para unos 25–30 km (cada moto lleva 2 baterías, unos 50–60 km en total): planifica la ruta dentro de esa distancia y pasa por la tienda a cambiar la batería (20.000 VND) antes de que '
  'se agote.',
  'Para viajes largos como las colinas de té de Cau Dat, Lang Biang o la ruta de cascadas, mejor la Honda Air Blade 125cc.',
- 'Se puede ir de dos si el peso total es inferior a 140 kg.'],
+ 'Se puede ir de dos si el peso total es inferior a 130 kg.'],
  h_faq='Preguntas frecuentes sobre el scooter eléctrico',
  faq=[('¿Qué necesito para alquilar un scooter eléctrico en Da Lat?',
   'Solo tu pasaporte o documento de identidad, que guardamos durante el alquiler; sin depósito en efectivo. El alquiler se paga al recoger el '
@@ -404,7 +404,7 @@ EV["es"] = dict(
  ('¿Cuánto se recorre con una batería?',
   'Unos 25–30 km (cada moto lleva 2 baterías, unos 50–60 km en total), suficiente para el centro y alrededores. Si necesitas más, cámbiala por una batería llena en nuestra tienda por 20.000 VND.'),
  ('¿Cuánto cuesta?', '150.000 VND al día, el mismo precio que los scooters de gasolina. Sin costes ocultos.'),
- ('¿Pueden ir dos personas?', 'Sí, si el peso total de las dos personas es inferior a 140 kg.')],
+ ('¿Pueden ir dos personas?', 'Sí, si el peso total de las dos personas es inferior a 130 kg.')],
 )
 
 EV["he"] = dict(

@@ -120,7 +120,7 @@ EV_ = dict(
  h_facts='Lo scooter elettrico in breve',
  facts=[('Prezzo', '150,000 VND al giorno, fisso'),
  ('Autonomia', 'una batteria dura circa 25–30 km (ogni scooter ha 2 batterie, circa 50–60 km in totale); cambio batteria in negozio 20,000 VND'),
- ('Carico', 'max. 2 persone, peso totale sotto i 140 kg'),
+ ('Carico', 'max. 2 persone, peso totale sotto i 130 kg'),
  ('Giorno di noleggio', 'dal ritiro fino alle 21:00; il negozio apre alle 4:30'),
  ('Deposito', 'niente contanti — lasci passaporto o carta d\'identità'),
  ('Incluso', 'casco e porta-telefono gratuiti'),
@@ -133,14 +133,14 @@ EV_ = dict(
  notes=['Gli scooter elettrici hanno poca potenza: salgono lentamente sulle colline ripide e sui passi.',
  'Una batteria dura circa 25–30 km (ogni scooter ha 2 batterie, circa 50–60 km in totale): organizza la giornata entro questa distanza e torna in negozio per il cambio batteria (20,000 VND) prima che si scarichi.',
  'Per le gite lunghe come le colline del tè di Cau Dat, il Lang Biang o il giro delle cascate, scegli piuttosto la Honda Air Blade 125cc.',
- 'In due si può solo se il peso totale è sotto i 140 kg.'],
+ 'In due si può solo se il peso totale è sotto i 130 kg.'],
  h_faq='Domande sullo scooter elettrico',
  faq=[('Cosa serve per noleggiare uno scooter elettrico a Da Lat?',
   'Solo il passaporto o la carta d\'identità, che teniamo durante il noleggio — nessun deposito in contanti. Il noleggio si paga al ritiro.'),
  ('Quanta strada si fa con una batteria?',
   'Una batteria dura circa 25–30 km (ogni scooter ha 2 batterie, circa 50–60 km in totale). Basta per il centro e le attrazioni vicine; per fare di più, cambia la batteria con una carica nel nostro negozio per 20,000 VND.'),
  ('Quanto costa?', '150,000 VND al giorno — lo stesso prezzo fisso dei nostri scooter a benzina, nessun costo nascosto.'),
- ('Si può andare in due?', 'Sì, purché il peso totale dei due sia sotto i 140 kg.')],
+ ('Si può andare in due?', 'Sì, purché il peso totale dei due sia sotto i 130 kg.')],
 )
 
 ART_ = {
@@ -188,7 +188,7 @@ ART_ = {
 <li>Silenzioso, senza marce, senza soste per il carburante.</li>
 <li>Una batteria dura circa <b>25–30 km</b> (ogni scooter ha 2 batterie, circa 50–60 km in totale) (cambio batteria in negozio: 20,000 VND) — basta per il centro e le attrazioni vicine.</li>
 <li>Poca potenza: lento sulle salite ripide e sui passi.</li>
-<li>In due solo se il peso totale è sotto i 140 kg.</li>
+<li>In due solo se il peso totale è sotto i 130 kg.</li>
 </ul>
 <p>Più dettagli: <a href="{EV}">noleggio scooter elettrico a Da Lat</a>.</p>
 <h2>Scooter a benzina: pro e limiti</h2>

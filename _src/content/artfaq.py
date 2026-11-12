@@ -41,7 +41,7 @@ FAQ = {
  "evrules": [
   ("Thuê xe máy điện cần cọc không?", "Không cọc tiền mặt — bạn để lại hộ chiếu hoặc CCCD bản gốc và nhận lại khi trả xe đúng tình trạng."),
   ("Pin xe máy điện đi được bao xa?", "Một pin đi khoảng 25–30 km (mỗi xe có 2 pin, tổng khoảng 50–60 km). Cần thêm thì mang xe về tiệm đổi pin đầy, 20.000 VND."),
-  ("Xe máy điện chở được mấy người?", "Tối đa 2 người, tổng cân nặng dưới 140 kg."),
+  ("Xe máy điện chở được mấy người?", "Tối đa 2 người, tổng cân nặng dưới 130 kg."),
   ("Trả xe muộn sau 21:00 thì sao?", "Trả sau 21:00 tính thêm một ngày. Muốn gia hạn, hãy nhắn trước cho tiệm."),
  ],
  "caudat": [
@@ -104,7 +104,7 @@ FAQ = {
  "evrules": [
   ("Is there a deposit for an electric scooter?", "No cash deposit — you leave your original passport or ID card and get it back when you return the scooter in the same condition."),
   ("How far does one battery go?", "About 25–30 km (each bike comes with 2 batteries, about 50–60 km in total). Need more? Bring the scooter to our shop for a full battery, 20,000 VND."),
-  ("How many people can ride an electric scooter?", "Maximum 2 people, with a combined weight under 140 kg."),
+  ("How many people can ride an electric scooter?", "Maximum 2 people, with a combined weight under 130 kg."),
   ("What if I return the scooter after 21:00?", "Returning after 21:00 counts as one extra day. To extend, message us first."),
  ],
  "caudat": [

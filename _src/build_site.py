@@ -387,6 +387,10 @@ def pm_section(l, me):
     t = PM.T[l]
     g = PG.T[l]
     return (f'<section class="pmsec"><h2>📍 {t["h1"]}</h2><p>{t["lead"]}</p><p>{hub_btn(l, me)}<a class="btn" href="{rel(me, pm_path(l))}">{t["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(AM, l))}" style="border:1px solid var(--line)">🗺️ {AM.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(RN, l))}" style="border:1px solid var(--line)">🛵 {RN.T[l]["h1"]} →</a> '
+            f'<a class="btn alt" href="{rel(me, map_path(FM, l))}" style="border:1px solid var(--line)">🌷 {FM.T[l]["h1"]} →</a> '
+            + (f'<a class="btn alt" href="{rel(me, map_path(PL, l))}" style="border:1px solid var(--line)">🏛️ {PL.T[l]["h1"]} →</a> ' if l in PL.LANGS else "") +
             f'<a class="btn alt" href="{rel(me, map_path(PG, l))}" style="border:1px solid var(--line)">🛕 {g["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(CH, l))}" style="border:1px solid var(--line)">⛪ {CH.T[l]["h1"]} →</a> '
             f'<a class="btn alt" href="{rel(me, map_path(SF, l))}" style="border:1px solid var(--line)">🌼 {SF.T[l]["h1"]} →</a> '
@@ -1004,6 +1008,8 @@ def _cta_heads():
             out.add(_plain(x.split(">", 1)[1].split("</h2>")[0]))
     return out
 _CTA_H = None
+# call-to-action headings inside article bodies are not FAQ questions (audit 2026-11-12)
+_CTA_Q = re.compile(r"^(Ready to|Sẵn sàng|이제 빌려|准备好|Готовы|Siap |Sedia |Bereit|Prêt|Listo|Pronto|Klaar|準備はいい|พร้อม)", re.I)
 def _faq_from_page(html):
     global _CTA_H
     if _CTA_H is None: _CTA_H = _cta_heads()
@@ -1013,7 +1019,7 @@ def _faq_from_page(html):
     for i in range(1, len(parts) - 1, 2):
         q = _plain(parts[i]); body = re.split(r"<h2|<section|</section>|<details", parts[i + 1])[0]
         a = _plain(body)
-        if q in _CTA_H or "wa.me/" in body or "tel:" in body or len(a) < 40: continue
+        if q in _CTA_H or _CTA_Q.match(q) or "wa.me/" in body or "tel:" in body or len(a) < 40: continue
         qa.append((q, a[:1000]))
     seen, out = set(), []
     for q, a in qa:
@@ -1239,7 +1245,7 @@ def page_street(i, s):
 <ul>{ideas_html}</ul>
 <p><b>Mẹo:</b> {tip}</p>
 <h2>Xe xăng hay xe điện?</h2>
-<p>Xe máy điện êm, dễ chạy, hợp dạo phố: mỗi xe có 2 pin, một pin đi được khoảng 25–30 km, tổng cộng khoảng 50–60 km; đổi pin tại tiệm 20.000 VND/lần. Xe điện chở tối đa 2 người với tổng cân nặng dưới 140 kg và không nên đi các đèo dài dốc như Prenn, Mimosa, Langbiang — những cung đó nên chọn Honda Air Blade 125cc. <a href="{ev}">Xem chi tiết xe máy điện</a>.</p>
+<p>Xe máy điện êm, dễ chạy, hợp dạo phố: mỗi xe có 2 pin, một pin đi được khoảng 25–30 km, tổng cộng khoảng 50–60 km; đổi pin tại tiệm 20.000 VND/lần. Xe điện chở tối đa 2 người với tổng cân nặng dưới 130 kg và không nên đi các đèo dài dốc như Prenn, Mimosa, Langbiang — những cung đó nên chọn Honda Air Blade 125cc. <a href="{ev}">Xem chi tiết xe máy điện</a>.</p>
 <p>Các đường khác gần đây: {near_html} · <a href="{hub}">Tất cả tuyến đường phường Xuân Hương</a></p>
 </section>
 <section class="faq"><h2>Câu hỏi thường gặp</h2>{"".join(f"<details><summary>{q}</summary><p>{a}</p></details>" for q, a in qa)}</section>
@@ -1285,7 +1291,7 @@ XS_PATH = home_path("vi") + "thue-xe-so-da-lat/"
 def page_xeso():
     me = XS_PATH
     title = "Thuê xe số Đà Lạt: Sirius FI, Wave RSX – giao xe tận nơi | Văn Phú"
-    desc = "Thuê xe số Sirius FI và Wave RSX ở Đà Lạt tại Văn Phú: không cọc tiền, kèm mũ bảo hiểm, mở cửa 4:30 sáng, giao xe miễn phí tới khách sạn khi thuê từ 2 ngày. Chạy thử và quay video tình trạng xe."
+    desc = "Thuê xe số Sirius FI, Wave RSX ở Đà Lạt tại Văn Phú: không cọc tiền, kèm mũ, mở cửa 4:30 sáng, giao xe miễn phí tới khách sạn khi thuê từ 2 ngày."
     faq = [
         ("Thuê xe số Sirius FI hay Wave RSX ở Đà Lạt?", "Sirius FI dễ đi trong phố và đường đèo nhẹ; Wave RSX gọn, nhẹ và hợp người mới chạy xe số. Bạn có thể xem cả hai xe tại tiệm 1/15/5 Thông Thiên Học và chọn xe trước khi nhận."),
         ("Thuê xe số ở Văn Phú có cần đặt cọc tiền không?", "Không. Văn Phú không giữ tiền cọc, chỉ giữ CCCD hoặc hộ chiếu trong thời gian thuê và trả lại khi bạn trả xe."),
@@ -1396,6 +1402,9 @@ for _l in AB.LANGS:
 CSP_TT = CSP.replace("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
                      "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.tiktok.com https://*.tiktok.com https://*.ttwstatic.com https://*.tiktokcdn.com https://*.tiktokcdn-us.com https://*.byteoversea.com https://*.ibytedtos.com"
                ).replace("frame-src ", "frame-src https://www.tiktok.com https://*.tiktok.com ")
+# TikTok captions are Vietnamese; other languages get a short translated alt (audit 2026-11-12)
+VILLA_ALT = {"en": "Da Lat villa – TikTok video {n}", "zh": "大叻别墅视频 {n}", "ru": "Вилла в Далате, видео {n}",
+             "ko": "달랏 빌라 영상 {n}", "id": "Vila di Da Lat – video TikTok {n}"}
 def page_villa(l):
     t, me = VL.T[l], villa_path(l)
     alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + villa_path(x)}">\n' for x in VL.LANGS) + f'<link rel="alternate" hreflang="x-default" href="{BASE + villa_path("en")}">\n'
@@ -1423,7 +1432,7 @@ def page_villa(l):
     ck = VL.CK[l]
     tiles = "".join(
         f'<a class="tt" href="https://www.tiktok.com/@bietthudalat/video/{c["id"]}" target="_blank" rel="noopener" data-id="{c["id"]}" data-t="{_h.escape(c["t"])}">'
-        f'<img src="/img/tiktok/{c["id"]}.webp?v=2" alt="{_h.escape(c["t"])}" width="360" height="480" loading="{"eager" if n < 6 else "lazy"}" decoding="async">'
+        f'<img src="/img/tiktok/{c["id"]}.webp?v=2" alt="{_h.escape(c["t"]) if l == "vi" else VILLA_ALT[l].format(n=n + 1)}" width="360" height="480" loading="{"eager" if n < 6 else "lazy"}" decoding="async">'
         + (f'<span class="pin">{pin}</span>' if c["p"] else "")
         + f'<span class="vw">▷ {c["v"]}</span></a>' for n, c in enumerate(VL.CLIPS))
     if l == "vi": bk_href = ZALO
@@ -2126,25 +2135,22 @@ for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide
 <meta http-equiv="refresh" content="0; url={BASE}">
 </head><body><p>Page not found. <a href="{BASE}">Go to the Van Phu Dalat home page</a>.</p></body></html>
 """, encoding="utf-8")
-# Sitemap scope: keep priority languages only (English root + vi, ru, zh, id, ms, th, ko, ja).
-# Other-language pages and PDFs stay on the site (linked and reachable) but are left out of the sitemap,
-# so Google's crawl budget goes to the pages we want indexed. hreflang alternates are filtered the same way.
+# Sitemap scope (audit 2026-11-12, owner approved): every indexable page in every language; left out are PDFs and
+# the noindex pages (blogs in de, fr, es, he, it, nl, km, lo, my and the vi road pages). hreflang alternates that
+# point to a noindex page are dropped too (here and in the HTML, after the noindex pass below).
 SITEMAP_LANGS = {"vi", "ru", "zh", "id", "ms", "th", "ko", "ja"}
 _ALL_PREFIX = {"de", "fr", "es", "he", "it", "nl", "km", "lo", "my"}
 def _keep_loc(loc):
     path = loc[len(BASE):]
     if path.startswith("files/"):
         return False
-    if re.match(r"^(?:(?:de|fr|es|he|it|nl|km|lo|my)/blog/|vi/thue-xe-may-da-lat/duong-)", path):
-        return False
-    first = path.split("/", 1)[0]
-    return not (first in _ALL_PREFIX)
+    return not re.match(r"^(?:(?:de|fr|es|he|it|nl|km|lo|my)/blog/|vi/thue-xe-may-da-lat/duong-)", path)
 _kept = []
 for _blk in urls.split("  <url>\n")[1:]:
     _loc = _blk.split("<loc>", 1)[1].split("</loc>", 1)[0]
     if not _keep_loc(_loc):
         continue
-    _blk = "\n".join(_ln for _ln in _blk.split("\n") if not any(f'hreflang="{x}"' in _ln for x in _ALL_PREFIX))
+    _blk = "\n".join(_ln for _ln in _blk.split("\n") if not (" href=" in _ln and "xhtml:link" in _ln and not _keep_loc(_ln.split(' href="', 1)[1].split('"', 1)[0])))
     _kept.append("  <url>\n" + _blk)
 urls = "".join(_kept)
 
@@ -2161,6 +2167,17 @@ for _f in OUT.rglob("index.html"):
         if 'name="robots" content="noindex"' not in _t:
             _t = _t.replace("<head>", '<head><meta name="robots" content="noindex">', 1)
             _f.write_text(_t, encoding="utf-8")
+# hreflang must not point to a noindex page (audit 2026-11-12, owner approved): drop those alternates from every page
+_ALT_RE = _re.compile(r'<link rel="alternate" hreflang="[^"]+" href="([^"]+)">\n?')
+def _alt_ok(m):
+    _u = m.group(1)
+    return m.group(0) if not (_u.startswith(BASE) and _NOINDEX_RE.match(_u[len(BASE):])) else ""
+for _f in OUT.rglob("index.html"):
+    _t = _f.read_text(encoding="utf-8")
+    # a noindex page keeps no hreflang at all (its set would be one-sided); other pages drop links to noindex pages
+    _n = _ALT_RE.sub("", _t) if 'name="robots" content="noindex"' in _t else _ALT_RE.sub(_alt_ok, _t)
+    if _n != _t:
+        _f.write_text(_n, encoding="utf-8")
 # Naver Search Advisor ownership check (owner asked 2026-11-06): meta tag on the homepage only
 NAVER_META = '<meta name="naver-site-verification" content="f373446e54ad121fe48ad95321bac8f701800081" />'
 for _home in (OUT / "index.html", OUT / "dalat-motorbike-rental" / "index.html"):
