@@ -153,6 +153,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-12 lt-solo-female — Long-tail: motorbike rental for solo female travellers (bike choice, daylight rides, attended parking, bag safety, live location to the shop; en "motorbike rental in Da Lat for solo female travellers", vi "thuê xe máy Đà Lạt cho nữ đi một mình", ru "аренда байка в Далате для девушки, путешествующей в одиночку", zh "大叻女生一个人租摩托车", ko "달랏 여자 혼자 오토바이 렌트", id "sewa motor Da Lat untuk wanita solo traveler"; links lt-breakdown, lt-navigation, solo; photos honda-vision-girls-helmets-dalat + guest-white-honda-vision-van-phu-shop; cluster procedure; 6 languages)
 - 2026-11-12 lt-ev-cold — EV long-tail: electric scooter in cold weather, what to wear (layers, gloves, neck warmer, poncho, visor, misty mornings, warm-up stops; 2 batteries + swap 20,000 VND, no km figure (links lt-ev-battery); en "electric scooter in Da Lat in cold weather", vi "đi xe máy điện Đà Lạt trời lạnh mặc gì", ru "электроскутер в Далате в холод: что надеть", zh "大叻天冷骑电动车穿什么", ko "달랏 추운 날 전기 스쿠터 옷차림", id "naik motor listrik di Da Lat saat dingin"; links weather, lt-ev-morning, lt-ev-rain, lt-ev-battery, evrules; photos electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; 6 languages)
 
+- 2026-11-13 souvenirs — What to buy in Da Lat: local souvenirs and specialties (mứt, hồng treo gió, strawberry jam, macadamia, atiso tea, Cau Dat coffee, Lam Dong tea, wine (id: halal-label tip), dried flowers, wool, brocade; where: Da Lat Market, night market, specialty shops, farms; packing tips; en "what to buy in Da Lat", vi "Đà Lạt mua gì làm quà", ru "что привезти из Далата", zh "大叻买什么特产", ko "달랏 기념품", id "oleh-oleh khas Da Lat"; links strawberries, nightmarket; photos van-phu-shop-busy-morning-vision-air-blade + honda-vision-bui-thi-xuan-street-dalat; cluster location; 6 languages)
+- 2026-11-13 lt-waterfalls-rent — Long-tail: renting a motorbike to visit the waterfalls (EV ok Cam Ly/Datanla only, Vision, Air Blade for Elephant/Pongour/Prenn Pass; half/full-day plans, fuel, parking; vi "thuê xe máy đi thác Đà Lạt", en "renting a motorbike to visit the waterfalls near Da Lat", ru "аренда байка в Далате для поездки к водопадам", zh "大叻租摩托车去瀑布", ko "달랏 폭포 오토바이 렌트", id "sewa motor ke air terjun Da Lat"; links waterfalls-map, waterfalls, tuyenlam; photos group-rental-air-blade-van-phu-morning + van-phu-guest-air-blade-thumbs-up; cluster bikes; 6 languages)
+- 2026-11-13 lt-ev-1day — EV long-tail: one full city day by electric scooter (lake, flower garden, station, midday battery swap at the shop 20,000 VND, Domaine de Marie, cathedral, villas, Lam Vien, view café, night market, return by 21:00; no km/kg figures (links lt-ev-battery, evrules); vi "thuê xe máy điện Đà Lạt 1 ngày", en "rent an electric scooter in Da Lat for one day", ru "аренда электроскутера в Далате на день", zh "大叻租电动车一天", ko "달랏 전기 스쿠터 하루 렌트", id "sewa motor listrik Da Lat satu hari"; links lt-ev-cafes, lt-ev-parking, lt-ev-weekend, domainedemarie; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -168,7 +172,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-waterfalls-rent — Renting a motorbike to visit the waterfalls near Da Lat (which bike, loops; link waterfalls + waterfalls map, not duplicate them)
 - [ ] lt-photoshoot — Renting a scooter for a photo shoot or couple photos in Da Lat (which bike, parking at photo spots, early light)
 - [ ] lt-weekend — Motorbike rental in Da Lat for the weekend (busy Saturdays: book ahead; link lt-2days, not duplicate it)
 - [ ] lt-nightride — Riding a rental motorbike in Da Lat after dark (lights, mist, cold, return by 21:00; not the EV-night article)
@@ -191,7 +194,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-1day — Renting an electric scooter for one full day: a city day plan with one battery swap at the shop (not halfday/weekend)
 - [ ] lt-ev-week — Electric scooter for a week or longer in Da Lat: daily battery-swap routine, extending, when to switch to Air Blade
 - [ ] lt-ev-booking — How to book an electric scooter in Da Lat in advance (busy weekends/holidays, what to send, confirmation)
 - [ ] lt-ev-delivery — Electric scooter delivered to your hotel in central Da Lat (free for 2+ days only; 1 day → message us)
@@ -203,7 +205,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 11/11 souvenirs — What to buy in Da Lat: local souvenirs and specialties
 - [ ] 12/11 december — Da Lat in December & the Flower Festival (tell readers to check official festival dates; never invent dates)
 - [ ] 13/11 dalatmarket — Da Lat Market (Chợ Đà Lạt) by day: what each floor/area sells, best time, parking (not the night-market article)
 - [ ] 14/11 hikes — Easy walks and hikes around Da Lat (pine forests, Tuyen Lam trails; link langbiang, not duplicate it)
