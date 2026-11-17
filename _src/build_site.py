@@ -35,6 +35,7 @@ def ya_name(l): return "Яндекс Карты" if l == "ru" else "Yandex Maps"
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
 from content import seo_titles as _SEO
+from content.safety import SAFETY as SAFE
 for _l in LANGS:
     C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
     EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
@@ -685,6 +686,10 @@ def page_home(l):
     if h.get("tips"):
         tips_sec = '<section class="prose"><h2>' + h["h_tips"] + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in h["tips"]) + "</ul></section>"
     upd = f'<p class="note">{h["updated"]}</p>' if h.get("updated") else ""
+    safe_sec = ""
+    if l in SAFE:
+        st, sitems = SAFE[l]
+        safe_sec = '<section class="prose safety"><h2>' + st + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in sitems) + "</ul></section>"
     body = f"""
 <header class="hh"><div class="wrap">{langbar(l, "home", None, me)}</div>
 <div class="hh-hero">
@@ -713,6 +718,7 @@ def page_home(l):
  </div></section>
  <section><h2>{h["h_how"]}</h2><ol class="steps">{steps}</ol></section>
  {tips_sec}
+ {safe_sec}
  <section><h2>{h["h_rules"]}</h2><div class="rules">{rules}</div></section>
  <section class="prose"><h2>{h["h_why"]}</h2>{why}
   <p><a class="btn alt" href="{rel(me, routes_path(l))}" style="border:1px solid var(--line)">{h["routes_btn"]}</a></p></section>
