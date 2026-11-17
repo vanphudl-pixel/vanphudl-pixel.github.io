@@ -35,7 +35,8 @@ def ya_name(l): return "Яндекс Карты" if l == "ru" else "Yandex Maps"
 C = {l: importlib.import_module(f"content.{l}").C for l in LANGS}
 from content.ev import EV
 from content import seo_titles as _SEO
-from content.safety import SAFETY as SAFE
+from content.safety import SAFETY as SAFE, SAFETY_SLUG, SAFETY_PAGE
+def safety_path(l): return lang_root(l) + SAFETY_SLUG[l] + "/"
 for _l in LANGS:
     C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
     EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
@@ -689,7 +690,8 @@ def page_home(l):
     safe_sec = ""
     if l in SAFE:
         st, sitems = SAFE[l]
-        safe_sec = '<section class="prose safety"><h2>' + st + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in sitems) + "</ul></section>"
+        safe_sec = ('<section class="prose safety"><h2>' + st + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in sitems) + "</ul>"
+                    + f'<p><a href="{rel(me, safety_path(l))}">{SAFETY_PAGE[l]["h1"]} →</a></p></section>')
     body = f"""
 <header class="hh"><div class="wrap">{langbar(l, "home", None, me)}</div>
 <div class="hh-hero">
@@ -1403,6 +1405,29 @@ def page_about(l):
     return head_html + body + foot(l, frm=me)
 for _l in AB.LANGS:
     write(about_path(_l), page_about(_l))
+
+# ------------------------------------------------------------------ Riding-safety guide page (one per priority language)
+def page_safety(l):
+    t, me = SAFETY_PAGE[l], safety_path(l)
+    items = SAFE[l][1]
+    alts = "".join(f'<link rel="alternate" hreflang="{x}" href="{BASE + safety_path(x)}">\n' for x in SAFETY_SLUG) + f'<link rel="alternate" hreflang="x-default" href="{BASE + safety_path("en")}">\n'
+    lds = [{"@context": "https://schema.org", "@type": "WebPage", "url": BASE + me, "inLanguage": l, "name": t["title"], "description": t["desc"]}]
+    head_html = head(l, "home", None, t["title"], t["desc"], lds, "electric-row")
+    head_html = re.sub(r'<link rel="canonical" href="[^"]*">\n(?:<link rel="alternate"[^\n]*\n)*', f'<link rel="canonical" href="{BASE + me}">\n' + alts, head_html, count=1)
+    lb = "".join(f'<a href="{rel(me, safety_path(x))}" hreflang="{x}" data-l="{x}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if x == l else ""}>{LABEL[x]}</a>' for x in SAFETY_SLUG)
+    lis = "".join(f"<li><b>{b}</b> — {x}</li>" for b, x in items)
+    body = f"""
+<header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
+<div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p></div></div></header>
+<main class="wrap">
+ <section class="prose"><ul>{lis}</ul>
+  <p><a class="btn" href="{rel(me, home_path(l))}">{t["cta"]} →</a></p>
+ </section>
+</main>
+"""
+    return head_html + body + foot(l, frm=me)
+for _l in SAFETY_SLUG:
+    write(safety_path(_l), page_safety(_l))
 
 # ------------------------------------------------------------------ Villa Đà Lạt page (owner asked 2026-11-04): whole TikTok channel embedded
 CSP_TT = CSP.replace("script-src 'self' 'unsafe-inline' https://www.googletagmanager.com",
@@ -2141,6 +2166,10 @@ for _me in [st_hub_path(), XS_PATH, VS_PATH, halal_path(), tour_path()] + [guide
 <meta http-equiv="refresh" content="0; url={BASE}">
 </head><body><p>Page not found. <a href="{BASE}">Go to the Van Phu Dalat home page</a>.</p></body></html>
 """, encoding="utf-8")
+# Riding-safety guide pages: add to sitemap with hreflang alternates
+_sf_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + safety_path(x)}"/>\n' for x in SAFETY_SLUG)
+_sf_entries = "".join(f"  <url>\n    <loc>{BASE + safety_path(x)}</loc>\n{_sf_alts}  </url>\n" for x in SAFETY_SLUG)
+urls = urls + _sf_entries
 # Sitemap scope (audit 2026-11-12, owner approved): every indexable page in every language; left out are PDFs and
 # the noindex pages (blogs in de, fr, es, he, it, nl, km, lo, my and the vi road pages). hreflang alternates that
 # point to a noindex page are dropped too (here and in the HTML, after the noindex pass below).

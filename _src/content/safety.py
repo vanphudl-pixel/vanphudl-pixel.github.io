@@ -48,3 +48,19 @@ SAFETY = {
    ("Экстренные номера.", "Полиция 113 · Пожарные 114 · Скорая помощь 115"),
    ("Страховка.", "Страхование аренды мы не предоставляем. Проверьте свою туристическую страховку перед поездкой.")]),
 }
+
+# Standalone safety guide page: one page per priority language.
+SAFETY_SLUG = {"en": "riding-safety-da-lat", "vi": "an-toan-khi-di-xe-da-lat", "ko": "dalat-anjeon-undong-annae",
+               "zh": "dalat-qixing-anquan", "ja": "dalat-anzen-unten", "th": "khwam-plodphai-dalat",
+               "id": "keselamatan-berkendara-dalat", "ms": "keselamatan-menunggang-dalat", "ru": "bezopasnost-dalat"}
+SAFETY_PAGE = {
+ "en": dict(title="Riding Safety in Da Lat | Van Phu Dalat", desc="Riding safety tips for scooters and motorbikes in Da Lat: helmets, rain, emergency numbers and insurance.", h1="Riding safety in Da Lat", lead="The short rules we give every guest before they ride.", cta="Rent a scooter"),
+ "vi": dict(title="An toàn khi đi xe ở Đà Lạt | Văn Phú Đà Lạt", desc="Lưu ý an toàn khi đi xe máy, xe điện ở Đà Lạt: mũ bảo hiểm, trời mưa, số khẩn cấp và bảo hiểm.", h1="An toàn khi đi xe ở Đà Lạt", lead="Những lưu ý ngắn gọn chúng tôi nói với mọi khách trước khi xuất phát.", cta="Thuê xe ngay"),
+ "ko": dict(title="달랏 안전 운전 가이드 | 반푸 달랏", desc="달랏에서 스쿠터와 오토바이를 탈 때의 안전 수칙: 헬멧, 비 오는 날, 긴급 전화, 보험.", h1="달랏 안전 운전 안내", lead="모든 고객이 출발 전에 듣는 짧은 안내입니다.", cta="스쿠터 대여하기"),
+ "zh": dict(title="大叻骑行安全指南 | Văn Phú Đà Lạt", desc="在大叻骑摩托车或电动车的安全提示：头盔、雨天、紧急电话和保险。", h1="大叻骑行安全提示", lead="每位客人出发前我们都会说明的简单规则。", cta="立即租车"),
+ "ja": dict(title="ダラットの安全運転ガイド | Văn Phú Đà Lạt", desc="ダラットでスクーターやバイクに乗る際の安全のポイント：ヘルメット、雨の日、緊急連絡先、保険。", h1="ダラットでの安全運転", lead="出発前に全てのお客様にお伝えしている簡単なルールです。", cta="スクーターを借りる"),
+ "th": dict(title="ความปลอดภัยในการขับขี่ในดาลัต | Văn Phú Đà Lạt", desc="เคล็ดลับความปลอดภัยสำหรับการขับสกู๊ตเตอร์หรือมอเตอร์ไซค์ในดาลัต: หมวกกันน็อก ฝนตก เบอร์ฉุกเฉิน และประกัน", h1="ความปลอดภัยในการขับขี่ในดาลัต", lead="กฎสั้นๆ ที่เราแจ้งลูกค้าทุกคนก่อนขับ", cta="เช่าสกู๊ตเตอร์"),
+ "id": dict(title="Keselamatan Berkendara di Da Lat | Văn Phú Đà Lạt", desc="Tips keselamatan naik skuter atau motor di Da Lat: helm, hujan, nomor darurat, dan asuransi.", h1="Keselamatan berkendara di Da Lat", lead="Aturan singkat yang kami sampaikan kepada setiap tamu sebelum berkendara.", cta="Sewa skuter"),
+ "ms": dict(title="Keselamatan Menunggang di Da Lat | Văn Phú Đà Lạt", desc="Tip keselamatan menunggang skuter atau motosikal di Da Lat: topi keledar, hujan, nombor kecemasan dan insurans.", h1="Keselamatan menunggang di Da Lat", lead="Peraturan ringkas yang kami beritahu kepada setiap tetamu sebelum menunggang.", cta="Sewa skuter"),
+ "ru": dict(title="Безопасность на дороге в Далате | Văn Phú Đà Lạt", desc="Советы по безопасности при езде на скутере или мотоцикле в Далате: шлем, дождь, экстренные номера и страховка.", h1="Безопасность на дороге в Далате", lead="Короткие правила, которые мы объясняем каждому гостю перед поездкой.", cta="Арендовать скутер"),
+}
