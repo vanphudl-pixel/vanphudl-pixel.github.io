@@ -37,6 +37,7 @@ from content.ev import EV
 from content import seo_titles as _SEO
 from content.safety import SAFETY as SAFE, SAFETY_SLUG, SAFETY_PAGE
 def safety_path(l): return lang_root(l) + SAFETY_SLUG[l] + "/"
+SAFE_ICONS = ["🪖", "🌧️", "📞", "🛡️"]  # helmet, rain, emergency, insurance
 for _l in LANGS:
     C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
     EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
@@ -142,6 +143,7 @@ table.price tr:last-child td{border-bottom:0}
 .cta-box h2{color:#fff}
 .cta-box p{margin:0 0 14px}
 .rules{display:grid;gap:10px}
+.sico{font-size:1.15em;margin-right:2px}
 .rule{display:flex;align-items:center;gap:12px;background:#fff4e5;border:1px solid #f2c98a;border-radius:12px;padding:14px 16px}
 .rule .ic{font-size:24px;flex:none}
 .revs{display:grid;gap:12px;margin:10px 0 14px}
@@ -690,7 +692,7 @@ def page_home(l):
     safe_sec = ""
     if l in SAFE:
         st, sitems = SAFE[l]
-        safe_sec = ('<section class="prose safety"><h2>' + st + '</h2><ul>' + "".join(f"<li><b>{b}</b> — {t}</li>" for b, t in sitems) + "</ul>"
+        safe_sec = ('<section class="prose safety"><h2>' + st + '</h2><ul>' + "".join(f'<li><span class="sico" aria-hidden="true">{SAFE_ICONS[i]}</span> <b>{b}</b> — {t}</li>' for i, (b, t) in enumerate(sitems)) + "</ul>"
                     + f'<p><a href="{rel(me, safety_path(l))}">{SAFETY_PAGE[l]["h1"]} →</a></p></section>')
     body = f"""
 <header class="hh"><div class="wrap">{langbar(l, "home", None, me)}</div>
@@ -1415,7 +1417,7 @@ def page_safety(l):
     head_html = head(l, "home", None, t["title"], t["desc"], lds, "electric-row")
     head_html = re.sub(r'<link rel="canonical" href="[^"]*">\n(?:<link rel="alternate"[^\n]*\n)*', f'<link rel="canonical" href="{BASE + me}">\n' + alts, head_html, count=1)
     lb = "".join(f'<a href="{rel(me, safety_path(x))}" hreflang="{x}" data-l="{x}"{" class=" + chr(34) + "on" + chr(34) + " aria-current=" + chr(34) + "page" + chr(34) if x == l else ""}>{LABEL[x]}</a>' for x in SAFETY_SLUG)
-    lis = "".join(f"<li><b>{b}</b> — {x}</li>" for b, x in items)
+    lis = "".join(f'<li><span class="sico" aria-hidden="true">{SAFE_ICONS[i]}</span> <b>{b}</b> — {x}</li>' for i, (b, x) in enumerate(items))
     body = f"""
 <header><div class="wrap"><div class="top"><div class="logo">Văn Phú Đà Lạt</div><div class="langs">{lb}</div></div>
 <div class="hero"><h1>{t["h1"]}</h1><p class="lead">{t["lead"]}</p></div></div></header>
