@@ -173,6 +173,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-17 lt-airport — Long-tail: renting a motorbike after landing at Lien Khuong Airport (airport ~30 km, shuttle/taxi/Grab, hotel delivery 2+ days or shop pick-up, no airport handover, late/early arrivals; vi "thuê xe máy Đà Lạt từ sân bay Liên Khương", en "renting a motorbike in Da Lat after landing at Lien Khuong Airport", ru "аренда байка в Далате из аэропорта Льен Кхыонг", zh "连姜机场到大叻租摩托车", ko "달랏 리엔크엉 공항 오토바이 렌트", id "sewa motor Da Lat dari bandara Lien Khuong"; links getting, lt-delivery; photos vision-air-blade-villa-delivery-dalat + guest-helmet-air-blade-hotel-dalat; cluster location; 6 languages)
 - 2026-11-17 lt-ev-food-tour — EV long-tail: street-food evening by electric scooter (bánh căn, bánh tráng nướng, grills, soy milk, central route, gửi xe, swap before evening 20,000 VND, return by 21:00; no km/kg figure (links lt-ev-battery, evrules); vi "xe máy điện đi ăn vặt Đà Lạt buổi tối", en "street-food evening in Da Lat by electric scooter", ru "уличная еда Далата на электроскутере", zh "骑电动车吃大叻街头小吃", ko "전기 스쿠터로 달랏 길거리 음식 투어", id "wisata kuliner malam Da Lat naik motor listrik"; links nightmarket, lt-ev-night, lt-ev-parking; photos electric-scooter-flower-garden-dalat + electric-scooter-purple-flowers-dalat; cluster ev; 6 languages)
 
+- 2026-11-18 coffeefarms — Coffee farms around Da Lat (arabica on the Lang Biang plateau, Cau Dat east ~20–25 km, Lac Duong/K'Ho family plots ~12–15 km, harvest roughly Oct–early year, farm visit, respect private land, civet-coffee welfare note, Air Blade; en "coffee farms around Da Lat", vi "vườn cà phê Đà Lạt", ru "кофейные плантации Далата", zh "大叻咖啡园", ko "달랏 커피 농장", id "kebun kopi Da Lat"; links caudat, souvenirs, strawberries, routes; photos group-travellers-air-blade-van-phu-shop + travellers-blue-air-blade-van-phu-sunny; cluster location; 6 languages)
+- 2026-11-18 lt-language — Long-tail: renting a motorbike without speaking Vietnamese (book by message, translation app offline, map pins, a few words, parking/fuel, send pin+photo on problems; en "renting a motorbike in Da Lat without speaking Vietnamese", vi "thuê xe máy Đà Lạt cho người nước ngoài không biết tiếng Việt" (written for Vietnamese with foreign friends/Việt kiều), ru "аренда байка в Далате без знания вьетнамского", zh "不会越南语在大叻租摩托车", ko "베트남어 못해도 달랏 오토바이 렌트", id "sewa motor di Da Lat tanpa bisa bahasa Vietnam"; links lt-booking, lt-navigation, phrases; photos three-honda-vision-rental-dalat + guest-white-honda-scooter-van-phu-sign; cluster procedure; 6 languages)
+- 2026-11-18 lt-ev-display — EV long-tail: electric scooter controls explained (power key/button, display, battery bars, modes, P button, brakes, horn, stand, 2-minute check; 2 batteries + swap 20,000 VND, no km figure (links lt-ev-battery); en "electric scooter controls explained", vi "cách sử dụng xe máy điện", ru "как управлять электроскутером", zh "电动车怎么骑", ko "전기 스쿠터 사용법", id "cara pakai motor listrik"; links lt-ev-checklist, evrules, lt-ev-battery; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -188,7 +192,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-language — Renting a motorbike in Da Lat without speaking Vietnamese (messaging in English, translation apps; link phrases)
 - [ ] lt-damage — What happens if a rental bike gets scratched or damaged (pick-up video, message first; no invented fees)
 - [ ] lt-weather-check — Checking weather and road conditions before a day ride from Da Lat (rain, fog, closed roads; link weather)
 - [ ] lt-sunset-ride — Renting a scooter for a sunset ride (Tuyen Lam, view cafés; riding back in the dark, return by 21:00)
@@ -207,14 +210,22 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-display — Electric scooter controls explained: power switch, display, battery bars, modes, parking stand
 - [ ] lt-ev-group — Electric scooters for a group of friends (book ahead, riders <140 kg per scooter, mixing with Air Blades)
 - [ ] lt-ev-villas — French villas and old streets of central Da Lat by electric scooter (quiet architecture ride)
 - [ ] lt-ev-pagodas — Pagodas near the centre by electric scooter (close ones only; Linh Phuoc/Truc Lam → check route/Air Blade; link pagoda-map)
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
+- [ ] lt-ev-students — Electric scooter for students and young travellers (rider 16+, sharing for two <140 kg, budget day in the centre)
+- [ ] lt-ev-churches — Churches of central Da Lat by electric scooter (cathedral, Domaine de Marie, others nearby; link church-map; not a copy of domainedemarie)
+- [ ] lt-ev-station — Da Lat Railway Station by electric scooter (parking, train to Trai Mat and back, ride back; link station, not duplicate it)
+- [ ] lt-ev-palaces — Palaces and museum near the centre by electric scooter (link palace-map; statuses 'check'; no prices/hours)
+- [ ] lt-ev-viewpoints — City viewpoints reachable by electric scooter without passes (hills in the centre, view cafés; link cafe-view-map)
+- [ ] lt-ev-lowbattery — What to do if the battery runs low away from the shop (slow down, lower mode, message with pin; no km figure)
+- [ ] lt-ev-festival — Electric scooter during the Flower Festival 2026 (crowds, closed streets, parking; dates only as planned, link flower-festival-2026) (publish ~mid Dec)
+- [ ] lt-ev-christmas — Christmas and New Year lights in the centre by electric scooter (publish ~mid Dec)
+- [ ] lt-ev-cherry — Cherry blossom (mai anh đào) spots near the centre by electric scooter (publish ~mid Jan)
+- [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 16/11 coffeefarms — Coffee farms around Da Lat (Cau Dat arabica, farm visits; not the café-view article)
 - [ ] 17/11 history — A short history of Da Lat: from French hill station to today, and where to see it (link palace map, station)
 - [ ] 18/11 couples — Da Lat for couples: romantic spots, sunrise rides and quiet cafés
 - [ ] 19/11 villages — K'Ho villages around Lac Duong: visiting respectfully (well-established facts only)
