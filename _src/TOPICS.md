@@ -177,6 +177,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-18 lt-language — Long-tail: renting a motorbike without speaking Vietnamese (book by message, translation app offline, map pins, a few words, parking/fuel, send pin+photo on problems; en "renting a motorbike in Da Lat without speaking Vietnamese", vi "thuê xe máy Đà Lạt cho người nước ngoài không biết tiếng Việt" (written for Vietnamese with foreign friends/Việt kiều), ru "аренда байка в Далате без знания вьетнамского", zh "不会越南语在大叻租摩托车", ko "베트남어 못해도 달랏 오토바이 렌트", id "sewa motor di Da Lat tanpa bisa bahasa Vietnam"; links lt-booking, lt-navigation, phrases; photos three-honda-vision-rental-dalat + guest-white-honda-scooter-van-phu-sign; cluster procedure; 6 languages)
 - 2026-11-18 lt-ev-display — EV long-tail: electric scooter controls explained (power key/button, display, battery bars, modes, P button, brakes, horn, stand, 2-minute check; 2 batteries + swap 20,000 VND, no km figure (links lt-ev-battery); en "electric scooter controls explained", vi "cách sử dụng xe máy điện", ru "как управлять электроскутером", zh "电动车怎么骑", ko "전기 스쿠터 사용법", id "cara pakai motor listrik"; links lt-ev-checklist, evrules, lt-ev-battery; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
 
+- 2026-11-19 history — A short history of Da Lat (Lạch/K'Ho plateau, name stories, Yersin 1893, hill station, Xuan Huong Lake dam, Lang Biang Palace hotel, Lycée Yersin, villas, cathedral, Domaine de Marie, railway, Dinh 1/2/3, after 1954 university town; where to see each chapter + half-day ride; en "a short history of Da Lat", vi "lịch sử Đà Lạt", ru "история Далата", zh "大叻历史", ko "달랏 역사", id "sejarah Da Lat"; links domainedemarie, station, thingstodo, palaces map, routes; photos honda-scooters-villa-garden-dalat + family-navy-air-blade-villa-street-dalat; cluster location; 6 languages)
+- 2026-11-19 lt-damage — Long-tail: rental bike scratched or damaged (pick-up video, safety/photos/message first, no repair before messaging, actual repair cost only (owner rule), no fixed fee/no deposit, flat tyre ≠ damage, avoiding scratches, return check; en "rental motorbike scratched or damaged in Da Lat", vi "xe máy thuê bị trầy xước, hư hỏng ở Đà Lạt", ru "поцарапали или повредили арендованный байк в Далате", zh "大叻租摩托车刮花损坏怎么办", ko "달랏 렌트 오토바이 흠집·파손", id "motor sewaan lecet atau rusak di Da Lat"; links lt-breakdown, lt-return, lt-checklist; photos honda-air-blade-vision-fleet-van-phu + guest-checking-black-air-blade-van-phu; cluster procedure; 6 languages)
+- 2026-11-19 lt-ev-group — EV long-tail: electric scooters for a group of friends (book ahead, pairing riders within the rules' weight limit (no kg figure), battery bars of every scooter, shared swap stop 20,000 VND, mixing with Air Blades for passes, riding in line, shared parking; no km figure (links lt-ev-battery, evrules); vi "thuê xe máy điện Đà Lạt theo nhóm", en "electric scooter rental in Da Lat for groups", ru "аренда электроскутеров в Далате для компании", zh "大叻团体租电动车", ko "달랏 단체 전기 스쿠터 렌트", id "sewa motor listrik Da Lat untuk rombongan"; links lt-ev-booking, lt-groups, lt-ev-parking; photos electric-scooter-flower-garden-dalat + electric-scooters-van-phu-shop; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -192,7 +196,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-damage — What happens if a rental bike gets scratched or damaged (pick-up video, message first; no invented fees)
 - [ ] lt-weather-check — Checking weather and road conditions before a day ride from Da Lat (rain, fog, closed roads; link weather)
 - [ ] lt-sunset-ride — Renting a scooter for a sunset ride (Tuyen Lam, view cafés; riding back in the dark, return by 21:00)
 - [ ] lt-tuyenlam-rent — Renting a motorbike to visit Tuyen Lam Lake (which bike, parking; link tuyenlam, not duplicate it)
@@ -210,7 +213,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-group — Electric scooters for a group of friends (book ahead, riders <140 kg per scooter, mixing with Air Blades)
 - [ ] lt-ev-villas — French villas and old streets of central Da Lat by electric scooter (quiet architecture ride)
 - [ ] lt-ev-pagodas — Pagodas near the centre by electric scooter (close ones only; Linh Phuoc/Truc Lam → check route/Air Blade; link pagoda-map)
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
@@ -226,7 +228,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 17/11 history — A short history of Da Lat: from French hill station to today, and where to see it (link palace map, station)
 - [ ] 18/11 couples — Da Lat for couples: romantic spots, sunrise rides and quiet cafés
 - [ ] 19/11 villages — K'Ho villages around Lac Duong: visiting respectfully (well-established facts only)
 - [ ] 20/11 evenings — Da Lat after dark beyond the night market: lake walks, live-music cafés, night views
