@@ -181,6 +181,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-19 lt-damage — Long-tail: rental bike scratched or damaged (pick-up video, safety/photos/message first, no repair before messaging, actual repair cost only (owner rule), no fixed fee/no deposit, flat tyre ≠ damage, avoiding scratches, return check; en "rental motorbike scratched or damaged in Da Lat", vi "xe máy thuê bị trầy xước, hư hỏng ở Đà Lạt", ru "поцарапали или повредили арендованный байк в Далате", zh "大叻租摩托车刮花损坏怎么办", ko "달랏 렌트 오토바이 흠집·파손", id "motor sewaan lecet atau rusak di Da Lat"; links lt-breakdown, lt-return, lt-checklist; photos honda-air-blade-vision-fleet-van-phu + guest-checking-black-air-blade-van-phu; cluster procedure; 6 languages)
 - 2026-11-19 lt-ev-group — EV long-tail: electric scooters for a group of friends (book ahead, pairing riders within the rules' weight limit (no kg figure), battery bars of every scooter, shared swap stop 20,000 VND, mixing with Air Blades for passes, riding in line, shared parking; no km figure (links lt-ev-battery, evrules); vi "thuê xe máy điện Đà Lạt theo nhóm", en "electric scooter rental in Da Lat for groups", ru "аренда электроскутеров в Далате для компании", zh "大叻团体租电动车", ko "달랏 단체 전기 스쿠터 렌트", id "sewa motor listrik Da Lat untuk rombongan"; links lt-ev-booking, lt-groups, lt-ev-parking; photos electric-scooter-flower-garden-dalat + electric-scooters-van-phu-shop; cluster ev; 6 languages)
 
+- 2026-11-20 couples — Da Lat for couples (sunrise at Xuan Huong / Cau Dat, Domaine de Marie, Tuyen Lam, Valley of Love, flower gardens, villa streets, view cafés, evenings, riding two-up (Air Blade for two, EV for centre), 2-day plan; en "Da Lat for couples", vi "du lịch Đà Lạt cặp đôi", ru "Далат для пар", zh "大叻情侣旅行", ko "달랏 커플 여행", id "liburan ke Da Lat bersama pasangan"; links sunrise-sunset, caudat, domainedemarie, tuyenlam, flowers, coffee, lt-two, lt-ev-couples, lt-photoshoot; photos travellers-air-blade-cafe-dalat + couple-air-blade-dalat-center-street + guests-helmets-red-air-blade-van-phu; cluster location; 6 languages)
+- 2026-11-20 lt-weather-check — Long-tail: checking weather and road conditions before a day ride (hourly rain timing, storm warnings, dawn fog lifts ~8 am, passes may close after landslides, roadworks, go / change plan / stay rule, what to bring; en "Da Lat weather and road conditions before a motorbike day trip", vi "thời tiết Đà Lạt đi xe máy", ru "погода в Далате для поездки на байке", zh "大叻骑摩托车出行天气", ko "달랏 오토바이 여행 날씨", id "cuaca Da Lat untuk naik motor"; links weather, passes, rainyday, lt-rainy, routes; photos van-phu-shop-busy-morning-vision-air-blade + guest-blue-air-blade-van-phu-shop; cluster bikes; 6 languages)
+- 2026-11-20 lt-ev-villas — EV long-tail: French villas and old streets by electric scooter (Tran Hung Dao, Dalat Palace hotel, former Lycée Yersin, railway station, Hoa Binh / Phan Dinh Phung old town, 2–3 h loop, respect private villas; 2 batteries + swap 20,000 VND, no km/kg figure (links lt-ev-battery, evrules); en "French villas in Da Lat by electric scooter", vi "xe máy điện dạo biệt thự Pháp Đà Lạt", ru "французские виллы Далата на электроскутере", zh "骑电动车看大叻法式别墅", ko "전기 스쿠터로 달랏 프랑스 빌라", id "keliling vila Prancis Da Lat naik motor listrik"; links history, domainedemarie, lt-ev-hills, lt-ev-parking; photos electric-scooters-helmets-van-phu + electric-scooter-purple-flowers-dalat + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -196,7 +200,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-weather-check — Checking weather and road conditions before a day ride from Da Lat (rain, fog, closed roads; link weather)
 - [ ] lt-sunset-ride — Renting a scooter for a sunset ride (Tuyen Lam, view cafés; riding back in the dark, return by 21:00)
 - [ ] lt-tuyenlam-rent — Renting a motorbike to visit Tuyen Lam Lake (which bike, parking; link tuyenlam, not duplicate it)
 - [ ] lt-langbiang-rent — Renting a motorbike to reach Lang Biang (Air Blade, no EV, fuel; link langbiang, not duplicate it)
@@ -213,7 +216,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-villas — French villas and old streets of central Da Lat by electric scooter (quiet architecture ride)
 - [ ] lt-ev-pagodas — Pagodas near the centre by electric scooter (close ones only; Linh Phuoc/Truc Lam → check route/Air Blade; link pagoda-map)
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
 - [ ] lt-ev-students — Electric scooter for students and young travellers (rider 16+, sharing for two <140 kg, budget day in the centre)
@@ -228,11 +230,20 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 18/11 couples — Da Lat for couples: romantic spots, sunrise rides and quiet cafés
 - [ ] 19/11 villages — K'Ho villages around Lac Duong: visiting respectfully (well-established facts only)
 - [ ] 20/11 evenings — Da Lat after dark beyond the night market: lake walks, live-music cafés, night views
 - [ ] 21/11 packing — What to pack for Da Lat: cool mornings, rain, riding gear
 - [ ] 22/11 slowtravel — Slow Da Lat for older travellers: easy sights, short rides, rest stops
+- [ ] 23/11 crazyhouse — Hang Nga Crazy House: what to expect, best time to visit, sights nearby (no prices/hours)
+- [ ] 24/11 lakes — Lakes around Da Lat compared: Xuan Huong, Tuyen Lam, Chien Thang, Dankia, Than Tho (which bike for each)
+- [ ] 25/11 museum — Lam Dong Museum and other indoor culture stops for a cool afternoon (no prices/hours; link palaces map)
+- [ ] 26/11 phototips — Photography tips for Da Lat: morning mist, golden hour, rain light, asking before portraits
+- [ ] 27/11 longstay — Staying a month in Da Lat: neighbourhoods, daily routine, markets, weather planning
+- [ ] 28/11 safety — Staying safe and well in Da Lat: cold nights, road safety, common tourist pitfalls, emergency numbers 113/114/115
+- [ ] 29/11 nextstop — Where to go after Da Lat: Nha Trang, Mui Ne, Buon Ma Thuot, Ho Chi Minh City (transport overview, no fares)
+- [ ] 30/11 xuanhuong — Xuan Huong Lake guide: walking loop, sunrise, flower garden, cafés, evening lights
+- [ ] 01/12 tanung — Ta Nung valley and Me Linh coffee garden: half-day ride west (Air Blade, no EV)
+- [ ] 02/12 markets — Neighbourhood markets beyond Da Lat Market: morning produce, flowers, how to shop
 - [ ] christmas — Da Lat in December: Christmas, cool weather, early cherry blossom (publish ~early Dec)
 - [ ] tet — Tết (Lunar New Year) in Da Lat: tips for travellers (publish ~early Jan)
 
