@@ -185,6 +185,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-20 lt-weather-check — Long-tail: checking weather and road conditions before a day ride (hourly rain timing, storm warnings, dawn fog lifts ~8 am, passes may close after landslides, roadworks, go / change plan / stay rule, what to bring; en "Da Lat weather and road conditions before a motorbike day trip", vi "thời tiết Đà Lạt đi xe máy", ru "погода в Далате для поездки на байке", zh "大叻骑摩托车出行天气", ko "달랏 오토바이 여행 날씨", id "cuaca Da Lat untuk naik motor"; links weather, passes, rainyday, lt-rainy, routes; photos van-phu-shop-busy-morning-vision-air-blade + guest-blue-air-blade-van-phu-shop; cluster bikes; 6 languages)
 - 2026-11-20 lt-ev-villas — EV long-tail: French villas and old streets by electric scooter (Tran Hung Dao, Dalat Palace hotel, former Lycée Yersin, railway station, Hoa Binh / Phan Dinh Phung old town, 2–3 h loop, respect private villas; 2 batteries + swap 20,000 VND, no km/kg figure (links lt-ev-battery, evrules); en "French villas in Da Lat by electric scooter", vi "xe máy điện dạo biệt thự Pháp Đà Lạt", ru "французские виллы Далата на электроскутере", zh "骑电动车看大叻法式别墅", ko "전기 스쿠터로 달랏 프랑스 빌라", id "keliling vila Prancis Da Lat naik motor listrik"; links history, domainedemarie, lt-ev-hills, lt-ev-parking; photos electric-scooters-helmets-van-phu + electric-scooter-purple-flowers-dalat + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
 
+- 2026-11-21 villages — K'Ho villages around Lac Duong: visiting respectfully (who the K'Ho are, Lạch/name of Da Lat, ~12 km north, brocade weaving, gong culture (UNESCO), coffee plots, churches; etiquette: ask before photos, private land, no sweets/money to kids, local guide; Air Blade, no EV; en "K'Ho villages around Lac Duong", vi "làng người K'Ho Lạc Dương", ru "деревни народа кхо у Лак Зыонга", zh "大叻嘎和族村落", ko "달랏 락즈엉 커호족 마을", id "desa suku K'Ho di Lac Duong"; links history, coffeefarms, langbiang, danhia, pinkgrass, routes; photos group-travellers-air-blade-van-phu-shop + guest-black-air-blade-van-phu-shop; cluster location; 6 languages)
+- 2026-11-21 lt-sunset-ride — Long-tail: renting a scooter for a sunset ride (sunset ~5:30–6:30 pm, Tuyen Lam, hill view cafés, Xuan Huong, which bike, riding back after dark, return by 21:00 or extend a day; en "rent a scooter for a sunset ride in Da Lat", vi "thuê xe máy Đà Lạt ngắm hoàng hôn", ru "аренда байка в Далате на закат", zh "大叻租摩托车看日落", ko "달랏 오토바이 렌트 일몰", id "sewa motor Da Lat untuk lihat sunset"; links tuyenlam, sunrise-sunset, lt-nightride, night-view-cafe-map; photos honda-scooters-villa-garden-dalat + guest-air-blade-dusk-street-dalat + guest-air-blade-hotel-evening-dalat; cluster bikes; 6 languages)
+- 2026-11-21 lt-ev-pagodas — EV long-tail: pagodas near central Da Lat by electric scooter (Linh Son, Linh Quang, Van Hanh loop + Chua Tau; Linh Phuoc check route/train, Truc Lam & Linh An → Air Blade; 2 batteries + swap 20,000 VND, no km/kg figure (links lt-ev-battery, evrules); en "pagodas near central Da Lat by electric scooter", vi "xe máy điện đi chùa Đà Lạt", ru "пагоды Далата на электроскутере", zh "骑电动车逛大叻寺庙", ko "전기 스쿠터로 달랏 사원 둘러보기", id "keliling pagoda Da Lat naik motor listrik"; links pagodas, pagoda-map; photos electric-scooter-flower-garden-dalat + electric-scooters-van-phu-shop; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -200,7 +204,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-sunset-ride — Renting a scooter for a sunset ride (Tuyen Lam, view cafés; riding back in the dark, return by 21:00)
 - [ ] lt-tuyenlam-rent — Renting a motorbike to visit Tuyen Lam Lake (which bike, parking; link tuyenlam, not duplicate it)
 - [ ] lt-langbiang-rent — Renting a motorbike to reach Lang Biang (Air Blade, no EV, fuel; link langbiang, not duplicate it)
 - [ ] lt-helmet — Helmets with your rental: getting a good fit, chin strap, two helmets for two riders, rain visor
@@ -216,7 +219,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-pagodas — Pagodas near the centre by electric scooter (close ones only; Linh Phuoc/Truc Lam → check route/Air Blade; link pagoda-map)
 - [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
 - [ ] lt-ev-students — Electric scooter for students and young travellers (rider 16+, sharing for two <140 kg, budget day in the centre)
 - [ ] lt-ev-churches — Churches of central Da Lat by electric scooter (cathedral, Domaine de Marie, others nearby; link church-map; not a copy of domainedemarie)
@@ -230,7 +232,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 19/11 villages — K'Ho villages around Lac Duong: visiting respectfully (well-established facts only)
 - [ ] 20/11 evenings — Da Lat after dark beyond the night market: lake walks, live-music cafés, night views
 - [ ] 21/11 packing — What to pack for Da Lat: cool mornings, rain, riding gear
 - [ ] 22/11 slowtravel — Slow Da Lat for older travellers: easy sights, short rides, rest stops
