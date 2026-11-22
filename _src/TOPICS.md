@@ -189,6 +189,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-21 lt-sunset-ride — Long-tail: renting a scooter for a sunset ride (sunset ~5:30–6:30 pm, Tuyen Lam, hill view cafés, Xuan Huong, which bike, riding back after dark, return by 21:00 or extend a day; en "rent a scooter for a sunset ride in Da Lat", vi "thuê xe máy Đà Lạt ngắm hoàng hôn", ru "аренда байка в Далате на закат", zh "大叻租摩托车看日落", ko "달랏 오토바이 렌트 일몰", id "sewa motor Da Lat untuk lihat sunset"; links tuyenlam, sunrise-sunset, lt-nightride, night-view-cafe-map; photos honda-scooters-villa-garden-dalat + guest-air-blade-dusk-street-dalat + guest-air-blade-hotel-evening-dalat; cluster bikes; 6 languages)
 - 2026-11-21 lt-ev-pagodas — EV long-tail: pagodas near central Da Lat by electric scooter (Linh Son, Linh Quang, Van Hanh loop + Chua Tau; Linh Phuoc check route/train, Truc Lam & Linh An → Air Blade; 2 batteries + swap 20,000 VND, no km/kg figure (links lt-ev-battery, evrules); en "pagodas near central Da Lat by electric scooter", vi "xe máy điện đi chùa Đà Lạt", ru "пагоды Далата на электроскутере", zh "骑电动车逛大叻寺庙", ko "전기 스쿠터로 달랏 사원 둘러보기", id "keliling pagoda Da Lat naik motor listrik"; links pagodas, pagoda-map; photos electric-scooter-flower-garden-dalat + electric-scooters-van-phu-shop; cluster ev; 6 languages)
 
+- 2026-11-22 evenings — Da Lat after dark beyond the night market (lake walk, Lam Vien Square, live-music cafés "nhạc sống", night-view cafés, soy milk/bánh tráng nướng/lẩu/chè, riding after dark, rental day until 21:00 or extend; en "things to do in Da Lat in the evening", vi "Đà Lạt về đêm đi đâu", ru "чем заняться в Далате вечером", zh "大叻晚上去哪玩", ko "달랏 밤에 갈 만한 곳", id "tempat wisata malam di Da Lat"; links night-view-cafe-map, lt-sunset-ride, nightmarket, lt-nightride, lt-ev-night; photos family-air-blade-hotel-street-dalat + evening-pickup-van-phu-1-15-5-thong-thien-hoc + honda-vision-cafe-garden-dalat; cluster location; 6 languages)
+- 2026-11-22 lt-tuyenlam-rent — Long-tail: renting a motorbike to visit Tuyen Lam Lake (~6–7 km south, Vision solo / Air Blade for two, EV not recommended, route via 3 Tháng 4 + signs near Datanla, fuel, attended parking at Truc Lam/piers, Robin Hill cable car option, half vs full day; en "rent a motorbike to visit Tuyen Lam Lake", vi "thuê xe máy đi hồ Tuyền Lâm", ru "аренда байка до озера Туйен Лам", zh "大叻租摩托车去宣林湖", ko "뚜옌럼 호수 오토바이 렌트", id "sewa motor ke Danau Tuyen Lam"; links tuyenlam, lt-waterfalls-rent; photos three-honda-vision-rental-dalat + travellers-blue-air-blade-van-phu-sunny + guests-helmets-red-air-blade-van-phu; cluster bikes; 6 languages)
+- 2026-11-22 lt-ev-nomads — EV long-tail: electric scooter for remote workers / long stays (café work habits, daily routine, swap every couple of days 20,000 VND, parking, laptop & rain, week 1,050,000 VND, Air Blade days for passes; no km/kg figure (links lt-ev-battery, evrules); en "electric scooter rental in Da Lat for remote workers", vi "thuê xe máy điện Đà Lạt cho người làm việc từ xa", ru "аренда электроскутера в Далате для удалёнщиков", zh "大叻数字游民租电动车", ko "달랏 한 달 살기 전기 스쿠터 렌트", id "sewa motor listrik Da Lat untuk digital nomad"; links lt-ev-cafes, lt-ev-parking, lt-ev-week; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -204,7 +208,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-tuyenlam-rent — Renting a motorbike to visit Tuyen Lam Lake (which bike, parking; link tuyenlam, not duplicate it)
 - [ ] lt-langbiang-rent — Renting a motorbike to reach Lang Biang (Air Blade, no EV, fuel; link langbiang, not duplicate it)
 - [ ] lt-helmet — Helmets with your rental: getting a good fit, chin strap, two helmets for two riders, rain visor
 - [ ] lt-short-ride — Renting a motorbike for just a few hours in Da Lat (honest: fixed 150,000 VND/day, rental day until 21:00)
@@ -219,7 +222,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-nomads — Electric scooter for remote workers / long stays in Da Lat (cafés to work from, daily routine, monthly planning)
 - [ ] lt-ev-students — Electric scooter for students and young travellers (rider 16+, sharing for two <140 kg, budget day in the centre)
 - [ ] lt-ev-churches — Churches of central Da Lat by electric scooter (cathedral, Domaine de Marie, others nearby; link church-map; not a copy of domainedemarie)
 - [ ] lt-ev-station — Da Lat Railway Station by electric scooter (parking, train to Trai Mat and back, ride back; link station, not duplicate it)
@@ -232,7 +234,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 20/11 evenings — Da Lat after dark beyond the night market: lake walks, live-music cafés, night views
 - [ ] 21/11 packing — What to pack for Da Lat: cool mornings, rain, riding gear
 - [ ] 22/11 slowtravel — Slow Da Lat for older travellers: easy sights, short rides, rest stops
 - [ ] 23/11 crazyhouse — Hang Nga Crazy House: what to expect, best time to visit, sights nearby (no prices/hours)
