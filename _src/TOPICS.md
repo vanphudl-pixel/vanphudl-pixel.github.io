@@ -193,6 +193,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-22 lt-tuyenlam-rent — Long-tail: renting a motorbike to visit Tuyen Lam Lake (~6–7 km south, Vision solo / Air Blade for two, EV not recommended, route via 3 Tháng 4 + signs near Datanla, fuel, attended parking at Truc Lam/piers, Robin Hill cable car option, half vs full day; en "rent a motorbike to visit Tuyen Lam Lake", vi "thuê xe máy đi hồ Tuyền Lâm", ru "аренда байка до озера Туйен Лам", zh "大叻租摩托车去宣林湖", ko "뚜옌럼 호수 오토바이 렌트", id "sewa motor ke Danau Tuyen Lam"; links tuyenlam, lt-waterfalls-rent; photos three-honda-vision-rental-dalat + travellers-blue-air-blade-van-phu-sunny + guests-helmets-red-air-blade-van-phu; cluster bikes; 6 languages)
 - 2026-11-22 lt-ev-nomads — EV long-tail: electric scooter for remote workers / long stays (café work habits, daily routine, swap every couple of days 20,000 VND, parking, laptop & rain, week 1,050,000 VND, Air Blade days for passes; no km/kg figure (links lt-ev-battery, evrules); en "electric scooter rental in Da Lat for remote workers", vi "thuê xe máy điện Đà Lạt cho người làm việc từ xa", ru "аренда электроскутера в Далате для удалёнщиков", zh "大叻数字游民租电动车", ko "달랏 한 달 살기 전기 스쿠터 렌트", id "sewa motor listrik Da Lat untuk digital nomad"; links lt-ev-cafes, lt-ev-parking, lt-ev-week; photos electric-scooters-helmets-van-phu + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
 
+- 2026-11-23 packing — What to pack for Da Lat (climate, layers, windproof jacket, rain suit/ponchos, closed shoes, sun protection, riding extras: gloves, backpack, power bank, offline maps, passport for the rental; en "what to pack for Da Lat", vi "đi Đà Lạt cần mang gì", ru "что взять с собой в Далат", zh "去大叻带什么", ko "달랏 여행 준비물", id "barang yang perlu dibawa ke Da Lat"; links weather, dalatmarket, rainyday, lt-ev-cold, lt-weather-check; photos family-kids-scooters-hotel-dalat + guest-helmet-air-blade-hotel-dalat + guest-checking-black-air-blade-van-phu; cluster bikes; 6 languages)
+- 2026-11-23 lt-langbiang-rent — Long-tail: renting a motorbike to reach Lang Biang (~12 km north, Air Blade recommended, Vision for one light rider, no EV, fill up in the city, parking at the foot, jeep/walk to Radar Peak, mornings; en "rent a motorbike to Lang Biang", vi "thuê xe máy đi Langbiang", ru "аренда байка до горы Лангбианг", zh "大叻租摩托车去朗边山", ko "랑비앙산 오토바이 렌트", id "sewa motor ke Gunung Lang Biang"; links langbiang, lt-airblade; photos friends-air-blade-van-phu-gate + guest-blue-air-blade-van-phu-shop + van-phu-shop-early-pickup-air-blade; cluster bikes; 6 languages)
+- 2026-11-23 lt-ev-students — EV long-tail: electric scooter for students and young travellers (rider 16+, 2 riders within the rules' weight limit (no kg figure), sharing costs, budget day in the centre, back by 21:00, no passes → Air Blade, 2 batteries + swap 20,000 VND, no km figure (links lt-ev-battery, evrules); en "electric scooter rental in Da Lat for students", vi "thuê xe máy điện Đà Lạt cho sinh viên", ru "аренда электроскутера в Далате для студентов", zh "大叻学生租电动车", ko "달랏 대학생 전기 스쿠터 렌트", id "sewa motor listrik Da Lat untuk pelajar dan mahasiswa"; links lt-ev-group, lt-ev-cafes; photos electric-scooter-flower-garden-dalat + electric-scooter-purple-flowers-dalat + electric-scooters-van-phu-shop; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -208,9 +212,18 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-langbiang-rent — Renting a motorbike to reach Lang Biang (Air Blade, no EV, fuel; link langbiang, not duplicate it)
 - [ ] lt-helmet — Helmets with your rental: getting a good fit, chin strap, two helmets for two riders, rain visor
 - [ ] lt-short-ride — Renting a motorbike for just a few hours in Da Lat (honest: fixed 150,000 VND/day, rental day until 21:00)
+- [ ] lt-dankia-rent — Renting a motorbike for Dankia Lake & Golden Stream (Air Blade, no EV, fuel; link danhia, not duplicate it)
+- [ ] lt-shop-directions — Finding our shop at 1/15/5 Thông Thiên Học: landmarks, the alley, where to stop, old GBP address on Bùi Thị Xuân (same shop)
+- [ ] lt-backpack-storage — Bags on a rental scooter: under-seat space Vision vs Air Blade, hooks, backpacks, no suitcases (link lt-ev-luggage for EV)
+- [ ] lt-seniors — Motorbike rental for older travellers: lighter Vision, short legs, riding as a passenger, rest stops (gas bikes; link lt-ev-families for EV)
+- [ ] lt-vs-car — Scooter rental or a car with driver for day trips: honest comparison by trip type (no third-party prices)
+- [ ] lt-tall-riders — Which rental scooter for tall riders: Air Blade seat and legroom, test ride (no weight figures)
+- [ ] lt-overnight — Renting a motorbike for an overnight trip out of Da Lat and back: bike choice, packing, fuel, keeping the rental days (no invented routes)
+- [ ] lt-tanung-rent — Renting a motorbike for Ta Nung valley (Air Blade, no EV; link tanung, not duplicate it) (publish ~early Dec, after tanung)
+- [ ] lt-festival-rent — Motorbike rental during the Flower Festival 2026: book ahead, closed streets, parking (dates only as planned; link flower-festival-2026) (publish ~mid Dec)
+- [ ] lt-cherry-rent — Renting a motorbike for cherry blossom (mai anh đào) season (publish ~mid Jan)
 
 ## Photos — owner's real photos (use them in every new article)
 - Library: `img/<name>.jpg` (EXIF/GPS stripped, ≤1200 px, ~150–240 KB; the build serves WebP copies of ~20–75 KB automatically). Alt texts in all languages: `content/photos.py` ALT[lang][name].
@@ -222,7 +235,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-students — Electric scooter for students and young travellers (rider 16+, sharing for two <140 kg, budget day in the centre)
 - [ ] lt-ev-churches — Churches of central Da Lat by electric scooter (cathedral, Domaine de Marie, others nearby; link church-map; not a copy of domainedemarie)
 - [ ] lt-ev-station — Da Lat Railway Station by electric scooter (parking, train to Trai Mat and back, ride back; link station, not duplicate it)
 - [ ] lt-ev-palaces — Palaces and museum near the centre by electric scooter (link palace-map; statuses 'check'; no prices/hours)
@@ -234,7 +246,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 21/11 packing — What to pack for Da Lat: cool mornings, rain, riding gear
 - [ ] 22/11 slowtravel — Slow Da Lat for older travellers: easy sights, short rides, rest stops
 - [ ] 23/11 crazyhouse — Hang Nga Crazy House: what to expect, best time to visit, sights nearby (no prices/hours)
 - [ ] 24/11 lakes — Lakes around Da Lat compared: Xuan Huong, Tuyen Lam, Chien Thang, Dankia, Than Tho (which bike for each)
