@@ -205,6 +205,10 @@ Owner: Phú. Report language: Vietnamese.
 - 2026-11-25 lt-short-ride — Long-tail: renting a scooter for a few hours (honest: no hourly rate, fixed 150,000 VND/day until 21:00, shop 4:30, sunrise/afternoon/sunset plans, quick pick-up, Grab for single trips; en "rent a scooter for a few hours in Da Lat", vi "thuê xe máy Đà Lạt theo giờ", ru "аренда байка в Далате на несколько часов", zh "大叻按小时租摩托车", ko "달랏 오토바이 시간 단위 렌트", id "sewa motor Da Lat per jam"; links lt-early, lt-sunset-ride, lt-sameday, lt-return; photos three-honda-vision-rental-dalat + guest-checking-black-air-blade-van-phu + evening-pickup-van-phu-1-15-5-thong-thien-hoc; cluster bikes; 6 languages)
 - 2026-11-25 lt-ev-station — EV long-tail: Da Lat Railway Station by electric scooter (ride from the lake, station parking, train to Trai Mat vs riding ~8 km, 2 batteries + swap 20,000 VND, no km figure (links lt-ev-battery); en "Da Lat Railway Station by electric scooter", vi "xe máy điện đi ga Đà Lạt", ru "на электроскутере к вокзалу Далата", zh "骑电动车去大叻火车站", ko "전기 스쿠터로 달랏 기차역 가기", id "ke Stasiun Kereta Da Lat naik motor listrik"; links evrules, lt-ev-parking, station, lt-ev-battery, lt-ev-lake; photos electric-scooter-flower-garden-dalat + electric-scooters-van-phu-shop + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
 
+- 2026-11-26 lakes — Lakes around Da Lat compared (Xuan Huong, Chien Thang, Than Tho, Tuyen Lam, Dankia/Suoi Vang; distance, character, best time, which bike: EV for Xuan Huong/Chien Thang/Than Tho, gas for Tuyen Lam, Air Blade for Dankia; en "lakes around Da Lat", vi "các hồ ở Đà Lạt", ru "озёра Далата", zh "大叻的湖", ko "달랏 호수", id "danau di Da Lat"; links lt-ev-lake, tuyenlam, lt-tuyenlam-rent, danhia, routes; photos travellers-air-blade-cafe-dalat + couple-air-blade-dalat-center-street + guest-air-blade-dusk-street-dalat; cluster location; 6 languages)
+- 2026-11-26 lt-dankia-rent — Long-tail: renting a motorbike for Dankia Lake & Golden Stream (~15–20 km NW, 40–50 km round trip, Air Blade, Vision for one, no EV, fill up in the city, 4:30 start, back before dark, checks, flat tyre → pin+photo, combine with Lang Biang; en "rent a motorbike for Dankia Lake and Golden Stream", vi "thuê xe máy đi hồ Đankia Suối Vàng", ru "аренда байка до озера Данкиа", zh "大叻租摩托车去丹基亚湖", ko "단끼아 호수 오토바이 렌트", id "sewa motor ke Danau Dankia"; links danhia, lt-airblade, lt-checklist, lt-breakdown, lt-langbiang-rent; photos group-travellers-air-blade-van-phu-shop + guest-blue-air-blade-van-phu-shop + guests-helmets-red-air-blade-van-phu; cluster bikes; 6 languages)
+- 2026-11-26 lt-ev-palaces — EV long-tail: Da Lat palaces by electric scooter (Madame de Dalat, Dinh 3, Dinh Tỉnh trưởng, Dinh 2 outside, Nam Phuong Palace/Lam Dong Museum, Dinh 1 check; loop ~8 km; statuses change, no prices/hours; 2 batteries + swap 20,000 VND, no km/kg figure (links lt-ev-battery, evrules); en "Da Lat palaces by electric scooter", vi "xe máy điện đi tham quan các dinh Đà Lạt", ru "дворцы Далата на электроскутере", zh "骑电动车游大叻宫殿", ko "전기 스쿠터로 달랏 궁전 투어", id "keliling istana Da Lat naik motor listrik"; links palaces map, lt-ev-parking, lt-ev-villas, history; photos electric-scooters-helmets-van-phu + electric-scooter-purple-flowers-dalat + guest-white-electric-scooter-dalat; cluster ev; 6 languages)
+
 - Spot guide pages (one per photo-map spot, long-tail: opening hours, entrance fee, how to get there by scooter, history, photo spots, FAQ) use the owner's own photos in `img/spots/<id>-*.webp`; first done: 2026-10-14 domainedemarie. Write the next ones only when the owner sends photos.
 
 ## Long-tail backlog — rental keywords (ONE per day, in addition to the daily travel article)
@@ -220,7 +224,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 - [ ] lt-tet — Motorbike rental in Da Lat during Tết and holidays: book early (publish ~early Jan)
 - [ ] lt-christmas — Motorbike rental in Da Lat over Christmas and New Year (publish ~early Dec)
 
-- [ ] lt-dankia-rent — Renting a motorbike for Dankia Lake & Golden Stream (Air Blade, no EV, fuel; link danhia, not duplicate it)
 - [ ] lt-shop-directions — Finding our shop at 1/15/5 Thông Thiên Học: landmarks, the alley, where to stop, old GBP address on Bùi Thị Xuân (same shop)
 - [ ] lt-backpack-storage — Bags on a rental scooter: under-seat space Vision vs Air Blade, hooks, backpacks, no suitcases (link lt-ev-luggage for EV)
 - [ ] lt-seniors — Motorbike rental for older travellers: lighter Vision, short legs, riding as a passenger, rest stops (gas bikes; link lt-ev-families for EV)
@@ -241,7 +244,6 @@ Purpose: rank for longer, less competitive rental searches in every language. Ru
 
 ## EV backlog — electric-scooter rental long-tail (ONE per day, third daily article)
 Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME}">…</a> and the rules article <a href="{ART:evrules}">…</a>; never duplicate `evgas` (electric vs gas) or `evrules`. Battery only with the approved figures above. Max 2 riders under 140 kg combined; no long steep passes (Prenn, Mimosa, Lang Biang) — suggest the Air Blade for those.
-- [ ] lt-ev-palaces — Palaces and museum near the centre by electric scooter (link palace-map; statuses 'check'; no prices/hours)
 - [ ] lt-ev-viewpoints — City viewpoints reachable by electric scooter without passes (hills in the centre, view cafés; link cafe-view-map)
 - [ ] lt-ev-lowbattery — What to do if the battery runs low away from the shop (slow down, lower mode, message with pin; no km figure)
 - [ ] lt-ev-festival — Electric scooter during the Flower Festival 2026 (crowds, closed streets, parking; dates only as planned, link flower-festival-2026) (publish ~mid Dec)
@@ -250,7 +252,6 @@ Same rules as the long-tail backlog; link <a href="{EV}">…</a>, <a href="{HOME
 - [ ] lt-ev-tet — Electric scooter rental during Tết: book early, busy streets (publish ~mid Jan)
 
 ## Backlog (top = next) — daily calendar from 2026-10-14
-- [ ] 24/11 lakes — Lakes around Da Lat compared: Xuan Huong, Tuyen Lam, Chien Thang, Dankia, Than Tho (which bike for each)
 - [ ] 25/11 museum — Lam Dong Museum and other indoor culture stops for a cool afternoon (no prices/hours; link palaces map)
 - [ ] 26/11 phototips — Photography tips for Da Lat: morning mist, golden hour, rain light, asking before portraits
 - [ ] 27/11 longstay — Staying a month in Da Lat: neighbourhoods, daily routine, markets, weather planning
