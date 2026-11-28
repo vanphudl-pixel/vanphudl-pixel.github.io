@@ -42,7 +42,7 @@ for _l in LANGS:
     C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
     EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
 from content.cluster import GROUP as CL_GROUP
-from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE, GALLERY as PHOTO_GALLERY
+from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE, GALLERY as PHOTO_GALLERY, EV_GALLERY as PHOTO_EV_GALLERY
 import html as _html
 def _esc(t): return _html.escape(t, quote=True)
 def _ph_style(name):
@@ -289,8 +289,8 @@ ol.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:
 @media(min-width:820px){ol.steps{grid-template-columns:repeat(4,1fr)}}
 ol.steps li{counter-increment:st;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:0}
 ol.steps li:before{content:counter(st);display:flex;width:34px;height:34px;border-radius:50%;background:var(--pine);color:var(--accent);font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
-main.home .gallery{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-main.home .gallery img{border-radius:14px}
+main.home .gallery,main .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+main.home .gallery img,main .gallery img{border-radius:14px;width:100%;height:auto}
 .pmsec p .btn{margin:0 6px 8px 0}
 main.home .faq details{border-radius:12px;padding:14px 16px}
 main.home .faq details[open]{border-color:var(--brand)}
@@ -961,7 +961,7 @@ def page_ev(l):
  <section>{vbox(l, EV_VIDEO, e["h1"])}</section>
  <section><h2>{e["h_facts"]}</h2><table class="price">{facts}</table>{lic_link(l, me)}</section>
  <section><h2>{e["h_good"]}</h2><ul class="checks">{good}</ul></section>
- <section><img src="{pre}img/guest-white-electric-scooter-dalat.jpg" alt="{_esc(PHOTO_ALT.get(l, {}).get("guest-white-electric-scooter-dalat") or PHOTO_ALT["en"]["guest-white-electric-scooter-dalat"])}" loading="lazy" style="{_ph_style("guest-white-electric-scooter-dalat")}"></section>
+ <section><div class="gallery">{"".join(f'<img src="{pre}img/{n}.jpg" alt="{_esc(PHOTO_ALT.get(l, {}).get(n) or PHOTO_ALT["en"][n])}" loading="lazy" {img_wh(n)}>' for n in PHOTO_EV_GALLERY)}</div></section>
  <section><h2>{e["h_note"]}</h2><ul class="checks">{notes}</ul></section>
  <section><h2>{e["h_faq"]}</h2>{faq}</section>
  {rev_section(l, ("keziah", "peter", "jan"))}

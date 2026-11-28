@@ -204,8 +204,8 @@ ol.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:
 @media(min-width:820px){ol.steps{grid-template-columns:repeat(4,1fr)}}
 ol.steps li{counter-increment:st;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px;margin:0}
 ol.steps li:before{content:counter(st);display:flex;width:34px;height:34px;border-radius:50%;background:var(--pine);color:var(--accent);font-weight:800;align-items:center;justify-content:center;margin-bottom:10px}
-main.home .gallery{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
-main.home .gallery img{border-radius:14px}
+main.home .gallery,main .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px}
+main.home .gallery img,main .gallery img{border-radius:14px;width:100%;height:auto}
 .pmsec p .btn{margin:0 6px 8px 0}
 main.home .faq details{border-radius:12px;padding:14px 16px}
 main.home .faq details[open]{border-color:var(--brand)}
