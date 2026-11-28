@@ -28,8 +28,10 @@ for l in LANGS:
             problems.append(f"{l}: section {sec} missing keys {miss}")
     # Owner 2026-11-01: new articles only in the focus languages; other languages may lack the newest keys,
     # but must keep en order, and the focus languages must have every article.
+    # Market-specific articles (owner 2026-11-28) live only in en + their target language.
+    _MKT = {"from-id-my"}
     if l in ("vi", "en", "zh", "ru", "ko", "id"):
-        if list(c["articles"]) != list(ref["articles"]):
+        if [k for k in c["articles"] if k not in _MKT] != [k for k in ref["articles"] if k not in _MKT]:
             problems.append(f"{l}: article keys/order differ from en")
     elif [k for k in ref["articles"] if k in c["articles"]] != list(c["articles"]):
         problems.append(f"{l}: article keys not in en order or unknown keys")

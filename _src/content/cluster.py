@@ -12,7 +12,7 @@ CLUSTERS = {
            "lt-ev-lake", "lt-ev-market", "lt-ev-hills", "lt-ev-weekend", "lt-ev-homestay", "lt-ev-morning", "lt-ev-safety",
            "lt-ev-flowers", "lt-ev-luggage", "lt-ev-cold", "lt-ev-1day", "lt-ev-week", "lt-ev-booking", "lt-ev-delivery", "lt-ev-food-tour", "lt-ev-display", "lt-ev-group", "lt-ev-villas", "lt-ev-pagodas", "lt-ev-nomads", "lt-ev-students", "lt-ev-churches", "lt-ev-station", "lt-ev-palaces", "lt-ev-viewpoints", "lt-ev-lowbattery"],
     # Group 4 — delivery & location
-    "location": ["getaround", "where-to-stay", "selfguided", "lt-busstation", "lt-delivery", "lt-center", "nightmarket", "thingstodo", "oneday", "kids", "station", "phrases", "parking-fuel", "pagodas", "solo", "vegetarian", "souvenirs", "lt-photoshoot", "dalatmarket", "breakfast", "lt-airport", "coffeefarms", "history", "couples", "villages", "evenings", "slowtravel", "crazyhouse", "lakes", "museum", "phototips"],
+    "location": ["getaround", "from-id-my", "where-to-stay", "selfguided", "lt-busstation", "lt-delivery", "lt-center", "nightmarket", "thingstodo", "oneday", "kids", "station", "phrases", "parking-fuel", "pagodas", "solo", "vegetarian", "souvenirs", "lt-photoshoot", "dalatmarket", "breakfast", "lt-airport", "coffeefarms", "history", "couples", "villages", "evenings", "slowtravel", "crazyhouse", "lakes", "museum", "phototips"],
     # bikes & trip length
     "bikes": ["lt-automatic", "lt-2days", "days2", "lt-airblade", "lt-vision", "lt-two", "lt-multiday", "lt-backpacker", "budget", "lt-rainy", "rainyday", "riding", "passes", "lt-groups", "lt-waterfalls-rent", "lt-weekend", "lt-weather-check", "lt-sunset-ride", "lt-tuyenlam-rent", "packing", "lt-langbiang-rent", "lt-short-ride", "lt-dankia-rent"],
 }

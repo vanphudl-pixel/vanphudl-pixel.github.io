@@ -22,7 +22,7 @@ REV_IDS = ["elvan", "keziah"]
 
 FAQ_H = "Pertanyaan yang sering ditanyakan"
 FAQ = [
-    ("Berapa harga sewa motor?", "150.000 VND per hari untuk semua motor (Honda Vision, Honda Air Blade 125cc, skuter listrik). Harga tetap, helm dan holder HP sudah termasuk."),
+    ("Berapa harga sewa motor?", "150.000 VND per hari untuk Honda Vision, Honda Air Blade 125cc dan skuter listrik. Harga tetap, helm dan holder HP sudah termasuk."),
     ("Perlu deposit?", "Tanpa deposit uang. Cukup titipkan paspor atau KTP selama masa sewa."),
     ("Bisa antar motor ke hotel?", "Bisa, gratis di pusat kota Dalat untuk sewa 2 hari atau lebih."),
     ("Jam berapa toko buka?", "Mulai pukul 04.30 pagi — pas untuk berburu awan. Motor dikembalikan sebelum pukul 21.00 di hari terakhir sewa."),

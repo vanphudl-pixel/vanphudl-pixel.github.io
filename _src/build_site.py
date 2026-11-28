@@ -93,6 +93,29 @@ C["en"]["dates"].update({"price": "2026-10-12", "evgas": "2026-10-12"})
 TPL = (HERE / "template.html").read_text(encoding="utf-8")
 # article order = order in content/en.py (oldest first); every language must have every key
 ARTICLES = list(C["en"]["articles"].keys())
+# Owner decision 2026-11-28 (SEO audit): near-duplicate articles in one language are merged into the
+# stronger article with the same search intent. The merged article is removed from that language only
+# (listings, hreflang, sitemap) and its old URL becomes a redirect (meta refresh 0 + canonical) to the kept one.
+# Never write new content under a merged key in that language.
+MERGED = {"id": {
+    "lt-ev-weekend": "lt-weekend", "lt-ev-group": "lt-groups", "lt-ev-checklist": "lt-checklist",
+    "lt-ev-delivery": "lt-delivery", "lt-ev-booking": "lt-booking", "lt-ev-rain": "lt-rainy",
+    "lt-caudat-early": "caudat", "lt-ev-1day": "oneday", "lt-ev-week": "lt-multiday",
+    "lt-ev-couples": "lt-two", "lt-language": "lt-foreigners", "lt-ev-beginners": "lt-first-time",
+    "lt-ev-night": "lt-nightride", "lt-ev-parking": "parking-fuel", "lt-ev-station": "station",
+    "lt-ev-lowbattery": "lt-ev-battery", "lt-ev-halfday": "lt-ev-city",
+    "lt-waterfalls-rent": "waterfalls", "lt-tuyenlam-rent": "tuyenlam", "lt-langbiang-rent": "langbiang",
+    "lt-dankia-rent": "danhia", "lt-ev-cafes": "coffee", "lt-ev-flowers": "flowers",
+    "lt-ev-pagodas": "pagodas", "lt-sunset-ride": "sunrise-sunset", "lt-ev-lake": "thingstodo",
+}}
+MERGED_OLD = {}  # (lang, old_key) -> old slug, for the redirect pages
+for _l, _m in MERGED.items():
+    for _old, _keep in _m.items():
+        if _old in C[_l]["articles"] and _keep in C[_l]["articles"]:
+            MERGED_OLD[(_l, _old)] = C[_l]["articles"].pop(_old)[0]
+def merged_to(l, k):
+    while k in MERGED.get(l, {}) and k not in C[l]["articles"]: k = MERGED[l][k]
+    return k
 # Owner decision 2026-11-01: new articles are written only in FOCUS_LANGS (vi, en, zh, ru, ko, id).
 # Older articles stay in all 18 languages. A language simply lacks the keys it was not written in:
 # listings, "read also", hreflang, language bar and sitemap only use the languages that really have the article.
@@ -281,13 +304,13 @@ HALAL_OLD = "id/sewa-motor-dalat/restoran-halal-dalat/"  # previous URL, kept as
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
-def art_path(l, k): return blog_path(l) + C[l]["articles"][k][0] + "/"
+def art_path(l, k): k = merged_to(l, k); return blog_path(l) + C[l]["articles"][k][0] + "/"
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
 def tm_path(l): return lang_root(l) + TM.SLUG[l] + "/"
 def lic_path(l): return lang_root(l) + LIC.SLUG[l] + "/"
 LIC_LANGS = [x for x in LIC.LANGS if x in LIC.T]
-LIC_FROM = {"lt-documents", "lt-ev-foreigners", "evrules", "lt-ev-experience", "lt-procedure"}  # articles that link to the licence page
+LIC_FROM = {"from-id-my", "lt-documents", "lt-ev-foreigners", "evrules", "lt-ev-experience", "lt-procedure"}  # articles that link to the licence page
 def pil_path(M, l): return lang_root(l) + M.SLUG[l] + "/"
 def arr_path(l): return pil_path(ARR, l)
 ARR_LANGS = [x for x in ARR.LANGS if x in ARR.T]
@@ -554,14 +577,16 @@ def head(l, kind, key, title, desc, ld, img="electric-row"):
 </head>
 <body>"""
 
-def id_funnel():
-    """Indonesian-only funnel block above the footer of every /id/ page (content/funnelid.py)."""
+def id_funnel(full=True):
+    """Indonesian-only funnel block above the footer of every /id/ page (content/funnelid.py).
+    full=False (rental home + EV page, which have their own reviews and FAQ): consultation box only,
+    so the page does not repeat a second review block and a second, overlapping FAQ (audit 2026-11-28)."""
     asks = "".join(f'<a class="btn wa" href="https://wa.me/84944081101?text={quote(m)}" target="_blank" rel="noopener">{_esc(b)}</a>' for b, m in FI.ASKS)
     faq = "".join(f'<details><summary>{_esc(q)}</summary><p>{_esc(a)}</p></details>' for q, a in FI.FAQ)
     return (f'<div class="wrap idf" style="padding-bottom:24px"><section class="box" id="konsultasi"><h2>{_esc(FI.H2)}</h2><p>{_esc(FI.LEAD)}</p><div class="cta">{asks}</div>'
             f'<p>{_esc(FI.HALAL_LINE)} <a href="/{halal_path()}">{_esc(FI.HALAL_LINK)}</a>.</p></section>'
-            f'<section><h2>{_esc(FI.REV_H)}</h2>{rev_cards(FI.REV_IDS)}</section>'
-            f'<section class="faq"><h2>{_esc(FI.FAQ_H)}</h2>{faq}</section></div>')
+            + ("</div>" if not full else "") + (f'<section><h2>{_esc(FI.REV_H)}</h2>{rev_cards(FI.REV_IDS)}</section>'
+            f'<section class="faq"><h2>{_esc(FI.FAQ_H)}</h2>{faq}</section></div>' if full else ""))
 
 def foot(l, root_redirect=False, frm=None):
     u = C[l]["ui"]
@@ -578,7 +603,7 @@ def foot(l, root_redirect=False, frm=None):
             kw += f' · <a href="{rel(frm, about_path(l))}">{AB.T[l]["foot"]}</a>'
         if l == "vi":
             kw += f' · <a href="{rel(frm, home_path("vi") + "phuong-xuan-huong/")}">Thuê xe máy theo tuyến đường phường Xuân Hương</a>'
-    pre = id_funnel() if l == "id" else ""
+    pre = id_funnel(full=frm not in (home_path("id"), ev_path("id"))) if l == "id" else ""
     return pre + f"""<footer><div class="fcalls"><a class="fp call" href="{TEL}">📞 {CALL[l][1]}: {phone_txt(l)}</a><a class="fp" href="{TEL2}">📞 {phone2_txt(l)}</a><a class="fp yt" href="{YT}" target="_blank" rel="noopener">▶ YouTube</a></div>{nap_block(l)}{u["footer"]}{kw}</footer>
 {floats(l)}
 <div class="lb" id="lb"><img alt=""></div>
@@ -1168,6 +1193,8 @@ def write(path, html):
 
 for old, (l_, k_) in OLD.items():
     write(old, page_redirect_to(l_, path_of(l_, k_)))
+for (l_, k_), slug_ in MERGED_OLD.items():
+    write(blog_path(l_) + slug_ + "/", page_redirect_to(l_, art_path(l_, k_)))
 
 groups = [("home", None), ("ev", None), ("routes", None), ("blog", None)] + [("art", k) for k in ARTICLES]
 for l in LANGS:
