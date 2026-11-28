@@ -59,9 +59,9 @@ C = {
   ("Apa saja yang termasuk dalam sewa?", "Setiap motor dapat helm dan holder HP, dan skuter bensin diserahkan dengan 1 liter bensin."),
   ("Motor mana yang sebaiknya dipilih?", "Untuk dalam kota dan jarak dekat, Honda Vision dan skuter listrik ringan dan senyap. Untuk tanjakan dan ke luar kota, seperti kebun teh Cau Dat, pilih Honda Air Blade 125cc — lebih bertenaga di tanjakan."),
   ("Bisa pesan dari jauh hari?", "Bisa. Kirim tanggal dan nama hotel via WhatsApp, Zalo atau WeChat, kami konfirmasi dan siapkan motornya."),
-  ("Di mana lokasi toko?", "Van Phu ada di 1/15/5 Thông Thiên Học, Da Lat. Lokasinya ada di Google Maps — lihat peta di bawah."),
+  ("Di mana rental motor terdekat di pusat Dalat?", "Van Phu ada di 1/15/5 Thông Thiên Học, di kawasan pusat kota Dalat. Lokasinya ada di Google Maps (lihat peta di bawah), dan untuk sewa 2 hari atau lebih motor bisa kami antar ke hotel Anda."),
  ],
- "h_map": "Lokasi kami", "h_contacts": "Kontak", "addr_label": "Alamat:",
+ "h_map": "Lokasi rental motor kami di pusat Dalat", "h_contacts": "Kontak", "addr_label": "Alamat:",
  "address": "1/15/5 Thông Thiên Học, Da Lat, Vietnam",
 },
 "routes": {
