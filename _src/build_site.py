@@ -42,7 +42,7 @@ for _l in LANGS:
     C[_l]["home"]["title"], C[_l]["home"]["desc"] = _SEO.HOME[_l]
     EV[_l]["title"], EV[_l]["desc"] = _SEO.EV[_l]
 from content.cluster import GROUP as CL_GROUP
-from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE
+from content.photos import ALT as PHOTO_ALT, HERO as PHOTO_HERO, INLINE as PHOTO_INLINE, GALLERY as PHOTO_GALLERY
 import html as _html
 def _esc(t): return _html.escape(t, quote=True)
 def _ph_style(name):
@@ -708,6 +708,8 @@ def page_home(l):
     imgs = [("electric-row", 1), ("airblade", 2), ("electric-helmets", 3), ("fleet-gas", 4), ("vision-white", 5), ("guest-1", 6), ("guest-2", 7)]
     galts = h.get("gallery_alts")
     gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{galts[i-1] if galts else f"{alt} {i}"}" loading="lazy" {img_wh(n)}>' for n, i in imgs)
+    if l in PHOTO_GALLERY:  # per-language gallery of real guest photos (photos.py GALLERY)
+        gallery = "".join(f'<img src="{pre}img/{n}.jpg" alt="{_esc(PHOTO_ALT.get(l, {}).get(n) or PHOTO_ALT["en"].get(n) or alt)}" loading="lazy" {img_wh(n)}>' for n in PHOTO_GALLERY[l])
     cmp_sec = ""
     if h.get("compare"):
         hd = "".join(f"<th>{c}</th>" for c in h["compare_head"])
