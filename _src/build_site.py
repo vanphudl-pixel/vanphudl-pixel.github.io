@@ -330,7 +330,8 @@ def pil_path(M, l): return lang_root(l) + M.SLUG[l] + "/"
 def arr_path(l): return pil_path(ARR, l)
 ARR_LANGS = [x for x in ARR.LANGS if x in ARR.T]
 def arr_link(l, me): return f'<p class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px">{ARR.ICON} <a href="{rel(me, arr_path(l))}"><b>{ARR.T[l]["h1"]}</b></a> →</p>' if l in ARR.T else ""
-def lic_link(l, me): return f'<p class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px">🪪 <a href="{rel(me, lic_path(l))}"><b>{LIC.T[l]["h1"]}</b></a> →</p>' if l in LIC.T else ""
+def lic_link(l, me): return ""  # owner 2026-11-28: no licence content on the site
+def _old_lic_link(l, me): return f'<p class="note" style="border:1px solid var(--line);border-radius:12px;padding:12px 16px">🪪 <a href="{rel(me, lic_path(l))}"><b>{LIC.T[l]["h1"]}</b></a> →</p>' if l in LIC.T else ""
 
 def path_of(l, kind, key=None):
     return {"home": home_path, "routes": routes_path, "blog": blog_path, "ev": ev_path}[kind](l) if kind != "art" else art_path(l, key)
@@ -1694,7 +1695,7 @@ def page_guide(l, i):
     langlink = f'<div class="langs"><a href="{rel(me, home_path(l))}" class="on" data-l="{l}">{l.upper()}</a></div>'
     top = f'<div class="top"><div class="logo">Văn Phú Đà Lạt</div>{langlink}</div>'
     others = [o for j, o in enumerate(GD.GUIDES[l]) if j != i]
-    related = "".join(f'<li><a href="{rel(me, guide_path(l, o))}">{o["h1"]}</a></li>' for o in others) + (f'<li><a href="{rel(me, lic_path(l))}">{LIC.T[l]["h1"]}</a></li>' if l in LIC.T else "")
+    related = "".join(f'<li><a href="{rel(me, guide_path(l, o))}">{o["h1"]}</a></li>' for o in others) 
     secs = "".join(f"<section><h2>{h}</h2>{body}</section>" for h, body in g["sections"])
     faq_ld = {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
         {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in g["faq"]]}
@@ -2053,9 +2054,12 @@ def page_pillar(M, l):
 <section>{contact_box(l)}{cta_box(l, me)}</section>
 </main>
 """ + foot(l, frm=me)
-for _M in (LIC, ARR):
+for _M in (ARR,):
     for l in [x for x in _M.LANGS if x in _M.T]:
         write(pil_path(_M, l), page_pillar(_M, l))
+# licence page removed (owner 2026-11-28: guests ask about licences by message); old URLs -> rental home
+for l in LIC.LANGS:
+    write(lic_path(l), page_redirect_to(l, home_path(l)))
 
 # ------------------------------------------------------------------ tourist map by motorbike route (vi + en)
 def page_tourmap(l):
@@ -2191,7 +2195,7 @@ for l in HUB.LANGS:
 _tm_alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + tm_path(x)}"/>\n' for x in TM.LANGS) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + tm_path("en")}"/>\n'
 for l in TM.LANGS:
     urls += f"  <url>\n    <loc>{BASE + tm_path(l)}</loc>\n{_tm_alts}    <lastmod>{TM.UPDATED}</lastmod>\n  </url>\n"
-for _M in (LIC, ARR):
+for _M in (ARR,):
     _pl = [x for x in _M.LANGS if x in _M.T]
     _alts = "".join(f'    <xhtml:link rel="alternate" hreflang="{x}" href="{BASE + pil_path(_M, x)}"/>\n' for x in _pl) + f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE + pil_path(_M, "en")}"/>\n'
     for l in _pl:
@@ -2317,7 +2321,6 @@ LLMS = f"""# Van Phu Dalat Motorbike Rental (Thuê xe máy Đà Lạt Văn Phú)
 - [Da Lat to Saigon bus — map of the Da Lat bus station and 12 bus company offices, free PDF]({BASE + map_path(BU, "en")})
 - [Da Lat to Da Nang bus — map of the Da Lat bus station and 6 bus company offices on the Da Nang / Hoi An route, free PDF]({BASE + map_path(DN, "en")})
 - [Da Lat Flower Festival 2026 — planned 19–31 Dec 2026: programme, venue map, free PDF]({BASE + map_path(FE, "en")})
-- [Do I need a license to rent a motorbike in Vietnam? Gas scooters need a valid motorbike license; electric scooters in the moped class (up to 50 km/h, motor up to 4 kW) need none]({BASE + lic_path("en")}) (Vietnamese: {BASE + lic_path("vi")})
 - [Arriving in Da Lat early by night bus — overnight buses from Ho Chi Minh City usually arrive about 4–7 am; where they stop, getting to the centre, picking up a scooter from 4:30 am]({BASE + arr_path("en")}) (Vietnamese: {BASE + arr_path("vi")})
 - [Motorbike routes around Da Lat]({BASE + routes_path("en")})
 - [Travel blog]({BASE + blog_path("en")})

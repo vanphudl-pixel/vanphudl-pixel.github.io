@@ -1,4 +1,6 @@
-"""Licence pillar page — 'Do I need a licence to rent a motorbike in Vietnam?' (owner asked 2026-10-28, all languages).
+"""NOT BUILT since 2026-11-28 (owner: no licence content anywhere on the site; guests ask by message). Old URLs redirect to the rental home.
+The electric fleet is VinFast Feliz II, so the old 'no licence for electric' claim below is WRONG — never reuse it.
+Licence pillar page — 'Do I need a licence to rent a motorbike in Vietnam?' (owner asked 2026-10-28, all languages).
 The ONLY place (with guides.py) where licence wording is allowed; check.py scans this file for every other rule.
 Owner-confirmed facts (2026-10-28):
 - Electric scooters are mopeds (xe gắn máy): top speed up to 50 km/h, motor up to 4 kW -> no licence needed (Law 36/2024/QH15).

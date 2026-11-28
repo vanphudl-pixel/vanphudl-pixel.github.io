@@ -58,7 +58,7 @@ for l in LANGS:
 # Licence pillar page (content/licence.py, owner allowed licence wording ONLY here, 2026-10-28):
 # every language present, every non-licence rule still enforced (currency, range wording, no 120 kg / 120k).
 # Same checks for the night-bus arrival pillar (content/arrive.py): it may name the licence only to link to the licence page.
-for _PN in ("licence", "arrive", "routeshub"):
+for _PN in ("arrive", "routeshub"):  # licence page removed 2026-11-28
   _P = importlib.import_module(f"content.{_PN}")
   if set(_P.T) != set(LANGS):
     problems.append(f"{_PN}: languages differ from site languages: {set(LANGS) ^ set(_P.T)}")

@@ -77,7 +77,6 @@ TOUR_ROUTE = [
     ("Malam: makan di Sagar Indian Cuisine", "Masakan India halal dengan porsi besar. Buka sampai 22:00, kecuali Selasa mulai 14:30."),
 ]
 TOUR_TIPS = [
-    "Gas (xe số, tay ga 125cc) butuh SIM motor. Xe điện tidak butuh SIM.",
     "Sebelum jalan di tanjakan, cek rem dan bahan bakar. Motor sudah diberi bensin 1 liter saat diserahkan.",
     "Tempat sholat: ISMAEL dan Hajah Hawa disebut punya ruang sholat di ulasan Google. Panduan lengkap ada di halaman restoran halal.",
     "Pakai jaket. Dalat lebih dingin dari kota pesisir, terutama malam hari.",
