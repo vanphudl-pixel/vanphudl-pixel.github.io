@@ -24,7 +24,8 @@ FAQ_H = "Pertanyaan yang sering ditanyakan"
 FAQ = [
     ("Berapa harga sewa motor?", "150.000 VND per hari untuk Honda Vision, Honda Air Blade 125cc dan skuter listrik. Harga tetap, helm dan holder HP sudah termasuk."),
     ("Perlu deposit?", "Tanpa deposit uang. Cukup titipkan paspor atau KTP selama masa sewa."),
-    ("Bisa antar motor ke hotel?", "Bisa, gratis di pusat kota Dalat untuk sewa 2 hari atau lebih."),
+    ("Bisa antar dan jemput motor di hotel?", "Bisa, gratis untuk sewa 2 hari atau lebih di hotel pusat kota Dalat (sekitar 3–4 km dari toko): kami antar, lalu jemput lagi saat selesai. Sewa 1 hari silakan ambil di toko."),
+    ("Apakah motornya matic?", "Ya, Honda Vision dan Air Blade matic, motor listrik juga tanpa gigi."),
     ("Jam berapa toko buka?", "Mulai pukul 04.30 pagi — pas untuk berburu awan. Motor dikembalikan sebelum pukul 21.00 di hari terakhir sewa."),
     ("Ada yang perlu diperhatikan saat berkendara?", "Di Vietnam kendaraan berjalan di lajur kanan (bukan kiri seperti di Indonesia). Dilarang minum alkohol saat berkendara, dan patuhi hukum lalu lintas Vietnam."),
 ]
