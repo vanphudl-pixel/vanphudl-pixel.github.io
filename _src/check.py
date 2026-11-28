@@ -30,7 +30,8 @@ for l in LANGS:
     # but must keep en order, and the focus languages must have every article.
     # Market-specific articles (owner 2026-11-28) live only in en + their target language.
     _MKT = {"from-id-my"}
-    if l in ("vi", "en", "zh", "ru", "ko", "id"):
+    # Owner 2026-11-28: id gets only 2-3 new articles per week (not every article), so id is checked for order only.
+    if l in ("vi", "en", "zh", "ru", "ko"):
         if [k for k in c["articles"] if k not in _MKT] != [k for k in ref["articles"] if k not in _MKT]:
             problems.append(f"{l}: article keys/order differ from en")
     elif [k for k in ref["articles"] if k in c["articles"]] != list(c["articles"]):

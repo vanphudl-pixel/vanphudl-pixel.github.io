@@ -304,7 +304,10 @@ HALAL_OLD = "id/sewa-motor-dalat/restoran-halal-dalat/"  # previous URL, kept as
 def routes_path(l): return lang_root(l) + C[l]["routes"]["slug"] + "/"
 def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
-def art_path(l, k): k = merged_to(l, k); return blog_path(l) + C[l]["articles"][k][0] + "/"
+def art_path(l, k):
+    k = merged_to(l, k)
+    if k not in C[l]["articles"]: return blog_path(l)  # article not written in this language (e.g. id skips some): link the blog index
+    return blog_path(l) + C[l]["articles"][k][0] + "/"
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
 def day_path(l): return lang_root(l) + DAY.SLUG[l] + "/"
 def tm_path(l): return lang_root(l) + TM.SLUG[l] + "/"
