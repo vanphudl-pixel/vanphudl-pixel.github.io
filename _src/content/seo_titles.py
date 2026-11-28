@@ -40,8 +40,8 @@ HOME = {
         "ဒါလတ်မြို့တွင် ဆိုင်ကယ်ငှားရန်: Honda Vision, Honda Air Blade 125cc နှင့် လျှပ်စစ်ဆိုင်ကယ်။ ငွေသားအာမခံ မလို၊ ဦးထုပ် အခမဲ့၊ ၂ ရက်နှင့်အထက် ဟိုတယ်အထိ အခမဲ့ပို့၊ မနက် 4:30 မှ ဖွင့်သည်။"),
 }
 EV = {
- "vi": ("Thuê Xe Máy Điện Đà Lạt – 2 Pin Đi 50–60 km, Không Cọc | Văn Phú",
-        "Thuê xe máy điện Đà Lạt tại Văn Phú: mỗi xe 2 pin, đi khoảng 50–60 km, đổi pin tại tiệm, không cọc tiền, kèm mũ, giao xe tận khách sạn từ 2 ngày."),
+ "vi": ("Thuê Xe Máy Điện Đà Lạt – VinFast Feliz, 2 Pin, Không Cọc | Văn Phú",
+        "Thuê xe máy điện Đà Lạt VinFast Feliz tại Văn Phú: mỗi xe 2 pin, đổi pin tại tiệm, không cọc tiền, kèm mũ, giao và nhận xe tận khách sạn từ 2 ngày."),
  "en": ("Electric Scooter Rental Da Lat – 2 Batteries, 50–60 km | Van Phu",
         "Electric scooter rental in Da Lat: 2 batteries for about 50–60 km, battery swap at our shop, no cash deposit, helmet included, free hotel delivery for 2+ days."),
  "ru": ("Аренда электроскутера в Далате – 2 батареи, 50–60 км | Van Phu",

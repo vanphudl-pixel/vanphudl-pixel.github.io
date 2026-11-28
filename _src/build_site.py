@@ -107,14 +107,25 @@ MERGED = {"id": {
     "lt-waterfalls-rent": "waterfalls", "lt-tuyenlam-rent": "tuyenlam", "lt-langbiang-rent": "langbiang",
     "lt-dankia-rent": "danhia", "lt-ev-cafes": "coffee", "lt-ev-flowers": "flowers",
     "lt-ev-pagodas": "pagodas", "lt-sunset-ride": "sunrise-sunset", "lt-ev-lake": "thingstodo",
+}, "vi": {
+    # Owner 2026-11-28: ~44 Vietnamese EV articles were competing with the EV page for "thuê xe máy điện Đà Lạt".
+    # Pure rental-intent ones go to the EV page ("@EV"); day-plan ones go to lt-ev-city.
+    "lt-ev-foreigners": "@EV", "lt-ev-experience": "@EV", "lt-ev-price": "@EV", "lt-ev-couples": "@EV",
+    "lt-ev-eco": "@EV", "lt-ev-checklist": "@EV", "lt-ev-families": "@EV", "lt-ev-faq": "@EV",
+    "lt-ev-homestay": "@EV", "lt-ev-week": "@EV", "lt-ev-booking": "@EV", "lt-ev-delivery": "@EV",
+    "lt-ev-group": "@EV", "lt-ev-nomads": "@EV", "lt-ev-students": "@EV", "lt-ev-rain": "@EV",
+    "lt-ev-halfday": "lt-ev-city", "lt-ev-1day": "lt-ev-city", "lt-ev-weekend": "lt-ev-city",
+    "lt-ev-morning": "lt-ev-city", "lt-ev-night": "lt-ev-city",
 }}
 MERGED_OLD = {}  # (lang, old_key) -> old slug, for the redirect pages
 for _l, _m in MERGED.items():
     for _old, _keep in _m.items():
-        if _old in C[_l]["articles"] and _keep in C[_l]["articles"]:
+        if _old in C[_l]["articles"] and (_keep.startswith("@") or _keep in C[_l]["articles"]):
             MERGED_OLD[(_l, _old)] = C[_l]["articles"].pop(_old)[0]
 def merged_to(l, k):
-    while k in MERGED.get(l, {}) and k not in C[l]["articles"]: k = MERGED[l][k]
+    while k in MERGED.get(l, {}) and k not in C[l]["articles"]:
+        k = MERGED[l][k]
+        if k.startswith("@"): break
     return k
 # Owner decision 2026-11-01: new articles are written only in FOCUS_LANGS (vi, en, zh, ru, ko, id).
 # Older articles stay in all 18 languages. A language simply lacks the keys it was not written in:
@@ -306,6 +317,7 @@ def blog_path(l): return lang_root(l) + "blog/"
 def ev_path(l): return lang_root(l) + EV[l]["slug"] + "/"
 def art_path(l, k):
     k = merged_to(l, k)
+    if k == "@EV": return ev_path(l)  # merged into the electric-scooter page
     if k not in C[l]["articles"]: return blog_path(l)  # article not written in this language (e.g. id skips some): link the blog index
     return blog_path(l) + C[l]["articles"][k][0] + "/"
 def hub_path(l): return lang_root(l) + HUB.SLUG[l] + "/"
@@ -949,6 +961,7 @@ def page_ev(l):
  <section>{vbox(l, EV_VIDEO, e["h1"])}</section>
  <section><h2>{e["h_facts"]}</h2><table class="price">{facts}</table>{lic_link(l, me)}</section>
  <section><h2>{e["h_good"]}</h2><ul class="checks">{good}</ul></section>
+ <section><img src="{pre}img/guest-white-electric-scooter-dalat.jpg" alt="{_esc(PHOTO_ALT.get(l, {}).get("guest-white-electric-scooter-dalat") or PHOTO_ALT["en"]["guest-white-electric-scooter-dalat"])}" loading="lazy" style="{_ph_style("guest-white-electric-scooter-dalat")}"></section>
  <section><h2>{e["h_note"]}</h2><ul class="checks">{notes}</ul></section>
  <section><h2>{e["h_faq"]}</h2>{faq}</section>
  {rev_section(l, ("keziah", "peter", "jan"))}
